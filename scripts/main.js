@@ -23,15 +23,16 @@ var fornavn;
 var etternavn;
 var email;
 var telefon;
+
 var medlemRabatt = 1;
 var områdePris = 0;
 var timePris = 150;
 var døgnPris = 800;
 var valgtKlokkeSlett = 0;
 var antallDøgn = 0;
-var antallDøgn = 0;
+var antallTimer = 0;
 var prisForValgteTimer = 0;
-var prisForValgtPeriode = 0;
+var prisForValgtPeriode = antallDøgn * døgnPris;
 
 
 
@@ -96,11 +97,20 @@ $(document).ready(function(){
                     //skru av muligheten for å skrive med tastatur for å forhindre kluss verdier.
                    $("#timeVelger1").keydown(function(){
                    	return false;
-                   })
+                   });
+
+                   $("#datovelger1").keydown(function(){
+                   	return false;
+                   });
+                   $("#datovelger2").keydown(function(){
+                   	return false;
+                   });
+
                     $("#timeVelger1").on('change', function() {
                     	valgtKlokkeSlett = $(this).val().substring(0,2);
                     	valgtKlokkeSlett = parseInt(valgtKlokkeSlett);
                     	antallTimer = valgtKlokkeSlett - 12;
+
                     	prisForValgteTimer = timePris * antallTimer;
 
                   
@@ -119,68 +129,85 @@ Form-change / submit
 
 
 	$("#bestillingSkjema :input").change(function(){
+			//Variabler oppdateres, brukes for å vise kvitering etter form submit.
+			fornavn = $("#fornavn").val();
+			etternavn = $("#etternavn").val();
+			email = $("#email").val();
+			telefon = $("#telefon").val();
+			områdePris = $("#område option:selected").val();
+			områdePris = parseInt(områdePris);
 
-		$("#kortTidsLeie").on('change', function(){
-      		prisForValgtPeriode = 0;
-      		prisForValgtPeriode = antallDøgn * døgnPris;
-  		$("#totalPris").html(findTotalSum);	
+			$("#kortTidsLeie").on('change', function(){
+		      		prisForValgtPeriode = 0;
+		      		antallTimer = 0;
+		      		antallDøgn = 0;
+		      		prisForValgtPeriode = antallDøgn * døgnPris;
+		  		$("#totalPris").html(findTotalSum);	
+	 		 });
 
+		$("#langTidsLeie").on('change', function(){
+	      		prisForValgteTimer = 0;
+	      		antallTimer = 0;
+	      		antallDøgn= 0;
+	      		prisForValgtPeriode = antallDøgn * døgnPris;
+	      		$("#totalPris").html(findTotalSum);	
+	 	 });
 
- 	 });
-	$("#langTidsLeie").on('change', function(){
-      		prisForValgteTimer = 0;
-      		prisForValgtPeriode = antallDøgn * døgnPris;
-      		$("#totalPris").html(findTotalSum);	
+		$("#medlem").on('change', function(){
+			if ($('#medlem').is(':checked')) {
+	      		$("#totalPris").html(findTotalSum);	
+	      		}
+	 	 });
 
- 	 });
-
-	$("#medlem").on('change', function(){
-		if ($('#medlem').is(':checked')) {
-      		$("#totalPris").html(findTotalSum);	
-      		}
-
- 	 });
-
-	//Variabler oppdateres, brukes for å vise kvitering etter form submit.
-		fornavn = $("#fornavn").val();
-		etternavn = $("#etternavn").val();
-		email = $("#email").val();
-		telefon = $("#telefon").val();
-		områdePris = $("#område option:selected").val();
-		områdePris = parseInt(områdePris);
-
-		
-//Det skjekkes om det skal leies i mindre eller mer en ett døgn
-// Viser repsektive panel ut i fra hvilken knap som er blitt avmerket.
-if ($("#kortTidsLeie").is(":checked")){
-	prisForValgtPeriode = 0;
-	prisForValgtPeriode = antallDøgn * døgnPris;
-	$("#velgDatoPanel").removeClass("showMe");
-	$("#velgDatoPanel").addClass("hide");
-
-	$("#velgTimePanel").removeClass("hide");
-	$("#velgTimePanel").addClass("showMe")
 	
-} else if ($("#langTidsLeie").is(":checked")){
-	prisForValgtPeriode = 0;
-	prisForValgtPeriode = antallDøgn * døgnPris;
-	$("#velgDatoPanel").removeClass("hide");
-	$("#velgDatoPanel").addClass("showMe");
+		
+	//Det skjekkes om det skal leies i mindre eller mer en ett døgn
+	// Viser repsektive panel ut i fra hvilken knap som er blitt avmerket.
+		if ($("#kortTidsLeie").is(":checked")){
+			prisForValgtPeriode = 0;
+			prisForValgtPeriode = antallDøgn * døgnPris;
+			$("#velgDatoPanel").removeClass("showMe");
+			$("#velgDatoPanel").addClass("hide");
 
-	$("#velgTimePanel").removeClass("showMe");
-	$("#velgTimePanel").addClass("hide")
-}
-  
+			$("#velgTimePanel").removeClass("hide");
+			$("#velgTimePanel").addClass("showMe")
 
-//Medlemsrabatt skjekkes
-		if ($('#medlem').is(':checked')) {
-			medlemRabatt = 0.85;
+			//Sett required på feltene som vises og ta den fekk på de som skjules.
+			$("#timeVelger1").prop('required',true);
+			$("#datovelger1").prop('required',false);
+			$("#datovelger2").prop('required',false);
+
+
+			
+		} else if ($("#langTidsLeie").is(":checked")){
+			prisForValgtPeriode = 0;
+			prisForValgtPeriode = antallDøgn * døgnPris;
+			$("#velgDatoPanel").removeClass("hide");
+			$("#velgDatoPanel").addClass("showMe");
+
+			$("#velgTimePanel").removeClass("showMe");
+			$("#velgTimePanel").addClass("hide")
+
+			//Sett required på feltene som vises og ta den fekk på de som skjules.
+			$("#timeVelger1").prop('required',false);
+			$("#datovelger1").prop('required',true);
+			$("#datovelger2").prop('required',true);
 		}
-		else	{
-			medlemRabatt=1;
-		}
-		//priser
-		$("#totalPris").html(findTotalSum);	
+		  
+
+		//Medlemsrabatt skjekkes
+			if ($('#medlem').is(':checked')) {
+				medlemRabatt = 0.85;
+			}
+			else	{
+				medlemRabatt=1;
+			}
+			//priser
+			$("#totalPris").html(findTotalSum);	
+
+
+			
+			
 
 	});	
 
@@ -238,12 +265,13 @@ if ($("#kortTidsLeie").is(":checked")){
 		alert("pris for valgte periode" + prisForValgtPeriode)
 
 		alert("områdepris: "+områdePris)*/
-		alert(prisForValgteTimer)
-		alert(pris)
-		var x = typeof prisForValgteTimer;
-		var y = typeof prisForValgteTimer;
-    		alert("type for prisForValgteTimer: "+ x);
-    		alert("type for prisForValgtPeriode: "+y);
+		alert(områdePris)
+		alert(antallDøgn)
+		//alert(pris)
+		//var x = typeof prisForValgteTimer;
+		//var y = typeof prisForValgteTimer;
+    		//alert("type for prisForValgteTimer: "+ x);
+    		//alert("type for prisForValgtPeriode: "+y);
 
 		    });
 });
