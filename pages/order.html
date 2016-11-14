@@ -13,6 +13,8 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<!-- Optional theme Bootstrap-->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<!--Timepicker.js  -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.css">
 		<!-- Stilark -->
 		<link rel="stylesheet" href="../styles/main.css">
 	</head>
@@ -42,7 +44,7 @@
 							<input required type="text" class="form-control" id="etternavn">
 						</div>
 				
-						<div class="form-group">
+						<div class="form-group ">
 							<label for="email">Email</label>
 							<input required type="email" class="form-control" id="email">
 						</div>
@@ -52,27 +54,46 @@
 							<input required type="tel" pattern="[0-9]{8}" maxlength="8" class="form-control" id="telefon">
 						</div>
 
-						<div class="form-group">
-							<label for="">Fra</label>
-							<input type="text" id="datovelger1" name="datovelger1">
-							<label for="">Til</label>
-							<input type="text" id="datovelger2" name="datovelger1">
-
-						</div>	
 
 						<div class="form-group">
-						  <label for="område">Velg råde:</label>
+						  <label for="område">Velg område:</label>
 						  <select class="form-control" id="område">
-						  <option value="" disabled selected>Select your option</option>
+						  <option value="" disabled selected>Velg hytteområde</option>
 						    <option value="850">Område 1 - 850kr</option>
 						    <option value="850">Område 2 - 850kr</option>
 						    <option value="1500">Område 3 - 1500kr</option>
 						    <option value="2346">Område 4 -2346kr</option>
 						  </select>
 						</div>
+
+									<div id="test">
+										<div class="form-group bob">
+										<h3>Hvor lenge vil du leie?</h3>
+										<input type="radio" name="leiePeriode" id="kortTidsLeie"> Mindre enn 24 timer <br/>
+										<input type="radio" name="leiePeriode" id="langTidsLeie"> Mer enn 24 timer
+										</div>
+										
+										<div class="form-group hide bob" id="velgTimePanel">
+										<h3>Hvor mange timer vil du leie? </h3>
+										<h4>Utleie begynner klokken 12.00 hver dag.</h4>
+											<label for="">Til</label>
+											<input type="text" id="timeVelger1" >
+											
+										</div>
+				
+										<div class="form-group hide bob" id="velgDatoPanel">
+											<h3>Hvor mange dager vil du leie? </h3>
+											<label for="">Fra</label>
+											<input type="text" id="datovelger1" name="datovelger1">
+											<label for="">Til</label>
+											<input type="text" id="datovelger2" name="datovelger1">
+										</div>	
+
+									</div>
+
 	
 
-						<div class="form-group">
+						<div class="form-group clear" >
 							<label><input type="checkbox" name="medlem" id="medlem">Medlem i Turistforeningen. Gir 15% Rabatt.</label>
 							
 						</div>
@@ -116,9 +137,12 @@
 
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<!-- Latest compiled and minified JavaScript -->
+<!--timepicker js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.js"></script>
+<!-- Latest compiled and minified JavaScript  Bootstrap-->
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Main Javascript File -->
 <script src="../scripts/main.js"></script>
 </body>
 </html>

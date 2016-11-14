@@ -1,10 +1,39 @@
+/************************************
+General
+************************************/
+.clear {
+  clear: both; }
+
 .hide {
   display: none; }
+
+.showMe {
+  display: block; }
 
 .wrapper h1 {
   text-align: center; }
 
 #opplysninger {
   height: 500px; }
+
+#test {
+  background-color: blue; }
+  #test h3, #test h4, #test input, #test label {
+    margin: 0;
+    padding: 0px; }
+  #test h3, #test h4, #test label {
+    padding: 5px 0px; }
+
+.bob {
+  width: 48%;
+  height: 125px;
+  float: left;
+  margin: 0; }
+
+#velgDatoPanel {
+  width: 48%; }
+
+#velgTimePanel {
+  width: 48%; }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,7 +1,16 @@
+/************************************
+General
+************************************/
+.clear {
+	clear: both;
+}
+
 .hide {
 	display:none;
 }
-
+.showMe{
+	display:block
+};
 .wrapper {
 	
 	h1 {
@@ -13,3 +22,32 @@
 	height:500px;
 	
 }
+
+#test{
+	background-color:blue;
+	h3,h4,input,label {
+		margin:0;
+		padding:0px;
+	}
+	
+	h3,h4,label {
+		padding:5px 0px;
+	}
+	
+}
+
+.bob {
+	width: 48%;
+	height:125px;
+float:left;
+	margin:0;
+}
+
+#velgDatoPanel{
+	width:48%;
+}
+
+#velgTimePanel {
+	width:48%;
+}
+
