@@ -1,0 +1,124 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Hytter og slikt</title>
+
+		<!-- Normalize.css for å nullstille innebygd css. Gir bedre utgangspunkt å arbeide med. -->
+		<link rel="stylesheet" href="../styles/normalize.css">
+		
+		<!--jQuery UI stilark -->
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+		<!-- Bootstrap CDN-->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- Optional theme Bootstrap-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<!-- Stilark -->
+		<link rel="stylesheet" href="../styles/main.css">
+	</head>
+<body>
+	<div class="wrapper">
+		<header>
+			<nav>
+			</nav>
+		</header>
+		
+		<div class="container" id="bestiller">
+			<h1>Bestill</h1>
+			<div class="row">
+				<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+
+					<!-- action javascript:null for å forhindre submit action. Men akseptere required fields. -->
+					<form action="javascript:null" method="GET" id="bestillingSkjema">
+				
+						<!-- INPUTs -->
+						<div class="form-group">
+							<label for="fornavn">Fornavn</label>
+							<input required type="text" class="form-control" id="fornavn">
+						</div>
+				
+						<div class="form-group">
+							<label for="etternavn">Etternavn</label>
+							<input required type="text" class="form-control" id="etternavn">
+						</div>
+				
+						<div class="form-group">
+							<label for="email">Email</label>
+							<input required type="email" class="form-control" id="email">
+						</div>
+				
+						<div class="form-group">
+							<label for="telefon">Telefon</label>
+							<input required type="tel" pattern="[0-9]{8}" maxlength="8" class="form-control" id="telefon">
+						</div>
+
+						<div class="form-group">
+							<label for="">Fra</label>
+							<input type="text" id="datovelger1" name="datovelger1">
+							<label for="">Til</label>
+							<input type="text" id="datovelger2" name="datovelger1">
+
+						</div>	
+
+						<div class="form-group">
+						  <label for="område">Velg råde:</label>
+						  <select class="form-control" id="område">
+						  <option value="" disabled selected>Select your option</option>
+						    <option value="850">Område 1 - 850kr</option>
+						    <option value="850">Område 2 - 850kr</option>
+						    <option value="1500">Område 3 - 1500kr</option>
+						    <option value="2346">Område 4 -2346kr</option>
+						  </select>
+						</div>
+	
+
+						<div class="form-group">
+							<label><input type="checkbox" name="medlem" id="medlem">Medlem i Turistforeningen. Gir 15% Rabatt.</label>
+							
+						</div>
+
+						<div id="prisOversikt">
+							<p> Totalpris: <span id="totalPris">0</span>kr</p>
+						</div>
+
+				
+						<div class="form-group">
+							<input required value="Bestill" type="submit" class="form-control btn btn-primary" id="submit">
+						</div>
+
+					</form>
+					<button id="testingbutton">Hjelp</button>
+				</div>
+			</div>
+		</div>
+		
+
+		<!-- Div som hvises når det skjemaet er bestilt. Default hidden. Løsning i stedet for php/angular.js/ajax etc.-->
+		<div id="bestilt" class="hide">
+			<div class="container">
+					<div class="row">
+						<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+							<h1>Tusen takk for din bestilling.</h1>
+			
+							<div id="opplysninger">
+							<h2>Dine opplysninger</h2>
+							<p>Fornavn: <span id="showFornavn"></span></p>
+							<p>Etternavn: <span id="showEtternavn"></span></p>
+							<p>Email: <span id="showEmail"></span></p>
+							<p>Telefon: <span id="showTelefon"></span></p>
+						</div>
+					</div>
+				</div>	
+			
+			</div>
+		</div>
+	</div>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../scripts/main.js"></script>
+</body>
+</html>
