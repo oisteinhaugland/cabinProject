@@ -10,12 +10,12 @@ function validateEmail(emailtest) {
 }
 //Funksjon som summerer alle kostnader og ganger med medlemsrabatt(står på 1 som default)
 function findTotalSum(){
-	sum = (områdePris + prisForValgtPeriode + prisForValgteTimer) * medlemRabatt
+	sum = (hyttePris + prisForValgtPeriode + prisForValgteTimer + utvaskPris)  * medlemRabatt
 	return sum;
 }
 
 
-
+    
 /*********************************************************************************************
 Info-variabler
 /********************************************************************************************/
@@ -25,15 +25,21 @@ var email;
 var telefon;
 
 var medlemRabatt = 1;
-var områdePris = 0;
+var hyttePris = 0;
 var timePris = 150;
 var døgnPris = 800;
+var utvaskPris = 0;
 var valgtKlokkeSlett = 0;
 var antallDøgn = 0;
 var antallTimer = 0;
 var prisForValgteTimer = 0;
 var prisForValgtPeriode = antallDøgn * døgnPris;
 
+
+var fasiliteterHytte1 = "Sengeplasser: 4"  + "&emsp;" + "Vann: ✓" + "&emsp;" + "Toalett: ✓";
+var fasiliteterHytte2 = "Sengeplasser:  8"  + "&emsp;" + "Internett: ✓ " + "&emsp;" + "Utedo: ✓";
+var fasiliteterHytte3 = "Sengeplasser: 12"  + "&emsp;" + "Kjøkken: ✓" + "&emsp;" + "Toalett: ✓";
+var fasiliteterHytte4 = "Sengeplasser: 16"  + "&emsp;" + "Toalett: ✓";
 
 
 
@@ -42,6 +48,9 @@ Datovelger / Timevelger
 /*********************************************************************************************/
 $(document).ready(function(){
 
+	   //finner sist besøke url. Brukes for å fylle ut info basert på hvilken hytte som ble sett på.    
+   	var referrer =  document.referrer;
+   	//start dato velger
 	 var startDateInteger;
 
     //jquery UI funksjon for å velge dato
@@ -106,6 +115,11 @@ $(document).ready(function(){
                    	return false;
                    });
 
+                   //Lagde et regex som filtrerer alt bortsett fra tall.
+                   $("#telefon").on('input', function (event) { 
+                   	this.value = this.value.replace(/[A-z\W]+/g, "")
+                   });
+
                     $("#timeVelger1").on('change', function() {
                     	valgtKlokkeSlett = $(this).val().substring(0,2);
                     	valgtKlokkeSlett = parseInt(valgtKlokkeSlett);
@@ -134,9 +148,40 @@ Form-change / submit
 			etternavn = $("#etternavn").val();
 			email = $("#email").val();
 			telefon = $("#telefon").val();
-			områdePris = $("#område option:selected").val();
-			områdePris = parseInt(områdePris);
+			hyttePris = $("#hytte option:selected").val();
+			hyttePris = parseInt(hyttePris);
 
+			//Switch som viser fasiliteter basert på hvilken hytte som blir valgt
+			switch ($("#hytte option:selected").val()){
+				case "800":
+				$("#fasiliteterP").html(fasiliteterHytte1);
+				break;
+
+				case "850":
+				$("#fasiliteterP").html(fasiliteterHytte2);
+				break;
+
+				case "900":
+				$("#fasiliteterP").html(fasiliteterHytte3);
+				break;
+
+				case "950":
+				$("#fasiliteterP").html(fasiliteterHytte4);
+				break;
+			}
+			
+
+			//Reset input felter for å hindre pris tukling.
+			$("#langTidsLeie").click(function(){
+				clearInput(document.getElementById("timeVelger1"));
+			});
+			//Reset input felter for å hindre pris tukling.
+			$("#kortTidsLeie").click(function(){
+				clearInput(document.getElementById("datovelger1"));
+				clearInput(document.getElementById("datovelger2"));
+			});
+
+			//Når verier endres nullstilles priser, antall døgn og timer og totaltpris oppdateres.
 			$("#kortTidsLeie").on('change', function(){
 		      		prisForValgtPeriode = 0;
 		      		antallTimer = 0;
@@ -145,20 +190,32 @@ Form-change / submit
 		  		$("#totalPris").html(findTotalSum);	
 	 		 });
 
-		$("#langTidsLeie").on('change', function(){
-	      		prisForValgteTimer = 0;
-	      		antallTimer = 0;
-	      		antallDøgn= 0;
-	      		prisForValgtPeriode = antallDøgn * døgnPris;
-	      		$("#totalPris").html(findTotalSum);	
-	 	 });
+			//Når verier endres nullstilles priser, antall døgn og timer og totaltpris oppdateres.
+			$("#langTidsLeie").on('change', function(){
+		      		prisForValgteTimer = 0;
+		      		antallTimer = 0;
+		      		antallDøgn= 0;
+		      		prisForValgtPeriode = antallDøgn * døgnPris;
+		      		$("#totalPris").html(findTotalSum);	
+		 	 });
 
-		$("#medlem").on('change', function(){
-			if ($('#medlem').is(':checked')) {
-	      		$("#totalPris").html(findTotalSum);	
-	      		}
-	 	 });
+			//Når medlem er krysset av eller på, oppdateres prisen hvis medlems er checked.
+			$("#medlem").on('change', function(){
+				if ($('#medlem').is(':checked')) {
+		      		$("#totalPris").html(findTotalSum);	
+		      		}
+		 	 });
 
+
+			$("#utvask").on('change', function(){
+				if ($('#utvask').is(':checked')) {
+					utvaskPris = 1500;
+		      			$("#totalPris").html(findTotalSum);	
+		      		} else {
+		      			utvaskPris = 0;
+		      			$("#totalPris").html(findTotalSum);	
+		      		}
+		 	 });
 	
 		
 	//Det skjekkes om det skal leies i mindre eller mer en ett døgn
@@ -168,6 +225,7 @@ Form-change / submit
 			prisForValgtPeriode = antallDøgn * døgnPris;
 			$("#velgDatoPanel").removeClass("showMe");
 			$("#velgDatoPanel").addClass("hide");
+			
 
 			$("#velgTimePanel").removeClass("hide");
 			$("#velgTimePanel").addClass("showMe")
@@ -176,8 +234,6 @@ Form-change / submit
 			$("#timeVelger1").prop('required',true);
 			$("#datovelger1").prop('required',false);
 			$("#datovelger2").prop('required',false);
-
-
 			
 		} else if ($("#langTidsLeie").is(":checked")){
 			prisForValgtPeriode = 0;
@@ -260,13 +316,14 @@ Form-change / submit
 	
 
 	$("#testingbutton").click(function(){
+		
 		/*alert("timepris" + timePris)
 		alert("pris for valgte timer" +prisForValgteTimer)
 		alert("pris for valgte periode" + prisForValgtPeriode)
 
-		alert("områdepris: "+områdePris)*/
-		alert(områdePris)
-		alert(antallDøgn)
+		alert("hyttepris: "+hyttePris)*/
+		//alert(hyttePris)
+		//alert(antallDøgn)
 		//alert(pris)
 		//var x = typeof prisForValgteTimer;
 		//var y = typeof prisForValgteTimer;

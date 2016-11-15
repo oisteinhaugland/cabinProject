@@ -56,15 +56,20 @@
 
 
 						<div class="form-group">
-						  <label for="område">Velg område:</label>
-						  <select class="form-control" id="område" required>
+						  <label for="område">Velg hytte:</label>
+						  <select class="form-control" id="hytte" required>
 						  <option value="" disabled selected>Velg hytteområde</option>
-						    <option value="850">Område 1 - 850kr</option>
-						    <option value="850">Område 2 - 850kr</option>
-						    <option value="1500">Område 3 - 1500kr</option>
-						    <option value="2346">Område 4 - 2350kr</option>
+						    <option value="800">Hytte1 - Døgnpris: 800kr</option>
+						    <option value="850">Hytte 2 - Døgnpris: 850kr</option>
+						    <option value="900">Hytte 3 - Døgnpris: 900kr</option>
+						    <option value="950">Hytte4 - Døgnpris: 950kr</option>
 						  </select>
+						  <h4>Fasiliteter: </h4>
+						  <p id="fasiliteterP"></p>
+							
 						</div>
+
+
 
 									<div id="test">
 										<div class="form-group bob">
@@ -93,9 +98,10 @@
 
 	
 
+						
 						<div class="form-group clear" >
-							<label><input type="checkbox" name="medlem" id="medlem">Medlem i Turistforeningen. Gir 15% Rabatt.</label>
-							
+							<label><input type="checkbox" name="medlem" id="medlem"> Medlem i Turistforeningen. Gir 15% Rabatt.</label>
+							<label><input type="checkbox" name="utvask" id="utvask"> Bestill Utvask - 1500kr</label>
 						</div>
 
 						<div id="prisOversikt">
