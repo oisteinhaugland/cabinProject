@@ -3,148 +3,146 @@
 	<meta charset="UTF-8">
 	<title>Hytter og slikt</title>
 	<link rel="stylesheet" href="../normalize.css">
+  <!--Font awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- Bootstrap-->
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<link rel="stylesheet" href="../styles/main.css">
+       <link rel="stylesheet" href="../styles/support.css">
 </head>
 <body>
-	<nav>
-		<ul>
-			<li><a href="index.html">Hjem</a></li>
-			<li><a href="#">Hytter</a></li>
-			<li><a href="pages/order.html">Bestill</a></li>
-		</ul>
-	</nav>
+<header>
+        <nav>
+             <ul>
+        <li><a href="../index.html" >Hjem <i class="fa fa-compass" aria-hidden="true"></i></a></li>
+        <li><a href="hytter.html" class="active">Hytter <i class="fa fa-home" aria-hidden="true"></i></a></li>
+       <!-- <li><img src="images/logostor.png" alt="" id="logo1"></li>-->
+        <li><a href="order.html" >Bestill <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+        <li><a href="omoss.html">Om Oss <i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
+      </ul>
+    </nav>
+    </header>
+<div id="introText">
+  <h1 class="underline" id="introText">Oversikt over alle de ulike hyttene du kan leie hos oss</h1>
+  </div>
+<div class="container-fluid">
+    <p>
+      Her er våre hytter som er lokalisert ved Kragerø og egner seg godt dersom man ønsker å ferie i norges skjærgård</p>
+    </div>
+  <div class="container">
+    <div class="row" id="row1">
 
-
-<h1 class="underline" id="Introtektsx">Her har du en oversikt over alle de ulike hyttene vi har til utleie</h1>
-	<div class="container-fluid" id="box">
-	<p>
-  	Her er våre hytter som er lokalisert ved Kragerø og egner seg godt dersom man ønsker å ferie i norges skjærgård
-  	</p>
-<div class="container-fluid" id="box2">
-    <div class="row">
-      <div class="hytteboks col-md-4 ">
-        <p>Hytte nr.1</p>
-          <img src="Holmsbuhytte.jpg" alt="Hyttenr1" />
-          <p>Denne hytten har: <br>
-            Internett:   ✔  <br>
-            Vannklosett: ✔  <br>
-            Kjøkken:     ✔  <br>
-            Jacuzzi:     ✔  <br>
-            Badstue:     ✔  <br>
-            Peis:        ✔  <br>
-            Sengeplasser: 6
-          </p>
+      <div class="col-sm-6">
+        <div class="hytteboks">
+          <p>Hytte nr.1</p>
+          <img src="../images/Holmsbuhytte.jpg" alt="Hyttenr1" />
+          <ul>Denne hytten har:
+            <li>Internett:</li>
+            <li>Vannklosett:</li>
+            <li>Kjøkken:✔</li>
+            <li>Jacuzzi:</li>
+            <li>Badstue: ✔</li>
+            <Li>Peis: ✔ </Li>
+            <Li>Antall sengeplasser: 4</Li>
+            <li><button class="btn btn-primary" type="button" id="button1" onclick="myFunction()">bestill</button></li>
+          </ul>
+        </div>
       </div>
-
-      <div class="hytteboks col-xs-4">
+    <div class="col-sm-6">
+      <div class="hytteboks">
           <p>Hytte nr.2 </p>
-              <img src="Lillesandhytte.jpg" alt="Hyttenr.2" />
-              <p>Denne hytten har: <br>
-                Internett:   ✔   <br>
-                Vannklosett: ✔   <br>
-                Kjøkken:     ✔   <br>
-                Jacuzzi:         <br>
-                Badstue:         <br>
-                Peis:        ✔   <br>
-                Sengeplasser: 10
-              </p>
+              <img src="../images/Lillesandhytte.jpg" alt="Hyttenr.2" />
+              <ul>Denne hytten har:
+                <li>Internett:</li>
+                <li>Vannklosett:</li>
+                <li>Kjøkken:✔</li>
+                <li>Jacuzzi:</li>
+                <li>Badstue: ✔</li>
+                <Li>Peis: ✔ </Li>
+                <Li>Antall sengeplasser: 4</Li>
+                <li><button class="btn btn-primary" type="button" id="button1" onclick="myFunction()">bestill</button></li>
+              </ul>
       </div>
+    </div>
 
-      <div class="hytteboks col-xs-4">
+      <p>Hytter i skogen </p>
+
+    <div class="col-sm-6">
+      <div class="hytteboks">
         <p>Hytte nr.3      </p>
-          <img src="tuddalhytte.png" alt="Hyttenr3"/>
-          <p>Denne hytten har: <br>
-            Internett:       <br>
-            Vannklosett:    <br>
-            Kjøkken:     ✔   <br>
-            Jacuzzi:         <br>
-            Badstue:     ✔    <br>
-            Peis:        ✔   <br>
-            Sengeplasser: 4
-          </p>
+          <img src="../images/tuddalhytte.png" alt="Hyttenr3"/>
+          <ul>Denne hytten har:
+            <li>Internett:</li>
+            <li>Vannklosett:</li>
+            <li>Kjøkken:✔</li>
+            <li>Jacuzzi:</li>
+            <li>Badstue: ✔</li>
+            <Li>Peis: ✔ </Li>
+            <Li>Antall sengeplasser: 4</Li>
+            <li><button class="btn btn-primary" type="button" id="button1" onclick="myFunction()">bestill</button></li>
+          </ul>
       </Div>
+    </div>
 
+    <div class="col-sm-6">
+      <div class="hytteboks">
+        <p>Hytte nr.1 </p>
+          <img src="../images/hyttefjell1.jpg" alt="Hyttenr4" />
+            <ul>Denne hytten har:
+              <li>Internett:</li>
+              <li>Vannklosett:</li>
+              <li>Kjøkken:✔</li>
+              <li>Jacuzzi:</li>
+              <li>Badstue: ✔</li>
+              <Li>Peis: ✔ </Li>
+              <Li>Antall sengeplasser: 4</Li>
+              <li><button class="btn btn-primary" type="button" id="button1" onclick="myFunction()">bestill</button></li>
+            </ul>
+      </div>
+    </div>
+
+      <p>hytter på fjellet</p>
+
+    <div class="col-sm-6">
+      <div class="hytteboks">
+          <p>Hytte nr.2 </p>
+            <img src="../images/hyttefjell2.jpg" alt="Hyttenr5" />
+            <ul>Denne hytten har:
+              <li>Internett:</li>
+              <li>Vannklosett:</li>
+              <li>Kjøkken:✔</li>
+              <li>Jacuzzi:</li>
+              <li>Badstue: ✔</li>
+              <Li>Peis: ✔ </Li>
+              <Li>Antall sengeplasser: 4</Li>
+              <li><button class="btn btn-primary" type="button" id="button1" onclick="myFunction()">bestill</button></li>
+            </ul>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="hytteboks">
+        <p>Hytte nr.3 </p>
+          <img src="../images/hyttefjell3.jpg" alt="Hyttenr6" />
+            <ul>Denne hytten har:
+              <li>Internett:</li>
+              <li>Vannklosett:</li>
+              <li>Kjøkken:✔</li>
+              <li>Jacuzzi:</li>
+              <li>Badstue: ✔</li>
+              <Li>Peis: ✔ </Li>
+              <Li>Antall sengeplasser: 4</Li>
+              <li><button class="btn btn-primary" type="button" id="button1" onclick="myFunction()">bestill</button></li>
+            </ul>
+      </div>
+    </div>
 
     </div>
    </div>
-</div>
-
-<p>
-  Disse hyttene befinner seg i skogen
-</p>
-  <div class="hytteboks">
-    <p>Hytte nr.1
-      </p>
-      <img src="hyttefjell1.jpg" alt="Hyttenr4" />
-      <p>Denne hytten har: <br>
-        Internett:       <br>
-        Vannklosett:    <br>
-        Kjøkken:     ✔   <br>
-        Jacuzzi:         <br>
-        Badstue:     ✔    <br>
-        Peis:        ✔   <br>
-        Sengeplasser: 4
-      </p>
   </div>
-
-  <div class="hytteboks">
-      <p>Hytte nr.2 </p>
-          <img src="hyttefjell2.jpg" alt="Hyttenr5" />
-          <p>Denne hytten har: <br>
-            Internett:       <br>
-            Vannklosett:    <br>
-            Kjøkken:     ✔   <br>
-            Jacuzzi:         <br>
-            Badstue:     ✔    <br>
-            Peis:        ✔   <br>
-            Sengeplasser: 4
-          </p>
-  </div>
-
-  <div class="hytteboks">
-    <p>Hytte nr.3
-      </p>
-      <img src="hyttefjell3.jpg" alt="Hyttenr6" />
-      <p>Denne hytten har: <br>
-        Internett:       <br>
-        Vannklosett:    <br>
-        Kjøkken:     ✔   <br>
-        Jacuzzi:         <br>
-        Badstue:     ✔    <br>
-        Peis:        ✔   <br>
-        Sengeplasser: 4
-      </p>
-  </div>
-
-<p>
-  Disse hyttene befinner seg ved vannet
-</p>
-  <div class="hytteboks">
-    <p>Hytte nr.1
-      </p>
-    <img src="hytte1.jpg" alt="Hyttenr7" />
-
-  </div>
-
-  <div class="hytteboks">
-      <p>Hytte nr.2 </p>
-          <img src="hytte2.jpg" alt="Hyttenr8" />
-  </div>
-
-  <div class="hytteboks">
-    <p>Hytte nr.3
-      </p>
-      <img src="hytte3.jpg" alt="Hyttenr9" />
-  </Div>
-
-
-  </div>
-
 
 
 

@@ -2,7 +2,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Hytter og slikt</title>
-	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="styles/normalize.css">
+	<!--Font awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- Bootstrap-->
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -11,13 +13,125 @@
 	<link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-	<nav>
-		<ul>
-			<li><a href="index.html">Hjem</a></li>
-			<li><a href="pages/hytter.html">Hytter</a></li>
-			<li><a href="pages/order.html">Bestill</a></li>
-		</ul>
-	</nav>
+<header>
+		<nav>
+			<ul>
+				<li>
+					<a href="index.html" class="active">
+						Hjem <i class="fa fa-compass" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li>
+					<a href="pages/hytter.html">
+						Hytter <i class="fa fa-home" aria-hidden="true"></i>
+					</a>
+				</li>
+				
+				<!-- <li><img src="images/logostor.png" alt="" id="logo1"></li>-->
+				
+				<li>
+					<a href="pages/order.html">
+						Bestill <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li>
+					<a href="pages/omoss.html">
+						Om Oss <i class="fa fa-info-circle" aria-hidden="true"></i>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	
+	<div class=" container-fluid wrapper">
+		<div class="container-fluid jumbotron" id="intro">
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3" id="introText">
+					<h2 id="attention1"> 
+					 	Hytter fra 800kr dagen.
+					</h2>
+					<blockquote>
+					Trivelige hytter og god service.
+						<footer>Lars Monsen</footer>
+					</blockquote>
+				</div>
+			</div>
+
+			
+		</div>
+		<div class="container" id="mainContent">
+			<div class="row nyBolk">
+				<div class="col-md-12">
+					<h2>Hytteområde rundt sjø</h2>
+					<div class="col-md-6">				
+						<img src="images/JPEG/img1.jpg" alt="kajakk">
+					</div>
+					<div class="col-md-6">
+						<p>text bolk</p>
+						<a href="pages/hytter.html#row1" class="btn btn-success myBtns">Skjekk ut hyttene i dette området</a>
+					</div>
+				</div>
+			</div>
+			<div class="row nyBolk">
+				<div class="col-md-12 seperator">
+					
+				</div>
+			</div>
+			<div class="row nyBolk">
+				<div class="col-md-12">
+					<h2>Hytteområde rundt fjell</h2>
+					<div class="col-md-6">
+						<p>tekstbolk</p>
+						<a href="pages/hytter.html#row1" class="btn btn-success myBtns">Skjekk ut hyttene i dette området</a>
+					</div>
+					<div class="col-md-6">
+						<img src="images/kajak.jpg" alt="kajakk">
+					</div>
+					
+				</div>
+			</div>
+			<div class="row nyBolk">
+				<div class="col-md-12 seperator">
+					
+				</div>
+			</div>
+			<div class="row nyBolk">
+				<div class="col-md-12">
+					<h2>Hytteområde rundt sjø</h2>
+					<div class="col-md-6">				
+						<img src="images/JPEG/img1.jpg" alt="kajakk">
+					</div>
+					<div class="col-md-6">
+						<p>text bolk</p>
+						<a href="pages/hytter.html#row1" class="btn btn-success myBtns">Skjekk ut hyttene i dette området</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row nyBolk">
+				<div class="col-md-12 seperator">
+					
+				</div>
+			</div>
+
+
+			<div class="row nyBolk">
+				<div class="col-md-12">
+					<h2>Hytteområde rundt fjell</h2>
+					<div class="col-md-6">
+						<p>tekstbolk</p>
+						<a href="pages/hytter.html#row1" class="btn btn-success myBtns">Skjekk ut hyttene i dette området</a>
+					</div>
+					<div class="col-md-6">
+						<img src="images/kajak.jpg" alt="kajakk">
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+
+	</div>
 
 
 

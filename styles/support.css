@@ -1,0 +1,54 @@
+ */
+/*.container {
+  margin-left: 120px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  margin-top: 40px;
+*/
+
+
+
+
+/*Dette er diven som hyttene blir presentert i*/
+
+
+
+
+
+
+.container-fluid {
+  text-align: center;
+}
+
+.hytteboks {
+  background-color: #d5e0e8;
+  height: 600px;
+  margin: 0 10px;
+
+  /*width: 30%;*/
+  padding-top: 2%;
+  /*display: inline-block;*/
+  text-align: center;
+
+  }
+/* Felles bestemmelser for alle bildene i boksene*/
+.hytteboks img {
+  height: 300px;
+  width: 100%
+}
+
+ul {
+  list-style-type: none;
+}
+
+#button1 {
+  margin-top: 8%;
+    background-color: red;
+}
+/*html {
+  background: url(http://www.emoticonswallpapers.com/background/thumb/pattern/background-pattern-015.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}*/
