@@ -53,7 +53,7 @@ General
 .bob {
 	width: 48%;
 	height:125px;
-float:left;
+	float:left;
 	margin:0;
 }
 
@@ -63,5 +63,22 @@ float:left;
 
 #velgTimePanel {
 	width:48%;
+}
+
+
+/************************************
+HYTTER.HTML
+************************************/
+
+.hytteboks {
+	background: #35FF59
+}
+
+#box {
+	background: yellow;
+}
+
+#box2 {
+	background:lightblue;
 }
 

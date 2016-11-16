@@ -15,6 +15,8 @@ function findTotalSum(){
 }
 
 
+// Hver gang $("#totalPris").html(findTotalSum; blir nevnt er det for å kontinuerlig oppdatere totaltpris.
+
     
 /*********************************************************************************************
 Info-variabler
@@ -30,6 +32,7 @@ var timePris = 150;
 var døgnPris = 800;
 var utvaskPris = 0;
 var valgtKlokkeSlett = 0;
+var daysInMonth = 0;
 var antallDøgn = 0;
 var antallTimer = 0;
 var prisForValgteTimer = 0;
@@ -49,9 +52,10 @@ Datovelger / Timevelger
 $(document).ready(function(){
 
 	   //finner sist besøke url. Brukes for å fylle ut info basert på hvilken hytte som ble sett på.    
-   	var referrer =  document.referrer;
+   	// var referrer =  document.referrer;
    	//start dato velger
 	 var startDateInteger;
+	 
 
     //jquery UI funksjon for å velge dato
    $("#datovelger1").datepicker({
@@ -60,22 +64,83 @@ $(document).ready(function(){
             onSelect: function () {
                 var datovelger2 = $('#datovelger2');
                 var startDate = $(this).datepicker('getDate');
+                hvilkenMåned = $(this).datepicker('getDate').getMonth() + 1;
+               //switch for å hindre at summen blir feil ved bestilling som skjer over 2 måneder
+                switch (hvilkenMåned){
+                	case 1 :
+			daysInMonth = 31;		
+                		break;
+                	
+                	case 2 :
+                		daysInMonth = 28;
+                		break;
+                	
+                	case 3 :
+                		daysInMonth = 31;
+                		break;
+                	
+                	case 4 :
+			daysInMonth = 30;
+                		break;
+                	
+                	case 5 :
+			daysInMonth = 31;
+                		break;
+                	
+                	case 6 :
+                		daysInMonth = 30;
+                		break;
+                	
+                	case 7 :
+                		daysInMonth = 29;
+                		break;
+                	
+                	case 8 :
+                		daysInMonth = 31;
+                		break;
+                	
+                	case 9 :
+                		daysInMonth = 30;
+                		break;
+                	
+                	case 10:
+                		daysInMonth = 31;
+                		break;
+                	
+                	case 11:
+                		daysInMonth = 30;
+                		break;
+                	
+                	case 12:
+                		daysInMonth = 31;
+                		break;
+                	
+
+                }
 
                 //1# getdate gjøres om til string, og tallverdiene som står mellom plass 8,10 hentes ut.
                 var startDateString = $(this).datepicker('getDate').toString().substring(8,10);
                 //omgjøres til integer slik at det kan brukes til å regne priser for antall døgn.
                  startDateInteger = parseInt(startDateString);
                 
+                //sett minimum dato og samme dato +1 for å hindre å kunne velge samme sluttdato som startdato.
                 var minDate = $(this).datepicker('getDate');
-               // datovelger2.datepicker('setDate', minDate); 
-
+                var nextDay = new Date($(this).datepicker('getDate'));
+		nextDay.setDate(nextDay.getDate() + 1);
+               
+ 	//setter datovelger2 maxDate til 14 dager etter den første datoen ble valgt.
                 startDate.setDate(startDate.getDate() + 14);
-                //setter datovelger2 maxDate til 14 dager etter den første datoen ble valgt.
+                
+                //sett neste datovelger maximum dato og minimum dato.
                 datovelger2.datepicker('option', 'maxDate', startDate);
-                datovelger2.datepicker('option', 'minDate', (minDate));
+                datovelger2.datepicker('option', 'minDate', nextDay);
+
+
        
             }
         });
+
+   	//funksjon for datovelger nr 2
         $('#datovelger2').datepicker({
             dateFormat: "d-M-yy",
             onSelect:function(date){
@@ -83,7 +148,13 @@ $(document).ready(function(){
             	var endDateString = $(this).datepicker('getDate').toString().substring(8,10);
             	var endDateInterger = parseInt(endDateString)
 
-	      	antallDøgn = endDateInterger- startDateInteger; 
+            	//hvis slutt dato er større enn startdato
+            	//hvis slutt dato er mindre enn startdato
+            	if (endDateInterger > startDateInteger){
+            		antallDøgn = endDateInterger- startDateInteger; 
+            	} else {
+            		antallDøgn = endDateInterger - startDateInteger + daysInMonth;
+            	}
 
 	      	prisForValgtPeriode = antallDøgn * døgnPris;
 	      	$("#totalPris").html(findTotalSum);	
@@ -316,7 +387,7 @@ Form-change / submit
 	
 
 	$("#testingbutton").click(function(){
-		
+		alert(daysInMonth);
 		/*alert("timepris" + timePris)
 		alert("pris for valgte timer" +prisForValgteTimer)
 		alert("pris for valgte periode" + prisForValgtPeriode)

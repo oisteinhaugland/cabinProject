@@ -42,4 +42,16 @@ General
 #velgTimePanel {
   width: 48%; }
 
+/************************************
+HYTTER.HTML
+************************************/
+.hytteboks {
+  background: #35FF59; }
+
+#box {
+  background: yellow; }
+
+#box2 {
+  background: lightblue; }
+
 /*# sourceMappingURL=main.css.map */
