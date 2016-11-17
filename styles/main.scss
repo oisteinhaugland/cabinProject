@@ -108,7 +108,6 @@ General
 
 .myBtns {
 	background: $btnColor;
-
 	&:hover {
 	background: darken($btnColor,10%);	
 	}
@@ -142,7 +141,7 @@ General
 
 	  #introText{
 	  	margin-top:80px;
-	  	background:rgba(255,255,255,0.9);
+	  	background:rgba(255,255,255,0.7);
 	 	text-align: center;
 	 	padding:6px 0;
 	  
@@ -150,7 +149,7 @@ General
 }
 
  #introText{
-	  	background:rgba(255,255,255,0.9);
+	  	background:rgba(255,255,255,0.7);
 	 	text-align: center;
 	  
 	  }
@@ -170,7 +169,7 @@ General
 }
 
 #test{
-	background-color:blue;
+	
 	h3,h4,input,label {
 		margin:0;
 		padding:0px;
@@ -227,6 +226,19 @@ HYTTER.HTML
 	background:lightblue;
 }
 
+
+
+/************************************
+Media Queries
+************************************/
+
+
+@media screen and (max-width: 480px) {
+   .xs-hidden {
+   	display:none;
+   }
+
+}
 
 
 /*Bilderessurser kilder

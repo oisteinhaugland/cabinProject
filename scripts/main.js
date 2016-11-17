@@ -1,6 +1,6 @@
-/*******************************
+/*************************************************************************************************************************
 Globale Funksjoner
-*******************/
+*******************************************************************************************************************************************/
 //Brukes nettlesere som ikke kan bruke required.
 //skjekker ett parameter om det stemmer med regex som validerer email format.
 function validateEmail(emailtest) { 
@@ -14,13 +14,19 @@ function findTotalSum(){
 	return sum;
 }
 
+//clear inputs
+function clearInput(target){
+	target.value= "";
+	return target;
+}
 
-// Hver gang $("#totalPris").html(findTotalSum; blir nevnt er det for å kontinuerlig oppdatere totaltpris.
+
+// Hver gang $("#totalPris").html(findTotalSum); blir nevnt er det for å kontinuerlig oppdatere totaltpris.
 
     
-/*********************************************************************************************
+/***************************************************************************************************************************
 Info-variabler
-/********************************************************************************************/
+/**************************************************************************************************************************/
 var fornavn;
 var etternavn;
 var email;
@@ -46,14 +52,31 @@ var fasiliteterHytte4 = "Sengeplasser: 16"  + "&emsp;" + "Toalett: ✓";
 
 
 
-/*********************************************************************************************
-Datovelger / Timevelger
-/*********************************************************************************************/
+/***************************************************************************************************************************
+/ Document.ready / Datovelger / Timevelger 
+/***************************************************************************************************************************/
 $(document).ready(function(){
 
-	   //finner sist besøke url. Brukes for å fylle ut info basert på hvilken hytte som ble sett på.    
-   	// var referrer =  document.referrer;
-   	//start dato velger
+	//Funksjon som skjekker vilke tilleggs parametre som ligger i urlen. For å kunne fylle ut litt av bestillingskjemaet basert på hvilken hytte som ble bestilt.
+ 	//All kodus til https://css-tricks.com/snippets/javascript/get-url-variables/
+
+   	function getQueryVariable(variable)
+		{
+		       var query = window.location.search.substring(1);
+		       var vars = query.split("&");
+		       for (var i=0;i<vars.length;i++) {
+		               var pair = vars[i].split("=");
+		               if(pair[0] == variable){return pair[1];}
+		       }
+		       return(false);
+		}
+
+
+
+
+   	
+
+   	//nødvending variabler for datovelger. Deklareres for å brukes i funksjon.
 	 var startDateInteger;
 	 
 
@@ -208,9 +231,9 @@ $(document).ready(function(){
 
 
 
-/*********************************************************************************************
+/***************************************************************************************************************************
 Form-change / submit
-*********************************************************************************************/
+***************************************************************************************************************************/
 
 
 	$("#bestillingSkjema :input").change(function(){
@@ -338,6 +361,26 @@ Form-change / submit
 
 	});	
 
+		   switch (getQueryVariable("id")){
+                		case "hytte1" :
+				$('#hytte').val(800);
+					
+                		break;
+                		case "hytte2" :
+				$('#hytte').val(850);
+				
+                		break;
+                		case "hytte3" :
+				$('#hytte').val(900);
+				
+                		break;
+                		case "hytte4" :
+				$('#hytte').val(950);
+				
+                		break;
+                	}
+                	
+
 
 	// Funksjon for "takk for bestillingen".
 	$("#bestillingSkjema").submit(function(){
@@ -387,7 +430,8 @@ Form-change / submit
 	
 
 	$("#testingbutton").click(function(){
-		alert(daysInMonth);
+		alert(getQueryVariable("id"));
+		//alert(daysInMonth);
 		/*alert("timepris" + timePris)
 		alert("pris for valgte timer" +prisForValgteTimer)
 		alert("pris for valgte periode" + prisForValgtPeriode)

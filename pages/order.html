@@ -1,6 +1,11 @@
 <html>
 	<head>
-		<meta charset="UTF-8">
+		<!--Characterset -->
+		<meta charset="utf-8">
+		<!--Support for older IE browsers -->
+    		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--Mobile responsive -->
+    		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Hytter og slikt</title>
 
 		<!-- Normalize.css for å nullstille innebygd css. Gir bedre utgangspunkt å arbeide med. -->
@@ -20,17 +25,19 @@
 		<!-- Stilark -->
 		<link rel="stylesheet" href="../styles/main.css">
 
+		  <!--recaptcha -->
+       		<script src='https://www.google.com/recaptcha/api.js'></script>
 	</head>
 <body>
 	<div class="wrapper">
 		<header>
 			<nav>
 			<ul>
-				<li><a href="../index.html" >Hjem <i class="fa fa-compass" aria-hidden="true"></i></a></li>
-				<li><a href="hytter.html">Hytter <i class="fa fa-home" aria-hidden="true"></i></a></li>
+				<li><a href="../index.html" >Hjem <i class="xs-hidden fa fa-compass" aria-hidden="true"></i></a></li>
+				<li><a href="hytter.html">Hytter <i class="xs-hidden fa fa-home" aria-hidden="true"></i></a></li>
 				<!-- <li><img src="images/logostor.png" alt="" id="logo1"></li>-->
-				<li><a href="order.html" class="active">Bestill <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-				<li><a href="omoss.html">Om Oss <i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
+				<li><a href="order.html" class=" active">Bestill <i class="xs-hidden fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+				<li><a href="omoss.html">Om Oss <i class="xs-hidden fa fa-info-circle" aria-hidden="true"></i></a></li>
 			</ul>
 		</nav>
 		</header>
@@ -81,35 +88,37 @@
 
 
 
-									<div id="test">
-										<div class="form-group bob">
-										<h3>Hvor lenge vil du leie?</h3>
-										<input  type="radio" name="leiePeriode" id="kortTidsLeie" required> Mindre enn 24 timer <br/>
-										<input  type="radio" name="leiePeriode" id="langTidsLeie" required> Mer enn 24 timer
-										</div>
-										
-										<div class="form-group hide bob" id="velgTimePanel">
-										<h3>Hvor mange timer vil du leie? </h3>
-										<h4>Utleie begynner klokken 12.00 hver dag.</h4>
-											<label for="">Til</label>
-											<input type="text" id="timeVelger1" >
+									<div id="test" class="container-fluid">
+										<div class="row">
+											<div class="form-group  col-sm-4">
+											<h3>Hvor lenge vil du leie?</h3>
+											<input  type="radio" name="leiePeriode" id="kortTidsLeie" required> Mindre enn 24 timer <br/>
+											<input  type="radio" name="leiePeriode" id="langTidsLeie" required> Mer enn 24 timer
+											</div>
 											
+											<div class="form-group hide  col-sm-4" id="velgTimePanel">
+											<h3>Hvor mange timer vil du leie? </h3>
+											<p>Utleie begynner klokken 12.00.</p>
+												<label for="">Til</label>
+												<input type="text" id="timeVelger1" >
+												
+											</div>
+					
+											<div class="form-group hide  col-sm-4" id="velgDatoPanel">
+												<h3>Hvor mange dager vil du leie? </h3>
+												<label for="">Fra</label>
+												<input type="text" id="datovelger1" name="datovelger1">
+												<br/>
+												<label for="">Til :</label>
+												<input type="text" id="datovelger2" name="datovelger1">
+											</div>	
 										</div>
-				
-										<div class="form-group hide bob" id="velgDatoPanel">
-											<h3>Hvor mange dager vil du leie? </h3>
-											<label for="">Fra</label>
-											<input type="text" id="datovelger1" name="datovelger1">
-											<label for="">Til</label>
-											<input type="text" id="datovelger2" name="datovelger1">
-										</div>	
-
 									</div>
 
 	
 
 						
-						<div class="form-group clear" >
+						<div class="form-group clear" id="utgifter">
 							<label><input type="checkbox" name="medlem" id="medlem"> Medlem i Turistforeningen. Gir 15% Rabatt.</label>
 							<label><input type="checkbox" name="utvask" id="utvask"> Bestill Utvask - 1500kr</label>
 						</div>
@@ -118,7 +127,7 @@
 							<p> Totalpris: <span id="totalPris">0</span>kr</p>
 						</div>
 
-				
+						<div class="g-recaptcha" data-sitekey="6Lf3KAwUAAAAAKcgkM_NDrAZ5Jz2oFO7_12OMRJk" ></div>
 						<div class="form-group">
 							<input required value="Bestill" type="submit" class="form-control btn btn-primary" id="submit">
 						</div>

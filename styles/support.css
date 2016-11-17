@@ -34,16 +34,16 @@
 /* Felles bestemmelser for alle bildene i boksene*/
 .hytteboks img {
   height: 300px;
-  width: 100%
+width: 100%;
 }
 
 ul {
   list-style-type: none;
 }
 
-#button1 {
+.buttons {
   margin-top: 8%;
-    background-color: red;
+    
 }
 /*html {
   background: url(http://www.emoticonswallpapers.com/background/thumb/pattern/background-pattern-015.jpg) no-repeat center center fixed;

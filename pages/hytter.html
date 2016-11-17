@@ -1,6 +1,11 @@
 <html>
 <head>
-	<meta charset="UTF-8">
+	<!--Characterset -->
+    <meta charset="utf-8">
+    <!--Support for older IE browsers -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Mobile responsive -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Hytter og slikt</title>
 	<link rel="stylesheet" href="../normalize.css">
   <!--Font awesome -->
@@ -12,16 +17,19 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<link rel="stylesheet" href="../styles/main.css">
        <link rel="stylesheet" href="../styles/support.css">
+
+
+
 </head>
 <body>
 <header>
         <nav>
              <ul>
-        <li><a href="../index.html" >Hjem <i class="fa fa-compass" aria-hidden="true"></i></a></li>
-        <li><a href="hytter.html" class="active">Hytter <i class="fa fa-home" aria-hidden="true"></i></a></li>
+        <li><a href="../index.html" >Hjem <i class="xs-hidden fa fa-compass" aria-hidden="true"></i></a></li>
+        <li><a href="hytter.html" class="active">Hytter <i class="xs-hidden fa fa-home" aria-hidden="true"></i></a></li>
        <!-- <li><img src="images/logostor.png" alt="" id="logo1"></li>-->
-        <li><a href="order.html" >Bestill <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-        <li><a href="omoss.html">Om Oss <i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
+        <li><a href="order.html" >Bestill <i class="xs-hidden fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+        <li><a href="omoss.html">Om Oss <i class="xs-hidden fa fa-info-circle" aria-hidden="true"></i></a></li>
       </ul>
     </nav>
     </header>
@@ -48,10 +56,12 @@
             <li>Badstue: ✔</li>
             <Li>Peis: ✔ </Li>
             <Li>Antall sengeplasser: 4</Li>
-            <li><button class="btn btn-primary" type="button" id="button1" onclick="myFunction()">bestill</button></li>
+            <li><a href="order.html?id=hytte1" class="btn btn-primary buttons" type="button" >bestill</a></li>
           </ul>
         </div>
       </div>
+      
+
     <div class="col-sm-6">
       <div class="hytteboks">
           <p>Hytte nr.2 </p>
@@ -64,13 +74,16 @@
                 <li>Badstue: ✔</li>
                 <Li>Peis: ✔ </Li>
                 <Li>Antall sengeplasser: 4</Li>
-                <li><button class="btn btn-primary" type="button" id="button1" onclick="myFunction()">bestill</button></li>
+                <li><a href="order.html?id=hytte2" class="btn btn-primary buttons" type="button" >bestill</a></li>
               </ul>
       </div>
     </div>
 
+    </div>
+
       <p>Hytter i skogen </p>
 
+<div class="row" id="row2">
     <div class="col-sm-6">
       <div class="hytteboks">
         <p>Hytte nr.3      </p>
@@ -83,7 +96,7 @@
             <li>Badstue: ✔</li>
             <Li>Peis: ✔ </Li>
             <Li>Antall sengeplasser: 4</Li>
-            <li><button class="btn btn-primary" type="button" id="button1" onclick="myFunction()">bestill</button></li>
+            <li><a href="order.html?id=hytte3" class="btn btn-primary buttons" type="button" >bestill</a></li>
           </ul>
       </Div>
     </div>
@@ -100,13 +113,14 @@
               <li>Badstue: ✔</li>
               <Li>Peis: ✔ </Li>
               <Li>Antall sengeplasser: 4</Li>
-              <li><button class="btn btn-primary" type="button" id="button1" onclick="myFunction()">bestill</button></li>
+              <li><a href="order.html?id=hytte4" class="btn btn-primary buttons" type="button" >bestill</a></li>
             </ul>
       </div>
     </div>
-
+</div>
       <p>hytter på fjellet</p>
 
+<div class="row" id="row3">
     <div class="col-sm-6">
       <div class="hytteboks">
           <p>Hytte nr.2 </p>
@@ -119,7 +133,7 @@
               <li>Badstue: ✔</li>
               <Li>Peis: ✔ </Li>
               <Li>Antall sengeplasser: 4</Li>
-              <li><button class="btn btn-primary" type="button" id="button1" onclick="myFunction()">bestill</button></li>
+              <li><a href="order.html?id=hytte5" class="btn btn-primary buttons" type="button" >bestill</a></li>
             </ul>
       </div>
     </div>
@@ -136,9 +150,10 @@
               <li>Badstue: ✔</li>
               <Li>Peis: ✔ </Li>
               <Li>Antall sengeplasser: 4</Li>
-              <li><button class="btn btn-primary" type="button" id="button1" onclick="myFunction()">bestill</button></li>
+              <li><a href="order.html?id=hytte6" class="btn btn-primary buttons" type="button" >bestill</a></li>
             </ul>
       </div>
+    </div>
     </div>
 
     </div>
