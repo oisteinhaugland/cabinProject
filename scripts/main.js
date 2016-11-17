@@ -20,7 +20,6 @@ function clearInput(target){
 	return target;
 }
 
-
 // Hver gang $("#totalPris").html(findTotalSum); blir nevnt er det for å kontinuerlig oppdatere totaltpris.
 
     
@@ -57,6 +56,7 @@ var fasiliteterHytte4 = "Sengeplasser: 16"  + "&emsp;" + "Toalett: ✓";
 /***************************************************************************************************************************/
 $(document).ready(function(){
 
+
 	//Funksjon som skjekker vilke tilleggs parametre som ligger i urlen. For å kunne fylle ut litt av bestillingskjemaet basert på hvilken hytte som ble bestilt.
  	//All kodus til https://css-tricks.com/snippets/javascript/get-url-variables/
 
@@ -72,7 +72,9 @@ $(document).ready(function(){
 		}
 
 
-
+/*
+Slider
+*/
 
    	
 
@@ -225,8 +227,13 @@ $(document).ready(function(){
                     });
 
                     
-        
        
+/***************************************************************************************************************************
+Slick Slider
+/***************************************************************************************************************************/
+
+
+
 
 
 
@@ -361,24 +368,28 @@ Form-change / submit
 
 	});	
 
+		//switch som oppdaterer hvilken hytte som blir valgt ut i fra hvilken hytte som blir bestilt fra forrige side.
+		// trigger også change for å oppdatere formet.
 		   switch (getQueryVariable("id")){
                 		case "hytte1" :
 				$('#hytte').val(800);
-					
-                		break;
+				$("#hytte").trigger("change");
+                			break;
                 		case "hytte2" :
 				$('#hytte').val(850);
-				
-                		break;
+				$("#hytte").trigger("change");
+                			break;
                 		case "hytte3" :
 				$('#hytte').val(900);
-				
-                		break;
+				$("#hytte").trigger("change");
+                			break;
                 		case "hytte4" :
 				$('#hytte').val(950);
-				
-                		break;
+				$("#hytte").trigger("change");
+                			break;
                 	}
+
+              	
                 	
 
 
@@ -446,6 +457,7 @@ Form-change / submit
     		//alert("type for prisForValgtPeriode: "+y);
 
 		    });
+
 });
 
 

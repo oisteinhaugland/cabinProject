@@ -130,7 +130,7 @@ General
 
 #intro {
 	border-radius: 0;
-	 background: url(../images/fjellnorge.jpg) no-repeat center center fixed; 
+	background: url(../images/fjellnorge.jpg) no-repeat center center fixed; 
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
 	  -o-background-size: cover;
@@ -145,6 +145,10 @@ General
 	 	text-align: center;
 	 	padding:6px 0;
 	  
+	  }
+
+	  blockquote{
+	  	border-left:none;
 	  }
 }
 
@@ -193,14 +197,6 @@ General
 Bestillingsskjema css
 ************************************/
 
-#velgDatoPanel{
-	width:48%;
-}
-
-#velgTimePanel {
-	width:48%;
-}
-
 #prisOversikt{
 	p {
 		font-size: 18px;
@@ -237,9 +233,9 @@ Media Queries
    .xs-hidden {
    	display:none;
    }
-
 }
 
+/* Use additional CSS to control the `height` of `[data-slides]`, like so: */
 
 /*Bilderessurser kilder
 kajak.jpg fra https://www.visitnorway.no/
@@ -251,3 +247,5 @@ Unsplash.com {
 
 
 */
+
+

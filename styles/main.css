@@ -96,6 +96,8 @@ General
     background: rgba(255, 255, 255, 0.7);
     text-align: center;
     padding: 6px 0; }
+  #intro blockquote {
+    border-left: none; }
 
 #introText {
   background: rgba(255, 255, 255, 0.7);
@@ -122,12 +124,6 @@ General
 /************************************
 Bestillingsskjema css
 ************************************/
-#velgDatoPanel {
-  width: 48%; }
-
-#velgTimePanel {
-  width: 48%; }
-
 #prisOversikt p {
   font-size: 18px; }
 
@@ -149,6 +145,7 @@ Media Queries
 @media screen and (max-width: 480px) {
   .xs-hidden {
     display: none; } }
+/* Use additional CSS to control the `height` of `[data-slides]`, like so: */
 /*Bilderessurser kilder
 kajak.jpg fra https://www.visitnorway.no/
 Unsplash.com {

@@ -8,9 +8,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Hytter og slikt</title>
+	<!-- Reset css file -->
 	<link rel="stylesheet" href="styles/normalize.css">
 	<!--Font awesome -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Slick Slider -->
+	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"> -->
 	<!-- Bootstrap-->
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -50,10 +53,15 @@
 	</header>
 
 	<div class=" container-fluid wrapper">
-		<div class="container-fluid jumbotron" id="intro">
+		<div class="container-fluid jumbotron" id="intro" data-slides='[
+		"images/img1.jpg",
+		"images/img2.jpg",
+		"images/img3.jpg"
+		
+	]'>
 
 			<div class="row">
-				<div class="col-sm-6 col-sm-offset-3" id="introText">
+				<div class="col-sm-6 col-sm-offset-3 slider" id="introText">
 					<h2 id="attention1"> 
 					 	Hytter fra 800kr dagen.
 					</h2>
@@ -62,10 +70,12 @@
 						<footer>Lars Monsen</footer>
 					</blockquote>
 				</div>
+		
 			</div>
 
 			
 		</div>
+
 		<div class="container" id="mainContent">
 			<div class="row nyBolk">
 				<div class="col-md-12">
@@ -143,10 +153,16 @@
 
 
 
-
+<!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<!-- Latest compiled and minified JavaScript -->
+<!-- slick slider -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+<!--timepicker js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.js"></script>
+<!-- Latest compiled and minified JavaScript  Bootstrap-->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Main Javascript File -->
 <script src="scripts/main.js"></script>
 </body>
 </html>
