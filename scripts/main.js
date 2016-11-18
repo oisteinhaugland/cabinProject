@@ -24,7 +24,7 @@ function clearInput(target){
 
     
 /***************************************************************************************************************************
-Info-variabler
+Info-variabler / Deklareres og blir gitt verdi for å bestemme data type.
 /**************************************************************************************************************************/
 var fornavn;
 var etternavn;
@@ -36,12 +36,17 @@ var hyttePris = 0;
 var timePris = 150;
 var døgnPris = 800;
 var utvaskPris = 0;
+var totalPris = 0;
+var fraDato = new Date();
+var tilDato = new Date();
+var startDate = new Date();
 var valgtKlokkeSlett = 0;
 var daysInMonth = 0;
 var antallDøgn = 0;
 var antallTimer = 0;
 var prisForValgteTimer = 0;
 var prisForValgtPeriode = antallDøgn * døgnPris;
+
 
 
 var fasiliteterHytte1 = "Sengeplasser: 4"  + "&emsp;" + "Vann: ✓" + "&emsp;" + "Toalett: ✓";
@@ -52,7 +57,7 @@ var fasiliteterHytte4 = "Sengeplasser: 16"  + "&emsp;" + "Toalett: ✓";
 
 
 /***************************************************************************************************************************
-/ Document.ready / Datovelger / Timevelger 
+/ Document.ready 
 /***************************************************************************************************************************/
 $(document).ready(function(){
 
@@ -71,25 +76,24 @@ $(document).ready(function(){
 		       return(false);
 		}
 
-
-/*
-Slider
-*/
-
-   	
-
+   
    	//nødvending variabler for datovelger. Deklareres for å brukes i funksjon.
 	 var startDateInteger;
-	 
 
+
+/***************************************************************************************************************************************
+/ Datovelger / Timevelger 
+***************************************************************************************************************************************/	 
     //jquery UI funksjon for å velge dato
    $("#datovelger1").datepicker({
             dateFormat: "d-M-yy",
             minDate: 0,
             onSelect: function () {
                 var datovelger2 = $('#datovelger2');
-                var startDate = $(this).datepicker('getDate');
+                startDate = $(this).datepicker('getDate');
+                fraDato = $(this).datepicker('getDate').toString().substring(0,10); //for å vise dato i oppsumering
                 hvilkenMåned = $(this).datepicker('getDate').getMonth() + 1;
+
                //switch for å hindre at summen blir feil ved bestilling som skjer over 2 måneder
                 switch (hvilkenMåned){
                 	case 1 :
@@ -145,6 +149,7 @@ Slider
 
                 //1# getdate gjøres om til string, og tallverdiene som står mellom plass 8,10 hentes ut.
                 var startDateString = $(this).datepicker('getDate').toString().substring(8,10);
+
                 //omgjøres til integer slik at det kan brukes til å regne priser for antall døgn.
                  startDateInteger = parseInt(startDateString);
                 
@@ -153,8 +158,8 @@ Slider
                 var nextDay = new Date($(this).datepicker('getDate'));
 		nextDay.setDate(nextDay.getDate() + 1);
                
- 	//setter datovelger2 maxDate til 14 dager etter den første datoen ble valgt.
-                startDate.setDate(startDate.getDate() + 14);
+	//setter datovelger2 maxDate til 14 dager etter den første datoen ble valgt.
+	startDate.setDate(startDate.getDate() + 14);
                 
                 //sett neste datovelger maximum dato og minimum dato.
                 datovelger2.datepicker('option', 'maxDate', startDate);
@@ -171,6 +176,7 @@ Slider
             onSelect:function(date){
             	// sammep prosses som 1#. 
             	var endDateString = $(this).datepicker('getDate').toString().substring(8,10);
+            	tilDato = $(this).datepicker('getDate').toString().substring(0,10);
             	var endDateInterger = parseInt(endDateString)
 
             	//hvis slutt dato er større enn startdato
@@ -188,15 +194,25 @@ Slider
            }
         });
 
+        // funksjon for datovelger 3
+        $('#datovelger3').datepicker({
+        	dateFormat: "d-M-yy",
+            minDate: 0,
+             onSelect:function(date){
+             fraDato = $(this).datepicker('getDate').toString().substring(0,10);
+             $("#totalPris").html(findTotalSum);	
+             }
+        });
+
 
         //Timevelger funksjoner - timepicker.js
-       
                     $('#timeVelger1').timepicker({
                         'minTime': '12:00pm',
                         'maxTime': '12:00am',
                         'showDuration': true,
                         show2400: true,
                          timeFormat: 'H:i',
+                         'step': 60
                     });
 
                     //skru av muligheten for å skrive med tastatur for å forhindre kluss verdier.
@@ -216,6 +232,7 @@ Slider
                    	this.value = this.value.replace(/[A-z\W]+/g, "")
                    });
 
+                  //funksjon for timevelger. 
                     $("#timeVelger1").on('change', function() {
                     	valgtKlokkeSlett = $(this).val().substring(0,2);
                     	valgtKlokkeSlett = parseInt(valgtKlokkeSlett);
@@ -249,6 +266,10 @@ Form-change / submit
 			etternavn = $("#etternavn").val();
 			email = $("#email").val();
 			telefon = $("#telefon").val();
+
+
+
+			//hyttepris oppdateres og gjøres til integer.
 			hyttePris = $("#hytte option:selected").val();
 			hyttePris = parseInt(hyttePris);
 
@@ -282,7 +303,7 @@ Form-change / submit
 				clearInput(document.getElementById("datovelger2"));
 			});
 
-			//Når verier endres nullstilles priser, antall døgn og timer og totaltpris oppdateres.
+			//Når radio buttons endres nullstilles priser, antall døgn og timer og totaltpris oppdateres.
 			$("#kortTidsLeie").on('change', function(){
 		      		prisForValgtPeriode = 0;
 		      		antallTimer = 0;
@@ -291,7 +312,7 @@ Form-change / submit
 		  		$("#totalPris").html(findTotalSum);	
 	 		 });
 
-			//Når verier endres nullstilles priser, antall døgn og timer og totaltpris oppdateres.
+			//Når radio buttons endres nullstilles priser, antall døgn og timer og totaltpris oppdateres.
 			$("#langTidsLeie").on('change', function(){
 		      		prisForValgteTimer = 0;
 		      		antallTimer = 0;
@@ -307,12 +328,18 @@ Form-change / submit
 		      		}
 		 	 });
 
-
+			//skjekker valg for utvask
 			$("#utvask").on('change', function(){
+				//hvis den er avmerket
 				if ($('#utvask').is(':checked')) {
+
+					//utvaskpris settes og pris oppdateres
 					utvaskPris = 1500;
 		      			$("#totalPris").html(findTotalSum);	
-		      		} else {
+		      		} 
+				//hvis ikke den er avmerket	
+		      		else {
+		      			//utvaskpris resettes og pris oppdateres
 		      			utvaskPris = 0;
 		      			$("#totalPris").html(findTotalSum);	
 		      		}
@@ -359,7 +386,7 @@ Form-change / submit
 			else	{
 				medlemRabatt=1;
 			}
-			//priser
+			//priser oppdateres
 			$("#totalPris").html(findTotalSum);	
 
 
@@ -369,7 +396,7 @@ Form-change / submit
 	});	
 
 		//switch som oppdaterer hvilken hytte som blir valgt ut i fra hvilken hytte som blir bestilt fra forrige side.
-		// trigger også change for å oppdatere formet.
+		// .trigger oppdaterer skjeamet.
 		   switch (getQueryVariable("id")){
                 		case "hytte1" :
 				$('#hytte').val(800);
@@ -395,35 +422,70 @@ Form-change / submit
 
 	// Funksjon for "takk for bestillingen".
 	$("#bestillingSkjema").submit(function(){
-		// Fix for nettlesere som ikke støtter required attributtet. Finner input-elementer i formet med required.
-		// Hvis feltet er tomt sendes feilmelding og prevent default aktiveres og felter som er tomt fokuseres.
-		// Også lagt til email verifisering for samme nettlesere. Regex brukes
-		//for each input loop, som skjekker om kriteriene er fylt ut riktig. Sender feilmelding og fokuserer feltet som ikke er riktig utfylt.
 		
-
+		
+		// Fix for nettlesere som ikke støtter required attributtet. Finner input-elementer i formet med required.
+		//for each input loop, som skjekker om kriteriene er fylt ut riktig. Sender feilmelding og fokuserer feltet som ikke er riktig utfylt.
+		// Også lagt til email verifisering for samme nettlesere. Regex brukes
+		//Det ble funnet en bedre løsning for validering. Bruk av et script (webshim) som gjør at safari godkjenner required funksjonen. Det er en lettere løsning, men normal validering var god trening, og den fungerer like godt.
+	
+		//fin elemter i skjemaet som har attributtet required
 		 var requiredInputField = $(this).find("[required]");
 
+
 		    $(requiredInputField).each(function(){
+		 	//Hvis verdien er tom
 		        if ( $(this).val() == ""){
-		        		alert("Required fields should not be blank. Please fill out the form.");
-		        		    $(this).focus();
+		        		alert("Nøvdenige felter kan ikke være tom. Vennligst fyll ut skjemaet.");
+		        		
+			//fokuser elementet
+	        		$(this).focus();
+	        		//prevent submit, og avslutt funksjon
 		            e.preventDefault();
 		            return false;
 		        	}
 		        
-		        if ($(this).attr('type') == "email"){
+		        //Ved email
+		          if($(this).attr('type') == "email"){
 
 		        		var value = $(this).val();
+		        		//bruker emailvaliderings funksjonen.
     				var valid = validateEmail(value);
 
+    				//hvis den ikke er valid
 		        		if (!valid){
 		        			alert("Ikke godkjent email format. Vennligt fyll inn korrekt.");
+		        			
+		        			//fokuser elementet
 		        			  $(this).focus();
+		        			  //prevent submit, og avslutt funksjon
 		            		e.preventDefault();
 		            		return false;
 		        		}
+
+				}
+			//Hvis det er select tag og den valgte muligheten har en verdi av 50 (Det er verdien på default option)
+			if ($(this).prop("tagName") == "SELECT" && $(this).find(":selected").val() == 0 ){
+					alert("Nøvdenige felter kan ikke være tom. Vennligst fyll ut skjemaet.");
+					 //fokuser elementet
+					 $(this).focus();
+					 //prevent submit, og avslutt funksjon
+		            		e.preventDefault();
+		            		return false;
+				}
+
+			//Radio button group, hvis ingen av knappene ikke er checked.
+			 if($(this).attr('name') == "leiePeriode" && (!$("input[name='leiePeriode']:checked").val())){
+			 	alert("Nøvdenige felter kan ikke være tom. Vennligst fyll ut skjemaet.");
+			 	
+			 	//fokuser elementet
+			 	 $(this).focus();
+	            		e.preventDefault();
+	            		return false;
+				 }
+
 		        	}
-		        }); 
+		        ); 
 		
 		 // Bestillingskjema gjemmes
 		$("#bestiller").hide()
@@ -431,11 +493,38 @@ Form-change / submit
 		//Takk for din bestilling vises
 		$("#bestilt").removeClass("hide");
 		
+		
+/*********************************************************************************************************************************************
+Oppsumering etter bestilling.
+*********************************************************************************************************************************************/
+
 		//Henter all informasjon fra variablene og setter respektive spans til å være lik verdiene som ble fylt inn.
 		$("#showFornavn").html(fornavn);	
 		$("#showEtternavn").html(etternavn);	
 		$("#showTelefon").html(telefon);	
 		$("#showEmail").html(email);	
+		$('#showHytte').html($("#hytte option:selected").text());
+		$('#showFasiliteter').html($("#fasiliteterP").html());
+		if ($("#kortTidsLeie").is(":checked")){
+			$('#showLeieperiode').html("Dato: " + fraDato + ", " +  antallTimer + " timer fra klokken 12.00");
+		} else {
+			$('#showLeieperiode').html("Fra " + fraDato +", til " + tilDato +  " , " + antallDøgn + " dager");
+		};
+		
+		if ($('#medlem').is(':checked')) {
+			$('#showEkstra').html("✓");	
+		}
+		else {
+			$('#showEkstra').html("✖");	
+		}
+
+		if ($('#utvask').is(':checked')) {
+			$('#showUtvask').html("✓");
+		} else {
+			$('#showUtvask').html("✖");
+		}
+		
+		$('#showTotalPris').html(findTotalSum);
 	})
 
 	
