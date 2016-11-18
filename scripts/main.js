@@ -22,6 +22,7 @@ function clearInput(target){
 
 // Hver gang $("#totalPris").html(findTotalSum); blir nevnt er det for å kontinuerlig oppdatere totaltpris.
 
+//Regular expressions lages ved hjelp av http://regexr.com
     
 /***************************************************************************************************************************
 Info-variabler / Deklareres og blir gitt verdi for å bestemme data type.
@@ -227,11 +228,11 @@ $(document).ready(function(){
                    	return false;
                    });
 
-                   //Lagde et regex som filtrerer alt bortsett fra tall.
+                   //Lagde et regex som filtrerer alt bortsett fra tall. 
                    $("#telefon").on('input', function (event) { 
                    	this.value = this.value.replace(/[A-z\W]+/g, "")
                    });
-
+            
                   //funksjon for timevelger. 
                     $("#timeVelger1").on('change', function() {
                     	valgtKlokkeSlett = $(this).val().substring(0,2);
@@ -418,11 +419,11 @@ Form-change / submit
 
               	
                 	
-
-
+/********************************************************************************************************************
+Validering
+********************************************************************************************************************/
 	// Funksjon for "takk for bestillingen".
 	$("#bestillingSkjema").submit(function(){
-		
 		
 		// Fix for nettlesere som ikke støtter required attributtet. Finner input-elementer i formet med required.
 		//for each input loop, som skjekker om kriteriene er fylt ut riktig. Sender feilmelding og fokuserer feltet som ikke er riktig utfylt.
@@ -445,6 +446,17 @@ Form-change / submit
 		            return false;
 		        	}
 		        
+		        //ved pattern      
+		         if ($(this).attr('name') == "navn") {
+			var hasNumberOrSign = /[\d!+-.,!@#$%^&*();\/|<>"':?=]+/
+		         	if (hasNumberOrSign.test($(this).val())) {
+	          	 		alert("Navn kan ikke inneholde tall eller tegn.");
+	          	 		$(this).focus();
+	         			e.preventDefault();
+		            	return false;
+		          	 
+		          }
+		}
 		        //Ved email
 		          if($(this).attr('type') == "email"){
 
@@ -508,7 +520,7 @@ Oppsumering etter bestilling.
 		if ($("#kortTidsLeie").is(":checked")){
 			$('#showLeieperiode').html("Dato: " + fraDato + ", " +  antallTimer + " timer fra klokken 12.00");
 		} else {
-			$('#showLeieperiode').html("Fra " + fraDato +", til " + tilDato +  " , " + antallDøgn + " dager");
+			$('#showLeieperiode').html("Fra " + fraDato +" til " + tilDato +  ". " + antallDøgn + " dager");
 		};
 		
 		if ($('#medlem').is(':checked')) {
