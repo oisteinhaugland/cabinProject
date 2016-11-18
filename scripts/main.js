@@ -424,7 +424,23 @@ Validering
 ********************************************************************************************************************/
 	// Funksjon for "takk for bestillingen".
 	$("#bestillingSkjema").submit(function(){
-		
+
+		//chrome fix - prøvde patterns for html5.
+		   if ($("#bestillingSkjema :input").attr('name') == "navn") {
+		   	//var er regex som skjekker matcher alle tall og tegn.
+			var hasNumberOrSign = /[\d!+-.,!@#$%^&*();\/|<>"':?=]+/
+			//hvis input feltet inneholder noen av tegnen i regexet skjer følgende.
+		         	if (hasNumberOrSign.test($(this).val())) {
+	          	 		alert("Navn kan ikke inneholde tall eller tegn.");
+	          	 		$(this).focus();
+	         			e.preventDefault();
+		            	return false;
+		          	 
+		          }
+		      }
+
+
+
 		// Fix for nettlesere som ikke støtter required attributtet. Finner input-elementer i formet med required.
 		//for each input loop, som skjekker om kriteriene er fylt ut riktig. Sender feilmelding og fokuserer feltet som ikke er riktig utfylt.
 		// Også lagt til email verifisering for samme nettlesere. Regex brukes
@@ -537,7 +553,7 @@ Oppsumering etter bestilling.
 		}
 		
 		$('#showTotalPris').html(findTotalSum);
-	})
+	});
 
 	
 
