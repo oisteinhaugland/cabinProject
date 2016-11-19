@@ -516,8 +516,8 @@ Validering
 
 
 			//recapcha validering
-			if ($(this).attr('name') == "recaptcha" ){
-				alert("hello");
+			if ($(this).attr('name') == "recaptcha" && grecaptcha.getResponse().length === 0 ){
+				alert("Vennligt bekreft reCAPTCHA.");
 				 $(this).focus();
 	            		e.preventDefault();
 	            		return false;
