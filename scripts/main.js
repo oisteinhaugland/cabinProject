@@ -297,6 +297,7 @@ Form-change / submit
 			//Reset input felter for å hindre pris tukling.
 			$("#langTidsLeie").click(function(){
 				clearInput(document.getElementById("timeVelger1"));
+				clearInput(document.getElementById("datovelger3"));
 			});
 			//Reset input felter for å hindre pris tukling.
 			$("#kortTidsLeie").click(function(){
@@ -361,6 +362,7 @@ Form-change / submit
 
 			//Sett required på feltene som vises og ta den fekk på de som skjules.
 			$("#timeVelger1").prop('required',true);
+			$("#datovelger3").prop('required',true);
 			$("#datovelger1").prop('required',false);
 			$("#datovelger2").prop('required',false);
 			
@@ -375,11 +377,11 @@ Form-change / submit
 
 			//Sett required på feltene som vises og ta den fekk på de som skjules.
 			$("#timeVelger1").prop('required',false);
+			$("#datovelger3").prop('required',false);
 			$("#datovelger1").prop('required',true);
 			$("#datovelger2").prop('required',true);
 		}
-		  
-
+		 
 		//Medlemsrabatt skjekkes
 			if ($('#medlem').is(':checked')) {
 				medlemRabatt = 0.85;
@@ -389,11 +391,6 @@ Form-change / submit
 			}
 			//priser oppdateres
 			$("#totalPris").html(findTotalSum);	
-
-
-			
-			
-
 	});	
 
 		//switch som oppdaterer hvilken hytte som blir valgt ut i fra hvilken hytte som blir bestilt fra forrige side.
@@ -418,7 +415,7 @@ Form-change / submit
                 	}
 
               	
-                	
+     
 /********************************************************************************************************************
 Validering
 ********************************************************************************************************************/
@@ -438,11 +435,7 @@ Validering
 		          	 
 		          }
 		      }
-
-		      //
-
-
-
+		
 		// Fix for nettlesere som ikke støtter required attributtet. Finner input-elementer i formet med required.
 		//for each input loop, som skjekker om kriteriene er fylt ut riktig. Sender feilmelding og fokuserer feltet som ikke er riktig utfylt.
 		// Også lagt til email verifisering for samme nettlesere. Regex brukes
@@ -453,7 +446,7 @@ Validering
 
 
 		    $(requiredInputField).each(function(){
-		 	//Hvis verdien er tom
+		 	//Hvis verdien er tom og ikke lik recaptcha
 		        if ( $(this).val() == "" && $(this).attr('name') != "recaptcha"  ){
 		        		alert("Nøvdenige felter kan ikke være tom. Vennligst fyll ut skjemaet.");
 		        		
@@ -464,7 +457,8 @@ Validering
 		            return false;
 		        	}
 		        
-		        //ved pattern      
+		        //Hvis det er fornavn eller etternavn feltet, skjekkes for tegn og tall. 
+		        //Hvis det finnes, blir det sent feilmelding ved submit.
 		         if ($(this).attr('name') == "navn") {
 			var hasNumberOrSign = /[\d!+-.,!@#$%^&*();\/|<>"':?=]+/
 		         	if (hasNumberOrSign.test($(this).val())) {
@@ -494,6 +488,17 @@ Validering
 		        		}
 
 				}
+
+			//ved telefon	
+		          if($(this).attr('type') == "tel"){
+		         	if ($(this).val().length!=8) {
+	          	 		alert("Vennligst fyll ut riktig telefon nummer format. 8 siffer");
+	          	 		$(this).focus();
+	         			e.preventDefault();
+		            	return false;
+		          	 
+		          	}
+		          }
 			//Hvis det er select tag og den valgte muligheten har en verdi av 50 (Det er verdien på default option)
 			if ($(this).prop("tagName") == "SELECT" && $(this).find(":selected").val() == 0 ){
 					alert("Nøvdenige felter kan ikke være tom. Vennligst fyll ut skjemaet.");
@@ -515,7 +520,7 @@ Validering
 				 }
 
 
-			//recapcha validering
+			//recapcha validering. grecaptcha.getResponse er tom hvis den ikke er avkrysset
 			if ($(this).attr('name') == "recaptcha" && grecaptcha.getResponse().length === 0 ){
 				alert("Vennligt bekreft reCAPTCHA.");
 				 $(this).focus();
