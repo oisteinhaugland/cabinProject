@@ -454,7 +454,7 @@ Validering
 
 		    $(requiredInputField).each(function(){
 		 	//Hvis verdien er tom
-		        if ( $(this).val() == "" && $(this).attr("name" != "recaptcha") ){
+		        if ( $(this).val() == "" && $(this).attr('name') != "recaptcha"  ){
 		        		alert("Nøvdenige felter kan ikke være tom. Vennligst fyll ut skjemaet.");
 		        		
 			//fokuser elementet
