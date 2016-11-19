@@ -454,7 +454,7 @@ Validering
 
 		    $(requiredInputField).each(function(){
 		 	//Hvis verdien er tom
-		        if ( $(this).val() == ""){
+		        if ( $(this).val() == "" && $(this).attr("name" != "recaptcha") ){
 		        		alert("Nøvdenige felter kan ikke være tom. Vennligst fyll ut skjemaet.");
 		        		
 			//fokuser elementet
@@ -515,7 +515,14 @@ Validering
 				 }
 
 
-			//recapcha for safari;
+			//recapcha validering
+			if ($(this).attr('name') == "recaptcha" ){
+				alert("hello");
+				 $(this).focus();
+	            		e.preventDefault();
+	            		return false;
+				
+				}
 
 		        	}
 		        ); 
