@@ -425,7 +425,7 @@ Validering
 	// Funksjon for "takk for bestillingen".
 	$("#bestillingSkjema").submit(function(){
 
-		//chrome fix - prøvde patterns for html5.
+		//chrome fix - prøvde patterns for html5, men dette fungerte bedre.
 		   if ($("#bestillingSkjema :input").attr('name') == "navn") {
 		   	//var er regex som skjekker matcher alle tall og tegn.
 			var hasNumberOrSign = /[\d!+-.,!@#$%^&*();\/|<>"':?=]+/
@@ -438,6 +438,8 @@ Validering
 		          	 
 		          }
 		      }
+
+		      //
 
 
 
@@ -511,6 +513,9 @@ Validering
 	            		e.preventDefault();
 	            		return false;
 				 }
+
+
+			//recapcha for safari;
 
 		        	}
 		        ); 
