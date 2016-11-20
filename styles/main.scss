@@ -1,10 +1,10 @@
 /************************************
 Variabler
 ************************************/
-/*
+/* test farger
 #303539
-
 */
+
 $nav-color: #f7f7f7;
 $navtextcolor: #303539;;
 $btnColor:#3F8D8C;
@@ -48,20 +48,14 @@ body {
 
 
 
-
-
-
-
 /************************************
 Navigasjon
 ************************************/
 header{
-	
-	
 	z-index:5;
 }
+
 nav {
-	
 	width:100%;
 	background:$nav-color;
 	
@@ -69,24 +63,24 @@ nav {
 	margin:0;
 	list-style: none;
 	display: flex;
-	/*justify-content: center;*/
+	justify-content: center;
 	border-bottom: 1px solid rgb(225,225,225);
-	li {
-		display:flex;
-		margin:0;
-		
-		a {
-			padding:20px;
-			background: $nav-color;
-			color:$navtextcolor;
-			&:hover {
-			background: darken($nav-color ,5%);
-			text-decoration: none;
-			color:$navtextcolor;
+		li {
+			display:flex;
+			margin:0;
+			
+			a {
+				padding:20px;
+				background: $nav-color;
+				color:$navtextcolor;
+				&:hover {
+				background: darken($nav-color ,5%);
+				text-decoration: none;
+				color:$navtextcolor;
+				}
 			}
 		}
 	}
-}
 
 .active {
 	background: darken($nav-color ,5%);
@@ -102,10 +96,11 @@ nav {
 
 
 
-/************************************
+/************************************************************************************************************
 General
-************************************/
+************************************************************************************************************/
 
+/*Knapper på fremsiden */
 .myBtns {
 	background: $btnColor;
 	&:hover {
@@ -113,6 +108,7 @@ General
 	}
 }
 
+/*Fargefelt */
 .seperator {
 	margin:20px 0;
 	height:100px;
@@ -121,13 +117,15 @@ General
 	border:1px solid rgb(225,225,255);
 }
 
+
+/*Container-fluid padding fix */
 .container-fluid {
 	padding-left: 0;
 	padding-right: 0;
 }
 
 
-
+/* Headeren */
 #intro {
 	border-radius: 0;
 	background: url(../images/fjellnorge.jpg) no-repeat center center fixed; 
@@ -139,41 +137,32 @@ General
 	  z-index: -1;
 	  margin-bottom: 0;
 
-	  #introText{
+	/*Teksten i Headeren */
+	  .introText{
 	  	margin-top:80px;
 	  	background:rgba(255,255,255,0.7);
 	 	text-align: center;
 	 	padding:6px 0;
 	  
 	  }
-
+	
+	/*Blockquote fix*/
 	  blockquote{
 	  	border-left:none;
 	  }
 }
 
- #introText{
-	  	background:rgba(255,255,255,0.7);
-	 	text-align: center;
-	  
-	  }
-
-
+/*Wrapper for main content margin fix */
 #mainContent {
 	margin-top:0;
 }
 
-
-
-
-
-#opplysninger {
-	height:500px;
+/*******************************************************************************************
+ORDER.HTML
+*******************************************************************************************/
+#leiePeriodeContainer{
 	
-}
-
-#test{
-	
+	/*Margin/ padding fix*/
 	h3,h4,input,label {
 		margin:0;
 		padding:0px;
@@ -185,18 +174,6 @@ General
 	
 }
 
-.bob {
-	width: 48%;
-	height:125px;
-	float:left;
-	margin:0;
-}
-
-
-/************************************
-Bestillingsskjema css
-************************************/
-
 #prisOversikt{
 	p {
 		font-size: 18px;
@@ -206,21 +183,66 @@ Bestillingsskjema css
 
 
 
-/************************************
+/************************************************************************************************************
 HYTTER.HTML
-************************************/
-
-.hytteboks {
-	background: #35FF59
+************************************************************************************************************/
+#introText {
+	text-align: center;
 }
 
-#box {
-	background: yellow;
+
+.hytteTittel {
+	padding-left: 25px;
 }
 
-#box2 {
-	background:lightblue;
+.hytteNr {
+	text-align: center;
+	font-size: 25px;
+
 }
+
+#hytterContainer{
+	
+
+	ul {
+  		list-style-type: none;
+  		padding:0;
+	}
+
+
+	.hytteboks {
+		  background-color: #d5e0e8;  
+		  margin: 0 10px 15px 10px;
+
+		  /*width: 30%;*/
+		  padding-top: 2%;
+		  /*display: inline-block;*/
+		  
+
+		 img {
+  		height: 300px;
+		width: 100%;
+		}
+		
+		.buttons {
+			width:100%;
+			font-size: 18px;
+
+
+			
+		}
+
+		.lorem {
+			padding:20px;
+			text-align: initial;
+		}
+
+	  }
+
+	
+}
+
+/* Felles bestemmelser for alle bildene i boksene*/
 
 
 
@@ -235,17 +257,31 @@ Media Queries
    }
 }
 
-/* Use additional CSS to control the `height` of `[data-slides]`, like so: */
 
-/*Bilderessurser kilder
-kajak.jpg fra https://www.visitnorway.no/
-Unsplash.com {
-	
+
+/************************
+Carousel
+************************/
+.item {
+	 -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	  height:500px;
+	  z-index: -1;
+	  margin-bottom: 0;
 }
 
+#item1{
+background: url(../images/JPEG/img1.jpg) no-repeat center center fixed; 
+}
 
+#item2{
+background: url(../images/JPEG/img2.jpg) no-repeat center center fixed; 
+}
 
-
-*/
+#item3{
+	background: url(../images/JPEG/img3.jpg) no-repeat center center fixed; 
+}
 
 

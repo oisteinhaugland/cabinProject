@@ -54,6 +54,8 @@ var fasiliteterHytte1 = "Sengeplasser: 4"  + "&emsp;" + "Vann: ✓" + "&emsp;" +
 var fasiliteterHytte2 = "Sengeplasser:  8"  + "&emsp;" + "Internett: ✓ " + "&emsp;" + "Utedo: ✓";
 var fasiliteterHytte3 = "Sengeplasser: 12"  + "&emsp;" + "Kjøkken: ✓" + "&emsp;" + "Toalett: ✓";
 var fasiliteterHytte4 = "Sengeplasser: 16"  + "&emsp;" + "Toalett: ✓";
+var fasiliteterHytte5 = "Sengeplasser: 16"  + "&emsp;" + "Toalett: ✓";
+var fasiliteterHytte6 = "Sengeplasser: 16"  + "&emsp;" + "Toalett: ✓";
 
 
 
@@ -291,6 +293,14 @@ Form-change / submit
 				case "950":
 				$("#fasiliteterP").html(fasiliteterHytte4);
 				break;
+
+				case "1000":
+				$("#fasiliteterP").html(fasiliteterHytte4);
+				break;
+
+				case "1050":
+				$("#fasiliteterP").html(fasiliteterHytte4);
+				break;
 			}
 			
 
@@ -410,6 +420,15 @@ Form-change / submit
                 			break;
                 		case "hytte4" :
 				$('#hytte').val(950);
+				$("#hytte").trigger("change");
+                			break;
+        			case "hytte5" :
+				$('#hytte').val(1000);
+				$("#hytte").trigger("change");
+                			break;
+
+        			case "hytte6" :
+				$('#hytte').val(1050);
 				$("#hytte").trigger("change");
                 			break;
                 	}
@@ -592,6 +611,10 @@ Oppsumering etter bestilling.
 
 		    });
 
+	//bootstrap carousel fix, hindrer at den pauser på mouse hover;
+$('.carousel').carousel({
+    pause: "false"
+});
 });
 
 
