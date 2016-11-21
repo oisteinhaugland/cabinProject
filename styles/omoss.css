@@ -1,0 +1,118 @@
+
+.page-content{
+  position: relative;
+  height: 70%;
+  width: 100%;
+  display: block;
+}
+
+.bilde {
+  width: 150px;
+  height: 100px;
+}
+
+.thumbnail {
+width: auto;
+height: 500px;
+}
+
+.navn {
+  font-size: 40px;
+  font-style: italic;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.info {
+  text-align: center;
+}
+
+.overskrift{
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+
+}
+
+.btn{
+  position: relative;
+  bottom: 0;
+}
+
+
+/*-------FOOTER--------*/
+
+
+footer {
+  display: block;
+  width: 100%;
+  height: 25%;
+  background-color: #004F66;
+  position:relative;
+}
+
+footer .nav-wrapper {
+  position: absolute;
+  top: 80;
+  left: 30;
+  display: inline-block;
+  width: 35%;
+  margin: 5px;
+}
+
+footer .logo-wrapper{
+  position: absolute;
+  top: 10;
+  left: 650;
+  display: inline-block;
+  width: 20%;
+  margin: 5px;
+}
+
+footer .info-wrapper {
+  position: absolute;
+  top: 40;
+  right: 30;
+  display: inline-block;
+  width: 25%;
+  margin: 5px;
+}
+
+footer .nav-wrapper nav{
+  background-color: #004F66;
+}
+
+
+footer nav ul {
+border-bottom: none;
+background: #004F66;
+}
+
+footer nav ul li {
+  display: inline-block;
+  margin-left: 20px;
+  list-style: none;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #fff;
+
+}
+
+#kontakt {
+  width: 100%;
+  display:block;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #fff;
+
+}
+#kontakt li {
+  display: block;
+  background: #004F66;
+  border-bottom: none;
+  margin-right: 10%;
+  background-color: #004F66;
+}

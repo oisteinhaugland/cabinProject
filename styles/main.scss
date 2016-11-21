@@ -2,12 +2,14 @@
 Variabler
 ************************************/
 /* test farger
+
+#3F8D8C
 #303539
 */
 
 $nav-color: #f7f7f7;
 $navtextcolor: #303539;;
-$btnColor:#3F8D8C;
+$btnColor:#50a050;
 $mountainColor:#004F66;
 $secondaryColor:#B0CCC1;
 
@@ -58,6 +60,8 @@ header{
 nav {
 	width:100%;
 	background:$nav-color;
+	
+	
 	
 	ul {
 	margin:0;
@@ -111,10 +115,10 @@ General
 /*Fargefelt */
 .seperator {
 	margin:20px 0;
-	height:100px;
+	height:1px;
 	width:100%;
 	background:$mountainColor;
-	border:1px solid rgb(225,225,255);
+	
 }
 
 
@@ -211,7 +215,9 @@ HYTTER.HTML
 
 
 	.hytteboks {
-		  background-color: #d5e0e8;  
+		border-radius: 5px;
+		background-color: #f7f7f7;
+		border: 1px solid #e1e1e1;
 		  margin: 0 10px 15px 10px;
 
 		  /*width: 30%;*/
@@ -227,13 +233,10 @@ HYTTER.HTML
 		.buttons {
 			width:100%;
 			font-size: 18px;
-
-
-			
 		}
 
 		.lorem {
-			padding:20px;
+			margin-top:23px;
 			text-align: initial;
 		}
 
@@ -242,20 +245,39 @@ HYTTER.HTML
 	
 }
 
-/* Felles bestemmelser for alle bildene i boksene*/
+/******************************************************
+Om Oss.html
+******************************************************/
 
-
-
-/************************************
-Media Queries
-************************************/
-
-
-@media screen and (max-width: 480px) {
-   .xs-hidden {
-   	display:none;
-   }
+.bilde {
+  width: 150px;
+  height: 100px;
 }
+
+.thumbnail {
+margin-bottom: 20px;
+}
+
+.navn {
+  font-size: 40px;
+  font-style: italic;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.info {
+  text-align: center;
+}
+
+.overskrift{
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+
+}
+
+
 
 
 
@@ -282,6 +304,64 @@ background: url(../images/JPEG/img2.jpg) no-repeat center center fixed;
 
 #item3{
 	background: url(../images/JPEG/img3.jpg) no-repeat center center fixed; 
+}
+
+
+/************************
+Footer
+************************/
+#contactHeader {
+	margin-bottom: 8px;
+}
+
+#bottomFooter{
+	padding:20px;
+	margin:20px 0 0 0;
+	width: 100%;
+	background-color: #004F66;
+	/*position:absolute;
+	bottom:0;*/
+
+	ul {
+
+		margin:0;
+		color:#fff;
+		list-style: none;
+		li {
+			
+			a {
+				color:#fff;
+
+				&:hover {
+					color:darken(#fff,20%);
+				}
+			}
+		}
+	}
+
+}
+
+
+
+
+
+
+/************************************
+Media Queries
+************************************/
+
+
+@media screen and (max-width: 480px) {
+   .xs-hidden {
+   	display:none;
+   }
+}
+@media screen and (max-width: 992px) {
+   
+  #bottomFooter {
+   	position:static;
+   }
+   
 }
 
 
