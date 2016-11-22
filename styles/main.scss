@@ -7,13 +7,12 @@ Variabler
 #303539
 */
 
-$nav-color: #f7f7f7;
+$nav-color:#f7f7f7;
 $navtextcolor: #303539;;
-$btnColor:#50a050;
+/*$btnColor:#50a050;*/
+$btnColor:#004f66;
 $mountainColor:#004F66;
 $secondaryColor:#B0CCC1;
-
-
 $better-helvetica:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
 
@@ -46,6 +45,7 @@ body {
 	font-family: $better-helvetica;
 	font-size:16px;
 	font-weight:300;
+	background:#fafafa;
 }
 
 
@@ -53,6 +53,12 @@ body {
 /************************************
 Navigasjon
 ************************************/
+#logoHeader{
+	margin-top:11.5px;
+	height:40px;
+
+}
+
 header{
 	z-index:5;
 }
@@ -60,15 +66,14 @@ header{
 nav {
 	width:100%;
 	background:$nav-color;
-	
-	
-	
+
 	ul {
 	margin:0;
 	list-style: none;
 	display: flex;
-	justify-content: center;
+	
 	border-bottom: 1px solid rgb(225,225,225);
+		
 		li {
 			display:flex;
 			margin:0;
@@ -108,7 +113,7 @@ General
 .myBtns {
 	background: $btnColor;
 	&:hover {
-	background: darken($btnColor,10%);	
+	background: lighten($btnColor,5%);	
 	}
 }
 
@@ -205,7 +210,7 @@ HYTTER.HTML
 
 }
 .infoboks {
-	background:#f7f7f7;
+	background:darken(#f7f7f7,4%);
 	border:1px solid rgb(225,225,225);
 	padding:20px;
 	margin-bottom:5px;
@@ -341,6 +346,10 @@ Footer
 	margin-bottom: 8px;
 }
 
+#logoFooter {
+	height:100px;
+}
+
 #bottomFooter{
 	padding:20px;
 	margin:20px 0 0 0;
@@ -379,4 +388,20 @@ Media Queries
    .xs-hidden {
    	display:none;
    }
+ 
 }
+
+@media screen and (max-width: 600px) {
+	  #logoHeader {
+   	display:none;
+   }	
+   #logoFooter {
+   	height:50px;
+   	padding-left:35px;
+   }
+}
+
+
+
+
+
