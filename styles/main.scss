@@ -1,8 +1,7 @@
-/************************************
+/************************************************************************************
 Variabler
-************************************/
+************************************************************************************/
 /* test farger
-
 #3F8D8C
 #303539
 */
@@ -16,9 +15,9 @@ $secondaryColor:#B0CCC1;
 $better-helvetica:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
 
-/************************************
+/************************************************************************************
 General
-************************************/
+************************************************************************************/
 .clear {
 	clear: both;
 }
@@ -39,7 +38,7 @@ General
 
 
 /************************************
-Fonts
+Body
 ************************************/
 body {
 	font-family: $better-helvetica;
@@ -50,35 +49,33 @@ body {
 
 
 
-/************************************
+/************************************************************************************
 Navigasjon
-************************************/
-
+************************************************************************************/
+/*Font-awesome carret styling*/
 #downCaret {
 	color:$btnColor;
 	font-size:50px;
 	padding:0;
 }
 
+/*Logo I headeren*/
 #logoHeader{
 	margin-top:11.5px;
 	height:40px;
 }
-
+/*Header z-index fix for fixed navigasjon*/
 header{
 	z-index:5;
 }
-
+/*ingen border bottom på index.html, men på alle andre*/
 #indexUl{
 	border-bottom:none;	
 }
+/*Navigasjonsbaren*/
 nav {
 	width:100%;
 	background:$nav-color;
-
-	
-
-	
 
 	ul {
 	margin:0;
@@ -105,6 +102,7 @@ nav {
 		}
 	}
 
+	/*For å vise den aktive fanen.*/
 	.active {
 		background: darken($btnColor,2%);
 		color:white;
@@ -114,14 +112,27 @@ nav {
 
 
 /************************************************************************************************************
-General
+INDEX.HTML / Generel css
 ************************************************************************************************************/
+/*Stilering for informasjons boksene*/
+.infoboks {
+	background:darken(#f7f7f7,4%);
+	padding:20px;
+	margin-bottom:5px;
+	h2 {
+		margin:0 0 5px 0;
+
+	}
+}
+
+/*Bildefix for bilder i modal.*/
 .responsiveBilder {
 	display:inline-block;
 	max-width:49%;
 	height:auto;
 }
 
+/*Padding fix for alle tittlene for hyttene.*/
 .hytteTitler{
 	padding-left:15px;
 }
@@ -142,12 +153,13 @@ General
 		}
 }
 
+/*knapper som skal stileres i stil 2*/
 .myOtherBtns{
 	background:rgb(225,225,225);
 	color:$navtextcolor;
 }
 
-
+/*en klasse for å få et mer symetrisk design.*/
 .spacingFix {
 	margin-bottom: 53.5px;
 }
@@ -169,7 +181,7 @@ General
 }
 
 
-/* Headeren */
+/* Introduksjons bildet og tekst*/
 #intro {
 	border-radius: 0;
 	background: url(../images/fjellnorge.jpg) no-repeat center center fixed; 
@@ -181,7 +193,7 @@ General
 	  z-index: -1;
 	  margin-bottom: 0;
 
-	/*Teksten i Headeren */
+	/*Teksten */
 	  .introText{
 	  	margin-top:80px;
 	  	background:rgba(255,255,255,0.7);
@@ -190,7 +202,7 @@ General
 	  
 	  }
 	
-	/*Blockquote fix*/
+	/*Blockquote*/
 	  blockquote{
 	  	border-left:none;
 	  	padding:0;
@@ -206,6 +218,7 @@ General
 /*******************************************************************************************
 ORDER.HTML
 *******************************************************************************************/
+/*Container for leieperiode, setter riktig padding / margin*/
 #leiePeriodeContainer{
 	
 	/*Margin/ padding fix*/
@@ -219,7 +232,7 @@ ORDER.HTML
 	}
 	
 }
-
+/*Paragraf som viser total pris*/
 #prisOversikt{
 	p {
 		font-size: 18px;
@@ -227,60 +240,63 @@ ORDER.HTML
 	}
 }
 
+/*Bestillingskanppen i skjemaet*/
+#submit {
+   	font-size: 18px;
+   	border-radius: 0;
+    	background: $btnColor;
+    	color:white;
+    	font-weight: normal;
+	&:hover {
+	background: lighten($btnColor,5%);	
+	}
+
+	&:active {
+		background: lighten($btnColor,5%);	
+		}
+}
 
 
 /************************************************************************************************************
 HYTTER.HTML
 ************************************************************************************************************/
+/*Stilering for pris*/
+.priser {
+	border-top:1px solid grey;
+	margin-top:30px;
+	font-size: 20px;
+}
+
+/*Introduksjons teksten sentreres*/
 #introText {
 	text-align: center;
 }
 
-
+/*Padding fiks for symmetrisk design*/
 .hytteTittel {
 	padding-left: 25px;
 }
 
-.hytteNr {
-	text-align: center;
-	font-size: 25px;
-
+/* Padding for fasilitet containerere*/
+.inner {
+	padding:20px;	
 }
-.infoboks {
-	background:darken(#f7f7f7,4%);
-	padding:20px;
-	margin-bottom:5px;
-	/*border-radius: 5px;*/
-
-	h2 {
-		margin:0 0 5px 0;
-
-	}
-
-}
+/*Stilering for hver hyttecontainer*/
 #hytterContainer{
-	
 
 	ul {
   		list-style-type: none;
   		padding:0;
+  		margin-bottom: 0;
 	}
 
-
-
 	.hytteboks {
-		border-radius: 5px;
-		background-color: #f7f7f7;
-		border: 1px solid #e1e1e1;
+		background:darken(#f7f7f7,4%);
 		margin: 0 10px 15px 10px;
-		padding-top: 2%;
 		/*Overflow hidden for å hindre at bilder flyter over container ved zoom.*/
 		overflow: hidden;
-		  
-		
-
+		 /*Stilering for zoom on hover*/
 		 img {
-  		
   		height: 300px;
 		width: 100%;
 		/*Transition effect*/
@@ -288,8 +304,6 @@ HYTTER.HTML
 		 -moz-transition: all 0.3s;
   		-webkit-transition: all 0.3s;
   		transition: all 0.3s;
-
-
 		&:hover {
 			/*scale øker med 0.5 for å skape zoom effekt*/
 			 -moz-transform: scale(1.05);
@@ -297,25 +311,13 @@ HYTTER.HTML
   			transform: scale(1.05);
 			}
 		}
-		
-		.mapsButton {
-			padding:7.5px 15px;
-			font-size:14px;
-			background:$mountainColor;
-		}
-
+		/*Stilering fo bestill knappene*/
 		.buttons {
 			width:100%;
 			font-size: 18px;
-
+			border-radius: 0;
 			background:$mountainColor;
 		}
-
-		.lorem {
-			margin-top:23px;
-			text-align: initial;
-		}
-
 	  }
 }
 
@@ -355,9 +357,9 @@ margin-bottom: 20px;
 
 
 
-/************************
+/************************************************************************
 Carousel
-************************/
+************************************************************************/
 .item {
 	 -webkit-background-size: cover;
 	  -moz-background-size: cover;
@@ -381,17 +383,18 @@ background: url(../images/JPEG/img2.jpg) no-repeat center center fixed;
 }
 
 
-/************************
+/************************************************************************
 Footer
-************************/
+************************************************************************/
+/*Øverste li element*/
 #contactHeader {
 	margin-bottom: 8px;
 }
-
+/*logo i footeren*/
 #logoFooter {
 	height:100px;
 }
-
+/*Generell footer css*/
 #bottomFooter{
 	padding:20px;
 	margin:20px 0 0 0;

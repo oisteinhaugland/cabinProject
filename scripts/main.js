@@ -50,12 +50,12 @@ var prisForValgtPeriode = antallDøgn * døgnPris;
 
 
 
-var fasiliteterHytte1 = "Sengeplasser: 4"  + "&emsp;" + "Vann: ✓" + "&emsp;" + "Toalett: ✓";
-var fasiliteterHytte2 = "Sengeplasser:  8"  + "&emsp;" + "Internett: ✓ " + "&emsp;" + "Utedo: ✓";
-var fasiliteterHytte3 = "Sengeplasser: 12"  + "&emsp;" + "Kjøkken: ✓" + "&emsp;" + "Toalett: ✓";
-var fasiliteterHytte4 = "Sengeplasser: 16"  + "&emsp;" + "Toalett: ✓";
-var fasiliteterHytte5 = "Sengeplasser: 16"  + "&emsp;" + "Toalett: ✓";
-var fasiliteterHytte6 = "Sengeplasser: 16"  + "&emsp;" + "Toalett: ✓";
+var fasiliteterHytte1 = "Sengeplasser: 8"  + "&emsp;" + "Internett:✖" + "&emsp;" + "Vannklosett:✖"+ "&emsp;" +"Kjøkken:✔"+ "&emsp;" +"Badestamp:✔" +"&emsp;" +"Peis: ✔"+"&emsp;" +"Innlagt Vann: ✖" + "&emsp;" +"Badstue: ✖";
+var fasiliteterHytte2 = "Sengeplasser: 10"  + "&emsp;" + "Internett:✖" + "&emsp;" + "Vannklosett:✖"+ "&emsp;" +"Kjøkken:✔"+ "&emsp;" +"Utedo::✔" +"&emsp;" +"Peis: ✔"+"&emsp;" +"Innlagt Vann: ✖" + "&emsp;" +"Badstue: ✖";
+var fasiliteterHytte3 = "Sengeplasser: 14"  + "&emsp;" + "Internett:✖" + "&emsp;" + "Vannklosett:✖"+ "&emsp;" +"Kjøkken:✔"+ "&emsp;" +"Badestamp:✖" +"&emsp;" +"Peis: ✔"+"&emsp;" +"Innlagt Vann: ✖" + "&emsp;" +"Badstue: ✖";
+var fasiliteterHytte4 = "Sengeplasser: 10"  + "&emsp;" + "Internett:✔" + "&emsp;" + "Vannklosett:✖"+ "&emsp;" +"Kjøkken:✔"+ "&emsp;" +"Badestamp:✔" +"&emsp;" +"Peis:  ✖"+"&emsp;" +"Innlagt Vann: ✖" + "&emsp;" +"Badstue:✖";
+var fasiliteterHytte5 = "Sengeplasser: 12"  + "&emsp;" + "Internett:✖" + "&emsp;" + "Vannklosett:✔"+ "&emsp;" +"Kjøkken:✔"+ "&emsp;" +"Badestamp:✖" +"&emsp;" +"Peis: ✔"+"&emsp;" +"Innlagt Vann: ✔" + "&emsp;" +"Badstue: ✔";
+var fasiliteterHytte6 = "Sengeplasser: 11"  + "&emsp;" + "Internett:✔" + "&emsp;" + "Vannklosett:✔"+ "&emsp;" +"Kjøkken:✔"+ "&emsp;" +"Badestamp:✔" +"&emsp;" +"Peis: ✔"+"&emsp;" +"Innlagt Vann: ✔" + "&emsp;" +"Badstue: ✔";
 
 
 
@@ -246,18 +246,6 @@ $(document).ready(function(){
                   
                     });
 
-                    
-       
-/***************************************************************************************************************************
-Slick Slider
-/***************************************************************************************************************************/
-
-
-
-
-
-
-
 /***************************************************************************************************************************
 Form-change / submit
 ***************************************************************************************************************************/
@@ -295,11 +283,11 @@ Form-change / submit
 				break;
 
 				case "1000":
-				$("#fasiliteterP").html(fasiliteterHytte4);
+				$("#fasiliteterP").html(fasiliteterHytte5);
 				break;
 
 				case "1050":
-				$("#fasiliteterP").html(fasiliteterHytte4);
+				$("#fasiliteterP").html(fasiliteterHytte6);
 				break;
 			}
 			

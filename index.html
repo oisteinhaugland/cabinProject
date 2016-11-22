@@ -6,23 +6,21 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!--Mobile responsive -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<title>Hytter og slikt</title>
+	<title>Furustu</title>
 	<!-- Reset css file -->
 	<link rel="stylesheet" href="styles/normalize.css">
 	<!--Font awesome -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!-- Slick Slider -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
 	<!-- Bootstrap-->
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<!-- Optional theme -->
+	<!-- Additional theme for bootstrap-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-<header>
+	<header>
+	<!--Navigasjon -->
 		<nav>
 			<ul id="indexUl">
 				<li>
@@ -52,8 +50,10 @@
 			</ul>
 		</nav>
 	</header>
-
+	
+	<!--Content Wrapper-->
 	<div class=" container-fluid wrapper">
+		<!-- Attention grapper section -->
 		<div class="container-fluid jumbotron headerImages" id="intro">
 
 			<div class="row">
@@ -72,34 +72,36 @@
 			</div>
 		
 		</div>
-		
-	
-
-
+		<!-- Main  Content Section -->
 		<div class="container" id="mainContent">
-			<div class="row nyBolk">
+			<div class="row">
 				<div class="col-md-12">
+				
+					<!-- Område 1-->
 					<h2 class="hytteTitler">Hytteområde ved Fjell</h2>
+					<!--Bilde, 6 kolonner -->
 					<div class="col-md-6">				
 						<img class="img-responsive" src="images/JPEG/img1.jpg" alt="kajakk">
 					</div>
+					<!--Informasjon, 6 kolonner -->
 					<div class="col-md-6 infoboks">
 					<h2>Øyingen</h2>
-						<p>Grubbler du på om du skal leie deg inn i fjellheimen`s stillhet og ro, er våre hytter midt i blinken. Det ene hyttefeltet vi kan tilby ligger ved foten av Brannheiklompen, - Øyingen. Litt nordøst for Steinkjer, her havner du litt utenfor comfortsonen, vi  vanligvis omgir oss med. Vi tenker at folk idag har behov for å plugge seg helt ut fra hverdagen og det får du glimrende anledning til her.Siden det er noe variende mobildekning får man samlet tankene, sinnsro, bort fra støy og mas. Ikke er det innlagt vann eller strøm, men av og til når vi har det litt primitivt, setter vi mer pris på det vi har hjemme. Å leve litt enklere noen dager, gjør at man får slappet av.</p>
-						<!--<p> Her har vi hytter som tar deg med ut av comfortsonen som vanligvis omgir oss, vi tenker at folk idag har behov for å plugge seg helt ut fra hverdagen og det får du glimrende anledning til her.Siden det er noe variende mobildekning får man samlet tankene, sinnsro, bort fra støy og mas. Ikke er det innlagt vann eller strøm, men av og til når vi har det litt primitivt, setter vi mer pris på det vi har hjemme. Å leve litt enklere noen dager, gjør at man får slappet av.</p>-->
+						<p>Grubbler du på om du skal leie deg inn i fjellheimen`s stillhet og ro, er våre hytter midt i blinken. Det ene hyttefeltet vi kan tilby ligger ved foten av Brannheiklompen, - Øyingen. Litt nordøst for Steinkjer, her havner du litt utenfor comfortsonen, vi  vanligvis omgir oss med. Vi tenker at folk idag har behov for å plugge seg helt ut fra hverdagen og det får du glimrende anledning til her. Siden det er noe variende mobildekning får man samlet tankene, sinnsro, bort fra støy og mas. Ikke er det innlagt vann eller strøm, men av og til når vi har det litt primitivt, setter vi mer pris på det vi har hjemme. Å leve litt enklere noen dager, gjør at man får slappet av.</p>
 						
 						<!-- script fra yr for værmelding -->
 						<script src="http://www.yr.no/sted/Norge/Nord-Trøndelag/Steinkjer/Øyingen/ekstern_boks_stripe.js"></script><noscript><a href="http://www.yr.no/sted/Norge/Nord-Trøndelag/Steinkjer/Øyingen/">yr.no: Værvarsel for Øyingen</a></noscript>
 
 
 					</div>
+					<!-- Knapp som sender videre til Hytter.html for å se mere om hytter-->
 					<a href="pages/hytter.html#row1" class="btn btn-primary myBtns">Sjekk ut hyttene i dette området</a>
-					<!--Bootstrap modal for å vise google maps kart for innholdet. -->
+					
+					<!--Bootstrap modal for å vise google maps over området. -->
 					<button type="button" class="btn btn-primary myBtns myOtherBtns" data-toggle="modal" data-target="#myModal">
 					Kart
 					</button>
 
-					<!-- Modal -->
+					<!-- Modal, alla bootstrap -->
 					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 					  <div class="modal-dialog modal-lg" role="document">
 					    <div class="modal-content"> <!--Content container -->
@@ -113,15 +115,16 @@
 					      <div class="modal-footer"> <!-- Dismiss button -->
 					        <button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
 					      </div>
-					    </div>
-					  </div>
-					</div>
+					    </div> <!--content end -->
+					  </div> <!--dialog end -->
+					</div> <!-- modal end -->
 
+					<!--Kanpp for aktiviteter i nærområdet -->
 					<button type="button" class="btn btn-primary myBtns myOtherBtns" data-toggle="modal" data-target="#myModal1">
 					Aktiviteter
 					</button>
 
-					<!-- Modal for aktiviteter -->
+					<!-- Modal for aktiviteter, alla bootstrap -->
 					<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
 					  <div class="modal-dialog modal-lg" role="document">
 					    <div class="modal-content"> <!--Content container -->
@@ -131,11 +134,11 @@
 					      </div>
 					      <div class="modal-body"> <!-- Modal body, aktiviteter -->
 					        	
-					        	<p>Bølarein 2 km fra hyttefeltet Øyingen finner du Bølarein.
-            						En turistatraksjon, hvor man kan se på en HELLEINRISTNING,
+					        	<p>2 km fra hyttefeltet Øyingen finner du Bølarein.
+            						En turistatraksjon, hvor man kan se på en helleristning,
             						som er 6000 år gammel. Av blandt annet en rein/simje
             						og en bølamann på truger. Der har de også en café.
-            						Ønsker du å vite mer, trykk <a href="http://www.bolarein.no/">HER!</a></p>
+            						<a href="http://www.bolarein.no/">Ønsker du å vite mer?</a></p>
 
             						    <img src="images/oyingen.jpg" class="responsiveBilder">
 					              <img src="images/oyingen1.jpeg" class="responsiveBilder">
@@ -144,25 +147,27 @@
 					      <div class="modal-footer"> <!-- Dismiss button -->
 					        <button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
 					      </div>
-					    </div>
-					  </div>
-					</div>
+					    </div> <!--content end -->
+					  </div> <!--dialog end -->
+					</div> <!-- modal end -->
 
 				</div>
 			</div>
-			<div class="row nyBolk">
+			
+			<!--Grafisk element for å skape skiller i designet -->
+			<div class="row">
 				<div class="col-md-12 seperator">
-					
 				</div>
 			</div>
-			<div class="row nyBolk">
+
+			<div class="row">
 				<div class="col-md-12">
 					<h2 class="hytteTitler">Hytteområde ved Skog</h2>
 					<div class="col-md-6">
 					<div class="col-md-10 infoboks" >
 					<h2>Innsvatnet</h2>
 						<p>
-							Vårt andre felt ligger ved flotte Innsvatnet i Verdal kommune. Her er det 30.min til Åre, Sverige. Hvor man kan shoppe litt bacon, ost og svippe innom systembolaget, bruke dagen i bassenget til Holiday Club eller oppe i alpinbakken med flere trekk. På sommerstid kan man ta gondolbanen,spille bumperball eller melde seg på en runde tvekamp
+							Vårt andre felt ligger ved flotte Innsvatnet i Verdal kommune. Her er det 30.min til Åre, Sverige. Eller 20.min til sentrum i Verdal. Rundt om i terrenget kan man gå opp til Hermannsnasa som ligger 1034 m over havet, man kan følge gamle kongevei, hvor man tror Gunnlaug Ormstunge vandret og Konge steinen er satt opp etter Olav Den Hellige`s ferd. Eller bare nyte naturen.
         						</p>
         						<script src="http://www.yr.no/sted/Norge/Nord-Trøndelag/Verdal/Innsvatnet/ekstern_boks_stripe.js"></script><noscript><a href="http://www.yr.no/sted/Norge/Nord-Trøndelag/Verdal/Innsvatnet/">yr.no: Værvarsel for Innsvatnet</a></noscript>
 					</div>
@@ -208,7 +213,8 @@
 					      </div>
 					      <div class="modal-body"> <!-- Modal body, aktiviteter -->
 					        	
-					        	<h2>aktiviteter fo sho</h2>
+					        	<p>Fra Innsvatnet kan man dra til Søta Bror, hvor man kan shoppe litt bacon, ost og svippe innom systembolaget, bruke dagen i bassenget til Holiday Club eller oppe i alpinbakken som har flere trekk. På sommerstid kan man ta gondolbanen, spille bumperball, melde seg på en runde tvekamp eller kjøre Down Hill på sykkel
+					        	</p>
 
 					      </div>
 					      <div class="modal-footer"> <!-- Dismiss button -->
@@ -225,12 +231,15 @@
 					
 				</div>
 			</div>
-			<div class="row nyBolk">
+
+			<!--Grafisk element for å skape skiller i designet -->
+			<div class="row">
 				<div class="col-md-12 seperator">
-					
 				</div>
 			</div>
 
+		</div>
+		<div class="container-fluid">
 		<!--Bootstrap carousel -->
 		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="5000"> 
 			  <!-- Wrapper for slides -->
@@ -255,8 +264,17 @@
 			    </div>
 			  </div>
 
+
 		</div> <!-- Carousel -->
-			<div class="row nyBolk">
+	</div>
+	
+				
+	<div class="container">
+		<div class="row">
+				<div class="col-md-12 seperator">
+				</div>
+			</div>
+			<div class="row">
 				<div class="col-md-12">
 					<h2 class="hytteTitler">Hytteområde ved Sjø</h2>
 					<div class="col-md-6">				
@@ -264,8 +282,7 @@
 					</div>
 					<div class="col-md-6 infoboks" >
 						<h2>Børgin</h2>
-						<p>Ønsker du å nyte fiskesnøret fra båtripa ved fjorden, det har vi mulighet til å hjelpe deg med!
-Vi kan tilby hytter ved Borgenfjorden, lett adkomst fra E6 mellom Verdal og Steinkjer. Hvor en kan bruke båten eller fiske fra land. Menge seg med tyske stor fiskere ved Skarnsundet, dra på båttreffet og ligge i båt til kai ei hel helg, hvor det er både plattdans og mye god sjømat</p>
+						<p>Ønsker du å nyte fiskesnøret fra båtripa ved fjorden, det har vi mulighet til å hjelpe deg med! Vi kan tilby hytter ved Borgenfjorden, lett adkomst fra E6 mellom Verdal og Steinkjer. Hvor en kan bruke båten eller fiske fra land. Menge seg med tyske stor fiskere ved Skarnsundet, dra på båttreffet og ligge i båt til kai ei hel helg, hvor det er både plattdans og mye god sjømat</p>
 						
 						<script src="http://www.yr.no/sted/Norge/Nord-Trøndelag/Inderøy/Børgin/ekstern_boks_stripe.js"></script><noscript><a href="http://www.yr.no/sted/Norge/Nord-Trøndelag/Inderøy/Børgin/">yr.no: Værvarsel for Børgin</a></noscript>
 
@@ -277,7 +294,7 @@ Vi kan tilby hytter ved Borgenfjorden, lett adkomst fra E6 mellom Verdal og Stei
 
 					<!-- Modal -->
 					<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4">
-					  <div class="modal-dialog modal-lg" role="document">
+					  <div class="modal-dialog modal-md" role="document">
 					    <div class="modal-content"> <!--Content container -->
 					      <div class="modal-header"> <!-- Header-->
 
@@ -302,7 +319,7 @@ Vi kan tilby hytter ved Borgenfjorden, lett adkomst fra E6 mellom Verdal og Stei
 
 					<!-- Modal for aktiviteter -->
 					<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel5">
-					  <div class="modal-dialog modal-lg" role="document">
+					  <div class="modal-dialog" role="document">
 					    <div class="modal-content"> <!--Content container -->
 					      <div class="modal-header"> <!-- Header-->
 					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -333,24 +350,28 @@ Vi kan tilby hytter ved Borgenfjorden, lett adkomst fra E6 mellom Verdal og Stei
 
 			
 		</div>
+	</div> <!-- content wrapperwrapper end -->
+		<!--Footer -->
+		
 		<footer id="bottomFooter">
-		<div class="container">
-			<div class="row">
-		</div>
-		<div class="col-sm-6">
-			<ul id="kontakt">
-				<li id="contactHeader">Kontakt oss:</li>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<ul id="kontakt">
+							<li id="contactHeader">Kontakt oss:</li>
 
-				<li>
-					<i class="xs-hidden fa fa-envelope" aria-hidden="true"></i> <a href="mailto:furustu@online.no">Mail: furustu@online.no</a></li>
-				<li>
-					<i class="xs-hidden fa fa-phone" aria-hidden="true"></i> Tlf: 22522484</li>
-				<li>
-					<i class="xs-hidden fa fa-home" aria-hidden="true"></i> Adr:  Trondheimsveien 43B, 7014, Trondheim</li>
-			</ul>	
-			</div>
-			<div class="col-sm-6">
-			<img src="images/logo/logohvit.png" id="logoFooter" alt="logo"></div>
+							<li>
+								<i class="xs-hidden fa fa-envelope" aria-hidden="true"></i> <a href="mailto:furustu@online.no">Mail: furustu@online.no</a></li>
+							<li>
+								<i class="xs-hidden fa fa-phone" aria-hidden="true"></i> Tlf: 22522484</li>
+							<li>
+								<i class="xs-hidden fa fa-home" aria-hidden="true"></i> Adr:  Trondheimsveien 43B, 7014, Trondheim</li>
+						</ul>	
+					</div>
+					<div class="col-sm-6">
+						<img src="images/logo/logohvit.png" id="logoFooter" alt="logo">
+					</div>
+				</div>
 			</div>
 		</footer>
 
