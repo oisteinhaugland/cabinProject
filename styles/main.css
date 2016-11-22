@@ -1,239 +1,40 @@
-@charset "UTF-8";
-/************************************
-Variabler
-************************************/
-/* test farger
+/*
+Error: Invalid CSS after "$mountainColor": expected selector or at-rule, was ":#004F66;"
+        on line 14 of main.scss
 
-#3F8D8C
-#303539
+9: 
+10: $nav-color: #f7f7f7;
+11: $navtextcolor: #303539;;
+12: $btnColor:#50a050;
+13: $hytteButtonColor:
+14: $mountainColor:#004F66;
+15: $secondaryColor:#B0CCC1;
+16: 
+17: 
+18: $better-helvetica:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+19: 
+
+Backtrace:
+main.scss:14
+/Users/Rubbelogbit/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1189:in `expected'
+/Users/Rubbelogbit/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1125:in `expected'
+/Users/Rubbelogbit/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:42:in `parse'
+/Users/Rubbelogbit/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:406:in `_to_tree'
+/Users/Rubbelogbit/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+/Users/Rubbelogbit/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:298:in `render_with_sourcemap'
+/Users/Rubbelogbit/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/Users/Rubbelogbit/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/Rubbelogbit/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/Rubbelogbit/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/Rubbelogbit/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
+/Users/Rubbelogbit/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:331:in `block in watch'
+/Users/Rubbelogbit/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/Users/Rubbelogbit/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/Users/Rubbelogbit/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
+/Users/Rubbelogbit/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
+/Users/Rubbelogbit/.rvm/gems/ruby-2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
 */
-/************************************
-General
-************************************/
-.clear {
-  clear: both; }
-
-.hide {
-  display: none; }
-
-.showMe {
-  display: block; }
-
-.wrapper h1 {
-  text-align: center; }
-
-/************************************
-Fonts
-************************************/
-body {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 16px;
-  font-weight: 300; }
-
-/************************************
-Navigasjon
-************************************/
-header {
-  z-index: 5; }
-
-nav {
-  width: 100%;
-  background: #f7f7f7; }
-  nav ul {
-    margin: 0;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    border-bottom: 1px solid #e1e1e1; }
-    nav ul li {
-      display: flex;
-      margin: 0; }
-      nav ul li a {
-        padding: 20px;
-        background: #f7f7f7;
-        color: #303539; }
-        nav ul li a:hover {
-          background: #eaeaea;
-          text-decoration: none;
-          color: #303539; }
-  nav .active {
-    background: #eaeaea; }
-
-#logo1 {
-  position: relative;
-  top: 2px;
-  height: 40px; }
-
-/************************************************************************************************************
-General
-************************************************************************************************************/
-/*Knapper på fremsiden */
-.myBtns {
-  background: #50a050; }
-  .myBtns:hover {
-    background: #3f7e3f; }
-
-/*Fargefelt */
-.seperator {
-  margin: 20px 0;
-  height: 1px;
-  width: 100%;
-  background: #004F66; }
-
-/*Container-fluid padding fix */
-.container-fluid {
-  padding-left: 0;
-  padding-right: 0; }
-
-/* Headeren */
-#intro {
-  border-radius: 0;
-  background: url(../images/fjellnorge.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 500px;
-  z-index: -1;
-  margin-bottom: 0;
-  /*Teksten i Headeren */
-  /*Blockquote fix*/ }
-  #intro .introText {
-    margin-top: 80px;
-    background: rgba(255, 255, 255, 0.7);
-    text-align: center;
-    padding: 6px 0; }
-  #intro blockquote {
-    border-left: none; }
-
-/*Wrapper for main content margin fix */
-#mainContent {
-  margin-top: 0; }
-
-/*******************************************************************************************
-ORDER.HTML
-*******************************************************************************************/
-#leiePeriodeContainer {
-  /*Margin/ padding fix*/ }
-  #leiePeriodeContainer h3, #leiePeriodeContainer h4, #leiePeriodeContainer input, #leiePeriodeContainer label {
-    margin: 0;
-    padding: 0px; }
-  #leiePeriodeContainer h3, #leiePeriodeContainer h4, #leiePeriodeContainer label {
-    padding: 5px 0px; }
-
-#prisOversikt p {
-  font-size: 18px; }
-
-/************************************************************************************************************
-HYTTER.HTML
-************************************************************************************************************/
-#introText {
-  text-align: center; }
-
-.hytteTittel {
-  padding-left: 25px; }
-
-.hytteNr {
-  text-align: center;
-  font-size: 25px; }
-
-#hytterContainer ul {
-  list-style-type: none;
-  padding: 0; }
-#hytterContainer .hytteboks {
-  border-radius: 5px;
-  background-color: #f7f7f7;
-  border: 1px solid #e1e1e1;
-  margin: 0 10px 15px 10px;
-  /*width: 30%;*/
-  padding-top: 2%;
-  /*display: inline-block;*/ }
-  #hytterContainer .hytteboks img {
-    height: 300px;
-    width: 100%; }
-  #hytterContainer .hytteboks .buttons {
-    width: 100%;
-    font-size: 18px; }
-  #hytterContainer .hytteboks .lorem {
-    margin-top: 23px;
-    text-align: initial; }
-
-/******************************************************
-Om Oss.html
-******************************************************/
-.bilde {
-  width: 150px;
-  height: 100px; }
-
-.thumbnail {
-  margin-bottom: 20px; }
-
-.navn {
-  font-size: 40px;
-  font-style: italic;
-  font-weight: bold;
-  font-family: sans-serif;
-  text-align: center; }
-
-.info {
-  text-align: center; }
-
-.overskrift {
-  font-weight: bold;
-  font-size: 50px;
-  text-align: center; }
-
-/************************
-Carousel
-************************/
-.item {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 500px;
-  z-index: -1;
-  margin-bottom: 0; }
-
-#item1 {
-  background: url(../images/JPEG/img1.jpg) no-repeat center center fixed; }
-
-#item2 {
-  background: url(../images/JPEG/img2.jpg) no-repeat center center fixed; }
-
-#item3 {
-  background: url(../images/JPEG/img3.jpg) no-repeat center center fixed; }
-
-/************************
-Footer
-************************/
-#contactHeader {
-  margin-bottom: 8px; }
-
-#bottomFooter {
-  padding: 20px;
-  margin: 20px 0 0 0;
-  width: 100%;
-  background-color: #004F66;
-  /*position:absolute;
-  bottom:0;*/ }
-  #bottomFooter ul {
-    margin: 0;
-    color: #fff;
-    list-style: none; }
-    #bottomFooter ul li a {
-      color: #fff; }
-      #bottomFooter ul li a:hover {
-        color: #cccccc; }
-
-/************************************
-Media Queries
-************************************/
-@media screen and (max-width: 480px) {
-  .xs-hidden {
-    display: none; } }
-@media screen and (max-width: 992px) {
-  #bottomFooter {
-    position: static; } }
-
-/*# sourceMappingURL=main.css.map */
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"$mountainColor\": expected selector or at-rule, was \":#004F66;\"\A         on line 14 of main.scss\A \A 9: \A 10: $nav-color: #f7f7f7;\A 11: $navtextcolor: #303539;;\A 12: $btnColor:#50a050;\A 13: $hytteButtonColor:\A 14: $mountainColor:#004F66;\A 15: $secondaryColor:#B0CCC1;\A 16: \A 17: \A 18: $better-helvetica:\"HelveticaNeue-Light\", \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, \"Lucida Grande\", sans-serif;\A 19: "; }

@@ -10,6 +10,7 @@ Variabler
 $nav-color: #f7f7f7;
 $navtextcolor: #303539;;
 $btnColor:#50a050;
+$hytteButtonColor:
 $mountainColor:#004F66;
 $secondaryColor:#B0CCC1;
 
@@ -218,18 +219,36 @@ HYTTER.HTML
 		border-radius: 5px;
 		background-color: #f7f7f7;
 		border: 1px solid #e1e1e1;
-		  margin: 0 10px 15px 10px;
-
-		  /*width: 30%;*/
-		  padding-top: 2%;
-		  /*display: inline-block;*/
+		margin: 0 10px 15px 10px;
+		padding-top: 2%;
+		/*Overflow hidden for å hindre at bilder flyter over container ved zoom.*/
+		overflow: hidden;
 		  
 
 		 img {
+  		
   		height: 300px;
 		width: 100%;
+		/*Transition effect*/
+		transform: scale(1); transition: 0.5s ease-in-out;
+		 -moz-transition: all 0.3s;
+  		-webkit-transition: all 0.3s;
+  		transition: all 0.3s;
+
+
+		&:hover {
+			/*scale øker med 0.5 for å skape zoom effekt*/
+			 -moz-transform: scale(1.05);
+  			-webkit-transform: scale(1.05);
+  			transform: scale(1.05);
+			}
 		}
 		
+		.mapsButton {
+			padding:7.5px 15px;
+			font-size:14px;
+		}
+
 		.buttons {
 			width:100%;
 			font-size: 18px;
@@ -241,8 +260,6 @@ HYTTER.HTML
 		}
 
 	  }
-
-	
 }
 
 /******************************************************
@@ -343,9 +360,6 @@ Footer
 
 
 
-
-
-
 /************************************
 Media Queries
 ************************************/
@@ -356,12 +370,3 @@ Media Queries
    	display:none;
    }
 }
-@media screen and (max-width: 992px) {
-   
-  #bottomFooter {
-   	position:static;
-   }
-   
-}
-
-

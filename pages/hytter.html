@@ -152,7 +152,33 @@
 						</div>
 						<div class="col-md-6">
 							<p class="lorem">Her er det veldig fint.</p>
+							<!-- Yr værmelding script -->
+							<script src="http://www.yr.no/sted/Norge/Nord-Trøndelag/Steinkjer/Øyingen/ekstern_boks_stripe.js"></script><noscript><a href="http://www.yr.no/sted/Norge/Nord-Trøndelag/Steinkjer/Øyingen/">yr.no: Værvarsel for Øyingen</a></noscript>
+							<!--Bootstrap modal for å vise google maps kart for innholdet. -->
+								<button type="button" class="btn btn-primary btn-lg mapsButton" data-toggle="modal" data-target="#myModal">
+								Kart
+								</button>
+
+								<!-- Modal -->
+								<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								  <div class="modal-dialog modal-lg" role="document">
+								    <div class="modal-content"> <!--Content container -->
+								      <div class="modal-header"> <!-- Header-->
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								        <h4 class="modal-title" id="myModalLabel">Kart</h4>
+								      </div>
+								      <div class="modal-body"> <!-- Modal body, iframe fra google maps  -->
+								        	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27865.87830420148!2d11.959273149737031!3d64.11823554926637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4672622493136277%3A0x1f0675b64e4dfebd!2zw5h5aW5nZW4!5e0!3m2!1sno!2sno!4v1479809983140" width="100%" height="300px" frameborder="0" style="border:0" allowfullscreen></iframe>
+								      </div>
+								      <div class="modal-footer"> <!-- Dismiss button -->
+								        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								      </div>
+								    </div>
+								  </div>
+								</div>
 						</div>
+
+					<!--Bestill knapp  med string query for å oppdaterere bestillingsskjemaet.-->
 					<a href="order.html?id=hytte4" class="btn btn-primary buttons" type="button" >Bestill</a>
 					</div>
 
