@@ -35,12 +35,20 @@ body {
 /************************************
 Navigasjon
 ************************************/
+#downCaret {
+  color: #004f66;
+  font-size: 50px;
+  padding: 0; }
+
 #logoHeader {
   margin-top: 11.5px;
   height: 40px; }
 
 header {
   z-index: 5; }
+
+#indexUl {
+  border-bottom: none; }
 
 nav {
   width: 100%;
@@ -58,25 +66,42 @@ nav {
         background: #f7f7f7;
         color: #303539; }
         nav ul li a:hover {
-          background: #eaeaea;
+          /*background: darken($nav-color ,5%);*/
+          background: #004f66;
           text-decoration: none;
-          color: #303539; }
+          color: white; }
   nav .active {
-    background: #eaeaea; }
-
-#logo1 {
-  position: relative;
-  top: 2px;
-  height: 40px; }
+    background: #00475c;
+    color: white; }
 
 /************************************************************************************************************
 General
 ************************************************************************************************************/
+.responsiveBilder {
+  display: inline-block;
+  max-width: 49%;
+  height: auto; }
+
+.hytteTitler {
+  padding-left: 15px; }
+
 /*Knapper på fremsiden */
 .myBtns {
-  background: #004f66; }
+  background: #004f66;
+  border: none;
+  border-radius: 0;
+  margin: 5px 0; }
   .myBtns:hover {
     background: #006380; }
+  .myBtns:active {
+    background: #006380; }
+
+.myOtherBtns {
+  background: #e1e1e1;
+  color: #303539; }
+
+.spacingFix {
+  margin-bottom: 53.5px; }
 
 /*Fargefelt */
 .seperator {
@@ -109,7 +134,9 @@ General
     text-align: center;
     padding: 6px 0; }
   #intro blockquote {
-    border-left: none; }
+    border-left: none;
+    padding: 0;
+    margin-bottom: 0; }
 
 /*Wrapper for main content margin fix */
 #mainContent {
@@ -144,10 +171,11 @@ HYTTER.HTML
 
 .infoboks {
   background: #ededed;
-  border: 1px solid #e1e1e1;
   padding: 20px;
   margin-bottom: 5px;
-  border-radius: 5px; }
+  /*border-radius: 5px;*/ }
+  .infoboks h2 {
+    margin: 0 0 5px 0; }
 
 #hytterContainer ul {
   list-style-type: none;

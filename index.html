@@ -24,7 +24,7 @@
 <body>
 <header>
 		<nav>
-			<ul>
+			<ul id="indexUl">
 				<li>
 					<img src="images/logo/nylogostor.png" alt="logo" id="logoHeader">
 				</li>
@@ -38,9 +38,7 @@
 						<i class="xs-hidden fa fa-home" aria-hidden="true"></i> Hytter 
 					</a>
 				</li>
-				
-				<!-- <li><img class="img-responsive" src="images/logostor.png" alt="" id="logo1"></li>-->
-				
+						
 				<li>
 					<a href="pages/order.html">
 						<i class="xs-hidden fa fa-shopping-cart" aria-hidden="true"></i> Bestill 
@@ -61,12 +59,14 @@
 			<div class="row">
 				<div class="col-sm-6 col-sm-offset-3 slider introText">
 					<h2 id="attention1"> 
-					 	Hytter fra 800kr dagen.
+					 	Hytter fra 800kr dagen
 					</h2>
 					<blockquote>
-					Trivelige hytter og god service.
-						<footer>Lars Monsen</footer>
+					Les mer om våre hytter
+						<footer>Furustu</footer>
 					</blockquote>
+					<i id="downCaret" class="fa fa-caret-down" aria-hidden="true"></i>
+
 				</div>
 		
 			</div>
@@ -79,14 +79,75 @@
 		<div class="container" id="mainContent">
 			<div class="row nyBolk">
 				<div class="col-md-12">
-					<h2>Hytteområde ved Fjell</h2>
+					<h2 class="hytteTitler">Hytteområde ved Fjell</h2>
 					<div class="col-md-6">				
 						<img class="img-responsive" src="images/JPEG/img1.jpg" alt="kajakk">
 					</div>
-					<div class="col-md-6">
-						<p> Her har vi hytter som tar deg med ut av comfortsonen som vanligvis omgir oss, vi tenker at folk idag har behov for å plugge seg helt ut fra hverdagen og det får du glimrende anledning til her.Siden det er noe variende mobildekning får man samlet tankene, sinnsro, bort fra støy og mas. Ikke er det innlagt vann eller strøm, men av og til når vi har det litt primitivt, setter vi mer pris på det vi har hjemme. Å leve litt enklere noen dager, gjør at man får slappet av.</p>
-						<a href="pages/hytter.html#row1" class="btn btn-success myBtns">Skjekk ut hyttene i dette området</a>
+					<div class="col-md-6 infoboks">
+					<h2>Øyingen</h2>
+						<p>Grubbler du på om du skal leie deg inn i fjellheimen`s stillhet og ro, er våre hytter midt i blinken. Det ene hyttefeltet vi kan tilby ligger ved foten av Brannheiklompen, - Øyingen. Litt nordøst for Steinkjer, her havner du litt utenfor comfortsonen, vi  vanligvis omgir oss med. Vi tenker at folk idag har behov for å plugge seg helt ut fra hverdagen og det får du glimrende anledning til her.Siden det er noe variende mobildekning får man samlet tankene, sinnsro, bort fra støy og mas. Ikke er det innlagt vann eller strøm, men av og til når vi har det litt primitivt, setter vi mer pris på det vi har hjemme. Å leve litt enklere noen dager, gjør at man får slappet av.</p>
+						<!--<p> Her har vi hytter som tar deg med ut av comfortsonen som vanligvis omgir oss, vi tenker at folk idag har behov for å plugge seg helt ut fra hverdagen og det får du glimrende anledning til her.Siden det er noe variende mobildekning får man samlet tankene, sinnsro, bort fra støy og mas. Ikke er det innlagt vann eller strøm, men av og til når vi har det litt primitivt, setter vi mer pris på det vi har hjemme. Å leve litt enklere noen dager, gjør at man får slappet av.</p>-->
+						
+						<!-- script fra yr for værmelding -->
+						<script src="http://www.yr.no/sted/Norge/Nord-Trøndelag/Steinkjer/Øyingen/ekstern_boks_stripe.js"></script><noscript><a href="http://www.yr.no/sted/Norge/Nord-Trøndelag/Steinkjer/Øyingen/">yr.no: Værvarsel for Øyingen</a></noscript>
+
+
 					</div>
+					<a href="pages/hytter.html#row1" class="btn btn-primary myBtns">Sjekk ut hyttene i dette området</a>
+					<!--Bootstrap modal for å vise google maps kart for innholdet. -->
+					<button type="button" class="btn btn-primary myBtns myOtherBtns" data-toggle="modal" data-target="#myModal">
+					Kart
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					  <div class="modal-dialog modal-lg" role="document">
+					    <div class="modal-content"> <!--Content container -->
+					      <div class="modal-header"> <!-- Header-->
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="myModalLabel">Kart</h4>
+					      </div>
+					      <div class="modal-body"> <!-- Modal body, iframe fra google maps  -->
+					        	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27865.87830420148!2d11.959273149737031!3d64.11823554926637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4672622493136277%3A0x1f0675b64e4dfebd!2zw5h5aW5nZW4!5e0!3m2!1sno!2sno!4v1479809983140" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
+					      </div>
+					      <div class="modal-footer"> <!-- Dismiss button -->
+					        <button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+
+					<button type="button" class="btn btn-primary myBtns myOtherBtns" data-toggle="modal" data-target="#myModal1">
+					Aktiviteter
+					</button>
+
+					<!-- Modal for aktiviteter -->
+					<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
+					  <div class="modal-dialog modal-lg" role="document">
+					    <div class="modal-content"> <!--Content container -->
+					      <div class="modal-header"> <!-- Header-->
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="myModalLabe1l">Aktiviteter i Nærområdet</h4>
+					      </div>
+					      <div class="modal-body"> <!-- Modal body, aktiviteter -->
+					        	
+					        	<p>Bølarein 2 km fra hyttefeltet Øyingen finner du Bølarein.
+            						En turistatraksjon, hvor man kan se på en HELLEINRISTNING,
+            						som er 6000 år gammel. Av blandt annet en rein/simje
+            						og en bølamann på truger. Der har de også en café.
+            						Ønsker du å vite mer, trykk <a href="http://www.bolarein.no/">HER!</a></p>
+
+            						    <img src="images/oyingen.jpg" class="responsiveBilder">
+					              <img src="images/oyingen1.jpeg" class="responsiveBilder">
+
+					      </div>
+					      <div class="modal-footer"> <!-- Dismiss button -->
+					        <button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+
 				</div>
 			</div>
 			<div class="row nyBolk">
@@ -96,20 +157,69 @@
 			</div>
 			<div class="row nyBolk">
 				<div class="col-md-12">
-					<h2>Hytteområde ved Skog</h2>
+					<h2 class="hytteTitler">Hytteområde ved Skog</h2>
 					<div class="col-md-6">
 					<div class="col-md-10 infoboks" >
+					<h2>Innsvatnet</h2>
 						<p>
-							Bølarein 2 km fra hyttefeltet Øyingen finner du Bølarein.
-            						En turistatraksjon, hvor man kan se på en HELLEINRISTNING,
-            						som er 6000 år gammel. Av blandt annet en rein/simje
-            						og en bølamann på truger. Der har de også en cafe`.
-            						Ønsker du å vite mer, trykk <a href="http://www.bolarein.no/">HER!</a>
+							Vårt andre felt ligger ved flotte Innsvatnet i Verdal kommune. Her er det 30.min til Åre, Sverige. Hvor man kan shoppe litt bacon, ost og svippe innom systembolaget, bruke dagen i bassenget til Holiday Club eller oppe i alpinbakken med flere trekk. På sommerstid kan man ta gondolbanen,spille bumperball eller melde seg på en runde tvekamp
         						</p>
+        						<script src="http://www.yr.no/sted/Norge/Nord-Trøndelag/Verdal/Innsvatnet/ekstern_boks_stripe.js"></script><noscript><a href="http://www.yr.no/sted/Norge/Nord-Trøndelag/Verdal/Innsvatnet/">yr.no: Værvarsel for Innsvatnet</a></noscript>
 					</div>
 						<a href="pages/hytter.html#row2" class="btn btn-success myBtns">Skjekk ut hyttene i dette området</a>
+						<!--Bootstrap modal for å vise google maps kart for innholdet. -->
+					
+					<button type="button" class="btn btn-primary myBtns myOtherBtns" data-toggle="modal" data-target="#myModal2">
+					Kart
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+					  <div class="modal-dialog modal-lg" role="document">
+					    <div class="modal-content"> <!--Content container -->
+					      <div class="modal-header"> <!-- Header-->
+
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="myModalLabel2">Kart</h4>
+					      </div>
+
+					      <div class="modal-body"> <!-- Modal body, iframe fra google maps  -->
+					        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28322.758313725597!2d12.167048797002852!3d63.66156745501194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x466d8e71eecb1447%3A0xcfbae686be9a3c2e!2sInnsvatnet!5e0!3m2!1sno!2sno!4v1479821158768" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
+					      </div>
+
+					      <div class="modal-footer"> <!-- Dismiss button -->
+					        <button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
+					      </div>
+					    </div>
+					  </div>
 					</div>
-					<div class="col-md-6">
+
+					<button type="button" class="btn btn-primary myBtns myOtherBtns" data-toggle="modal" data-target="#myModal3">
+					Aktiviteter
+					</button>
+
+					<!-- Modal for aktiviteter -->
+					<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3">
+					  <div class="modal-dialog modal-lg" role="document">
+					    <div class="modal-content"> <!--Content container -->
+					      <div class="modal-header"> <!-- Header-->
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="myModalLabel3">Aktiviteter i Nærområdet</h4>
+					      </div>
+					      <div class="modal-body"> <!-- Modal body, aktiviteter -->
+					        	
+					        	<h2>aktiviteter fo sho</h2>
+
+					      </div>
+					      <div class="modal-footer"> <!-- Dismiss button -->
+					        <button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+						
+					</div>
+					<div class="col-md-6 spacingFix">
 						<img class="img-responsive" src="images/kajak.jpg" alt="kajakk">
 					</div>
 					
@@ -148,19 +258,73 @@
 		</div> <!-- Carousel -->
 			<div class="row nyBolk">
 				<div class="col-md-12">
-					<h2>Hytteområde ved Sjø</h2>
+					<h2 class="hytteTitler">Hytteområde ved Sjø</h2>
 					<div class="col-md-6">				
 						<img class="img-responsive" src="images/JPEG/img1.jpg" alt="kajakk">
 					</div>
-					<div class="col-md-6">
-						<p>Alltid første helg i juli, for alle land og vannkrabber.
-              Aktiviteter for barna som bruskassestabling, båtbygging
-              med stort basseng til sjøsetting, eliasbåten,
-              kystvakta kjører runder, sjømattallerken,
-              bacalao, fishburger, musikk og stand. Både fredag og lørdagkveld
-              er det plattfest. Kom sjøveien og ligg til kai
-              i båt hele helgen om du vil. Vite mer om dette, trykk</p>
-						<a href="pages/hytter.html#row3" class="btn btn-success myBtns">Skjekk ut hyttene i dette området</a>
+					<div class="col-md-6 infoboks" >
+						<h2>Børgin</h2>
+						<p>Ønsker du å nyte fiskesnøret fra båtripa ved fjorden, det har vi mulighet til å hjelpe deg med!
+Vi kan tilby hytter ved Borgenfjorden, lett adkomst fra E6 mellom Verdal og Steinkjer. Hvor en kan bruke båten eller fiske fra land. Menge seg med tyske stor fiskere ved Skarnsundet, dra på båttreffet og ligge i båt til kai ei hel helg, hvor det er både plattdans og mye god sjømat</p>
+						
+						<script src="http://www.yr.no/sted/Norge/Nord-Trøndelag/Inderøy/Børgin/ekstern_boks_stripe.js"></script><noscript><a href="http://www.yr.no/sted/Norge/Nord-Trøndelag/Inderøy/Børgin/">yr.no: Værvarsel for Børgin</a></noscript>
+
+					</div>
+					<a href="pages/hytter.html#row3" class="btn btn-success myBtns">Skjekk ut hyttene i dette området</a>
+					<button type="button" class="btn btn-primary myBtns myOtherBtns" data-toggle="modal" data-target="#myModal4">
+					Kart
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4">
+					  <div class="modal-dialog modal-lg" role="document">
+					    <div class="modal-content"> <!--Content container -->
+					      <div class="modal-header"> <!-- Header-->
+
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="myModalLabel4">Kart</h4>
+					      </div>
+
+					      <div class="modal-body"> <!-- Modal body, iframe fra google maps  -->
+					        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56185.3616153411!2d11.303531934147934!3d63.891761214494686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x466d6271653e4d97%3A0xcc228ccae303e631!2zQsO4cmdpbg!5e0!3m2!1sno!2sno!4v1479821437168" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
+					      </div>
+
+					      <div class="modal-footer"> <!-- Dismiss button -->
+					        <button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+
+					<button type="button" class="btn btn-primary myBtns myOtherBtns" data-toggle="modal" data-target="#myModal5">
+					Aktiviteter
+					</button>
+
+					<!-- Modal for aktiviteter -->
+					<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel5">
+					  <div class="modal-dialog modal-lg" role="document">
+					    <div class="modal-content"> <!--Content container -->
+					      <div class="modal-header"> <!-- Header-->
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="myModalLabel5">Aktiviteter i Nærområdet</h4>
+					      </div>
+					      <div class="modal-body"> <!-- Modal body, aktiviteter -->
+					        	
+					        	<p>Alltid første helg i juli, for alle land og vannkrabber.
+					          	  Aktiviteter for barna som bruskassestabling, båtbygging
+					              med stort basseng til sjøsetting, eliasbåten,
+					              kystvakta kjører runder, sjømattallerken,
+					              bacalao, fishburger, musikk og stand. Både fredag og lørdagkveld
+					              er det plattfest. Kom sjøveien og ligg til kai
+					              i båt hele helgen om du vil. </p>
+
+	
+					      </div>
+					      <div class="modal-footer"> <!-- Dismiss button -->
+					        <button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
+					      </div>
+					    </div>
+					  </div>
 					</div>
 				</div>
 			</div>

@@ -53,25 +53,37 @@ body {
 /************************************
 Navigasjon
 ************************************/
+
+#downCaret {
+	color:$btnColor;
+	font-size:50px;
+	padding:0;
+}
+
 #logoHeader{
 	margin-top:11.5px;
 	height:40px;
-
 }
 
 header{
 	z-index:5;
 }
 
+#indexUl{
+	border-bottom:none;	
+}
 nav {
 	width:100%;
 	background:$nav-color;
+
+	
+
+	
 
 	ul {
 	margin:0;
 	list-style: none;
 	display: flex;
-	
 	border-bottom: 1px solid rgb(225,225,225);
 		
 		li {
@@ -83,24 +95,20 @@ nav {
 				background: $nav-color;
 				color:$navtextcolor;
 				&:hover {
-				background: darken($nav-color ,5%);
+				/*background: darken($nav-color ,5%);*/
+				background:$btnColor;
 				text-decoration: none;
-				color:$navtextcolor;
+				color:white;
+				
 				}
 			}
 		}
 	}
 
-.active {
-	background: darken($nav-color ,5%);
-	}
-}
-
-
-#logo1 {
-	position: relative;
-	top:2px;
-	height:40px;
+	.active {
+		background: darken($btnColor,2%);
+		color:white;
+		}
 }
 
 
@@ -108,13 +116,40 @@ nav {
 /************************************************************************************************************
 General
 ************************************************************************************************************/
+.responsiveBilder {
+	display:inline-block;
+	max-width:49%;
+	height:auto;
+}
+
+.hytteTitler{
+	padding-left:15px;
+}
+
 
 /*Knapper på fremsiden */
 .myBtns {
 	background: $btnColor;
+	border:none;
+	border-radius: 0;
+	margin:5px 0;
 	&:hover {
 	background: lighten($btnColor,5%);	
 	}
+
+	&:active {
+		background: lighten($btnColor,5%);	
+		}
+}
+
+.myOtherBtns{
+	background:rgb(225,225,225);
+	color:$navtextcolor;
+}
+
+
+.spacingFix {
+	margin-bottom: 53.5px;
 }
 
 /*Fargefelt */
@@ -158,6 +193,8 @@ General
 	/*Blockquote fix*/
 	  blockquote{
 	  	border-left:none;
+	  	padding:0;
+	  	margin-bottom: 0;
 	  }
 }
 
@@ -211,10 +248,14 @@ HYTTER.HTML
 }
 .infoboks {
 	background:darken(#f7f7f7,4%);
-	border:1px solid rgb(225,225,225);
 	padding:20px;
 	margin-bottom:5px;
-	border-radius: 5px;
+	/*border-radius: 5px;*/
+
+	h2 {
+		margin:0 0 5px 0;
+
+	}
 
 }
 #hytterContainer{
@@ -266,6 +307,7 @@ HYTTER.HTML
 		.buttons {
 			width:100%;
 			font-size: 18px;
+
 			background:$mountainColor;
 		}
 
