@@ -10,7 +10,6 @@ Variabler
 $nav-color: #f7f7f7;
 $navtextcolor: #303539;;
 $btnColor:#50a050;
-$hytteButtonColor:
 $mountainColor:#004F66;
 $secondaryColor:#B0CCC1;
 
@@ -205,7 +204,14 @@ HYTTER.HTML
 	font-size: 25px;
 
 }
+.infoboks {
+	background:#f7f7f7;
+	border:1px solid rgb(225,225,225);
+	padding:20px;
+	margin-bottom:5px;
+	border-radius: 5px;
 
+}
 #hytterContainer{
 	
 
@@ -213,6 +219,7 @@ HYTTER.HTML
   		list-style-type: none;
   		padding:0;
 	}
+
 
 
 	.hytteboks {
@@ -224,6 +231,7 @@ HYTTER.HTML
 		/*Overflow hidden for å hindre at bilder flyter over container ved zoom.*/
 		overflow: hidden;
 		  
+		
 
 		 img {
   		
@@ -247,11 +255,13 @@ HYTTER.HTML
 		.mapsButton {
 			padding:7.5px 15px;
 			font-size:14px;
+			background:$mountainColor;
 		}
 
 		.buttons {
 			width:100%;
 			font-size: 18px;
+			background:$mountainColor;
 		}
 
 		.lorem {
