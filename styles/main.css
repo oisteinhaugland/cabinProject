@@ -63,6 +63,9 @@ header {
 #indexUl {
   /*border-bottom:none;	*/ }
 
+#downCaret:hover {
+  cursor: pointer; }
+
 /*Navigasjonsbaren*/
 nav {
   width: 100%;
@@ -144,7 +147,7 @@ INDEX.HTML / Generel css
 /* Introduksjons bildet og tekst*/
 #intro {
   border-radius: 0;
-  background: url(../images/fjellnorge.jpg) no-repeat center center fixed;
+  background: url(../images/test/JPEG/img10.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -248,7 +251,8 @@ HYTTER.HTML
   /*Stilering for zoom on hover*/
   /*Stilering fo bestill knappene*/ }
   #hytterContainer .hytteboks img {
-    height: 300px;
+    /*height:300px;*/
+    height: auto;
     width: 100%;
     /*Transition effect*/
     transform: scale(1);
@@ -271,17 +275,14 @@ HYTTER.HTML
 Om Oss.html
 ******************************************************/
 .omossContainer {
+  margin: 15px 0;
   background: #ededed;
-  padding: 20px;
-  margin-bottom: 15px; }
+  padding: 20px; }
 
 .bilde {
   width: 100%;
   height: auto;
   display: block; }
-
-.thumbnail {
-  margin-bottom: 20px; }
 
 /************************************************************************
 Carousel
@@ -296,13 +297,16 @@ Carousel
   margin-bottom: 0; }
 
 #item1 {
-  background: url(../images/JPEG/img1.jpg) no-repeat center center fixed; }
+  background: url(../images/test/JPEG/img11.jpg) no-repeat center center fixed; }
 
 #item2 {
   background: url(../images/JPEG/img2.jpg) no-repeat center center fixed; }
 
 #item3 {
   background: url(../images/JPEG/img3.jpg) no-repeat center center fixed; }
+
+#item4 {
+  background: url(../images/test/JPEG/img12.jpg) no-repeat center center fixed; }
 
 /************************************************************************
 Footer
@@ -335,15 +339,27 @@ Footer
 /************************************
 Media Queries
 ************************************/
+/*gjem ikoner i navigasjonbaren på mobil og fiks footer*/
 @media screen and (max-width: 480px) {
   .xs-hidden {
-    display: none; } }
-@media screen and (max-width: 600px) {
+    display: none; }
+
+  #bottomFooter > .container {
+    padding-left: 0; } }
+/*gjem headeren og fjern padding i navigasjon*/
+@media screen and (max-width: 768px) {
   #logoHeader {
     display: none; }
+
+  nav > ul {
+    padding-left: 0; }
 
   #logoFooter {
     height: 50px;
     padding-left: 35px; } }
+/*footer fix  for smaller screens*/
+@media screen and (max-width: 992px) {
+  #logoFooter {
+    height: 70px; } }
 
 /*# sourceMappingURL=main.css.map */

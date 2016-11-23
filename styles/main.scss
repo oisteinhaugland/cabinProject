@@ -87,6 +87,12 @@ header {
 #indexUl{
 	/*border-bottom:none;	*/
 }
+
+#downCaret:hover {
+	cursor:pointer;
+}
+
+
 /*Navigasjonsbaren*/
 nav {
 	width:100%;
@@ -200,7 +206,7 @@ INDEX.HTML / Generel css
 /* Introduksjons bildet og tekst*/
 #intro {
 	border-radius: 0;
-	background: url(../images/fjellnorge.jpg) no-repeat center center fixed; 
+	background: url(../images/test/JPEG/img10.jpg) no-repeat center center fixed; 
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
 	  -o-background-size: cover;
@@ -336,7 +342,8 @@ HYTTER.HTML
 		overflow: hidden;
 		 /*Stilering for zoom on hover*/
 		 img {
-  		height: 300px;
+  		/*height:300px;*/
+  		height:auto;
 		width: 100%;
 		/*Transition effect*/
 		transform: scale(1); transition: 0.5s ease-in-out;
@@ -365,9 +372,10 @@ Om Oss.html
 ******************************************************/
 
 .omossContainer {
+	margin:15px 0;
 	background: #ededed;
 	padding:20px;
-	margin-bottom: 15px;
+	
 }
 
 .bilde {
@@ -375,20 +383,6 @@ Om Oss.html
  height:auto;
  display:block;
 }
-
-.thumbnail {
-margin-bottom: 20px;
-}
-
-.navn { 
-
-}
-
-.info {
- 
-}
-
-
 
 
 
@@ -408,7 +402,7 @@ Carousel
 }
 
 #item1{
-background: url(../images/JPEG/img1.jpg) no-repeat center center fixed; 
+background: url(../images/test/JPEG/img11.jpg) no-repeat center center fixed; 
 }
 
 #item2{
@@ -417,6 +411,10 @@ background: url(../images/JPEG/img2.jpg) no-repeat center center fixed;
 
 #item3{
 	background: url(../images/JPEG/img3.jpg) no-repeat center center fixed; 
+}
+#item4{
+	background: url(../images/test/JPEG/img12.jpg) no-repeat center center fixed; 
+
 }
 
 
@@ -466,25 +464,41 @@ Footer
 Media Queries
 ************************************/
 
-
+/*gjem ikoner i navigasjonbaren på mobil og fiks footer*/
 @media screen and (max-width: 480px) {
    .xs-hidden {
    	display:none;
    }
+
+   #bottomFooter>.container{
+   	padding-left:0;
+   }
  
 }
-
-@media screen and (max-width: 600px) {
+/*gjem headeren og fjern padding i navigasjon*/
+@media screen and (max-width: 768px) {
 	  #logoHeader {
    	display:none;
    }	
-   #logoFooter {
+
+nav>ul{
+padding-left:0;
+}
+
+  #logoFooter {
    	height:50px;
    	padding-left:35px;
    }
+
+ 
 }
 
-
-
+/*footer fix  for smaller screens*/
+@media screen and (max-width: 992px) {
+	  #logoFooter {
+   	height:70px;
+   	
+   }
+   }	
 
 

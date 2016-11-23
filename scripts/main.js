@@ -3,10 +3,9 @@ Globale Funksjoner
 *******************************************************************************************************************************************/
 //Brukes nettlesere som ikke kan bruke required.
 //skjekker ett parameter om det stemmer med regex som validerer email format.
-function validateEmail(emailtest) { 
+function validateEmail(emailtest){ 
   	var emailPattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     	return emailPattern.test(emailtest);
-  	
 }
 //Funksjon som summerer alle kostnader og ganger med medlemsrabatt(står på 1 som default)
 function findTotalSum(){
@@ -424,7 +423,7 @@ Form-change / submit
 			}
 			//priser oppdateres
 			$("#totalPris").html(findTotalSum);	
-	});	
+	}); //input change end
 
 		//switch som oppdaterer hvilken hytte som blir valgt ut i fra hvilken hytte som blir bestilt fra forrige side.
 		// .trigger oppdaterer skjeamet.
@@ -454,7 +453,7 @@ Form-change / submit
 				$('#hytte').val(1050);
 				$("#hytte").trigger("change");
                 			break;
-                	}
+                	} //end
 
               	
      
@@ -646,6 +645,13 @@ Oppsumering etter bestilling.
 		       	  return false;         // returner false for å stoppe funksjonen.
 
 	});
-});
 
+	/*Scroll ned når man trykker på pilen. */
+	$("#downCaret").click(function(){
+		$('html,body').animate({
+        			scrollTop: $("#mainContent").offset().top
+        			},
+        			'slow');
+	});
+});
 
