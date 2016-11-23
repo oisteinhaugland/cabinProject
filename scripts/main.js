@@ -10,7 +10,8 @@ function validateEmail(emailtest) {
 }
 //Funksjon som summerer alle kostnader og ganger med medlemsrabatt(står på 1 som default)
 function findTotalSum(){
-	sum = (hyttePris + prisForValgtPeriode + prisForValgteTimer + utvaskPris)  * medlemRabatt
+	sum = (hyttePris + prisForValgtPeriode + prisForValgteTimer)  * medlemRabatt
+	sum += + utvaskPris
 	return sum;
 }
 

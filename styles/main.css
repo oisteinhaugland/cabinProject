@@ -1,4 +1,8 @@
 @charset "UTF-8";
+body, html, #bottomFooter {
+  margin-bottom: 0;
+  padding-bottom: 0; }
+
 /************************************************************************************
 Variabler
 ************************************************************************************/
@@ -215,7 +219,7 @@ HYTTER.HTML
   padding: 20px; }
 
 /*Google maps iframe in modal*/
-iframe {
+.googleMaps {
   width: 100%;
   height: 400px; }
 
