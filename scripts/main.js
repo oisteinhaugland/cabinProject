@@ -21,6 +21,12 @@ function clearInput(target){
 	return target;
 }
 
+function clearPrisOnReset(){
+	$("#totalPris").html("0");
+}
+
+
+
 // Hver gang $("#totalPris").html(findTotalSum); blir nevnt er det for å kontinuerlig oppdatere totaltpris.
 
 //Regular expressions lages ved hjelp av http://regexr.com
@@ -629,9 +635,17 @@ Oppsumering etter bestilling.
 		    });
 
 	//bootstrap carousel fix, hindrer at den pauser på mouse hover;
-$('.carousel').carousel({
-    pause: "false"
-});
+	$('.carousel').carousel({
+    	pause: "false"
+	});
+
+	//Reset knapp fix..
+	$("#bestillingSkjema :reset").click(function(){
+		             document.getElementById("bestillingSkjema").reset(); // reset skjemaet
+			clearPrisOnReset();	// kaller funksjonen som oppdateres prisen
+		       	  return false;         // returner false for å stoppe funksjonen.
+
+	});
 });
 
 

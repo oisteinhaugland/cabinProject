@@ -61,7 +61,7 @@ header {
 
 /*ingen border bottom på index.html, men på alle andre*/
 #indexUl {
-  border-bottom: none; }
+  /*border-bottom:none;	*/ }
 
 /*Navigasjonsbaren*/
 nav {
@@ -81,7 +81,6 @@ nav {
         background: #f7f7f7;
         color: #303539; }
         nav ul li a:hover {
-          /*background: darken($nav-color ,2%);*/
           background: #004f66;
           text-decoration: none;
           color: white; }
@@ -186,16 +185,29 @@ ORDER.HTML
   font-size: 18px; }
 
 /*Bestillingskanppen i skjemaet*/
-#submit {
+.submit {
+  display: inline-block;
+  width: 49%;
   font-size: 18px;
   border-radius: 0;
   background: #004f66;
   color: white;
   font-weight: normal; }
-  #submit:hover {
+  .submit:hover {
     background: #005770; }
-  #submit:active, #submit:focus, #submit:focus:active {
+  .submit:active, .submit:focus, .submit:focus:active {
     background: #005770; }
+
+.reset {
+  color: #303539;
+  background: #e1e1e1;
+  border: none !important; }
+  .reset:hover {
+    background: #e6e6e6;
+    color: #303539; }
+  .reset:active, .reset:focus, .reset:focus:active {
+    background: #e6e6e6;
+    color: #303539; }
 
 /************************************************************************************************************
 HYTTER.HTML
@@ -258,27 +270,18 @@ HYTTER.HTML
 /******************************************************
 Om Oss.html
 ******************************************************/
+.omossContainer {
+  background: #ededed;
+  padding: 20px;
+  margin-bottom: 15px; }
+
 .bilde {
-  width: 150px;
-  height: 100px; }
+  width: 100%;
+  height: auto;
+  display: block; }
 
 .thumbnail {
   margin-bottom: 20px; }
-
-.navn {
-  font-size: 40px;
-  font-style: italic;
-  font-weight: bold;
-  font-family: sans-serif;
-  text-align: center; }
-
-.info {
-  text-align: center; }
-
-.overskrift {
-  font-weight: bold;
-  font-size: 50px;
-  text-align: center; }
 
 /************************************************************************
 Carousel

@@ -19,6 +19,7 @@ $btnColor:#004f66;
 $mountainColor:#004F66;
 $secondaryColor:#B0CCC1;
 $better-helvetica:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$resetColor:#e1e1e1;
 
 
 /************************************************************************************
@@ -84,7 +85,7 @@ header {
 
 /*ingen border bottom på index.html, men på alle andre*/
 #indexUl{
-	border-bottom:none;	
+	/*border-bottom:none;	*/
 }
 /*Navigasjonsbaren*/
 nav {
@@ -106,7 +107,7 @@ nav {
 				background: $nav-color;
 				color:$navtextcolor;
 				&:hover {
-				/*background: darken($nav-color ,2%);*/
+				
 				background:$btnColor;
 				text-decoration: none;
 				color:white;
@@ -256,7 +257,9 @@ ORDER.HTML
 }
 
 /*Bestillingskanppen i skjemaet*/
-#submit {
+.submit {
+	display:inline-block;
+	width:49%;
    	font-size: 18px;
    	border-radius: 0;
     	background: $btnColor;
@@ -270,6 +273,20 @@ ORDER.HTML
 		background: lighten($btnColor,2%);	
 		}
 
+}
+
+.reset {
+	color:$navtextcolor;
+	background:$resetColor;
+	border:none!important;
+	&:hover {
+	background: lighten($resetColor,2%);	
+	color:$navtextcolor;
+		}
+	&:active,&:focus,&:focus:active {
+		background: lighten($resetColor,2%);	
+		color:$navtextcolor;
+	}
 }
 
 
@@ -347,33 +364,31 @@ HYTTER.HTML
 Om Oss.html
 ******************************************************/
 
+.omossContainer {
+	background: #ededed;
+	padding:20px;
+	margin-bottom: 15px;
+}
+
 .bilde {
-  width: 150px;
-  height: 100px;
+ width:100%;
+ height:auto;
+ display:block;
 }
 
 .thumbnail {
 margin-bottom: 20px;
 }
 
-.navn {
-  font-size: 40px;
-  font-style: italic;
-  font-weight: bold;
-  font-family: sans-serif;
-  text-align: center;
+.navn { 
+
 }
 
 .info {
-  text-align: center;
+ 
 }
 
-.overskrift{
-  font-weight: bold;
-  font-size: 50px;
-  text-align: center;
 
-}
 
 
 
