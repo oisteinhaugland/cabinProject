@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="nn">
 <head>
 	<!--Characterset -->
 	<meta charset="utf-8">
@@ -6,6 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!--Mobile responsive -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--Språk -->
 	<title>Furustu</title>
 	<!-- Reset css file -->
 	<link rel="stylesheet" href="styles/normalize.css">
@@ -16,6 +18,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- Additional theme for bootstrap-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<!-- Css stilark, hentes fra main.scss -->
 	<link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -24,7 +27,9 @@
 		<nav>
 			<ul id="indexUl">
 				<li>
-					<img src="images/logo/nylogostor.png" alt="logo" id="logoHeader">
+					
+					<img src="images/logo/nylogostor.png" alt="Logo Furustu" id="logoHeader">
+					
 				</li>
 				<li>
 					<a href="index.html" class="active">
@@ -52,7 +57,7 @@
 	</header>
 	
 	<!--Content Wrapper-->
-	<div class=" container-fluid wrapper">
+	<div class=" container-fluid wrapper headerFixedMargin" >
 		<!-- Attention grapper section -->
 		<div class="container-fluid jumbotron headerImages" id="intro">
 
@@ -81,7 +86,7 @@
 					<h2 class="hytteTitler">Hytteområde ved Fjell</h2>
 					<!--Bilde, 6 kolonner -->
 					<div class="col-md-6">				
-						<img class="img-responsive" src="images/JPEG/img1.jpg" alt="kajakk">
+						<img class="img-responsive" src="images/JPEG/img1.jpg" alt="Kajakk">
 					</div>
 					<!--Informasjon, 6 kolonner -->
 					<div class="col-md-6 infoboks">
@@ -110,7 +115,7 @@
 					        <h4 class="modal-title" id="myModalLabel">Kart</h4>
 					      </div>
 					      <div class="modal-body"> <!-- Modal body, iframe fra google maps  -->
-					        	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27865.87830420148!2d11.959273149737031!3d64.11823554926637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4672622493136277%3A0x1f0675b64e4dfebd!2zw5h5aW5nZW4!5e0!3m2!1sno!2sno!4v1479809983140" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
+					        	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27865.87830420148!2d11.959273149737031!3d64.11823554926637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4672622493136277%3A0x1f0675b64e4dfebd!2zw5h5aW5nZW4!5e0!3m2!1sno!2sno!4v1479809983140"   style="border:0" allowfullscreen></iframe>
 					      </div>
 					      <div class="modal-footer"> <!-- Dismiss button -->
 					        <button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
@@ -130,7 +135,7 @@
 					    <div class="modal-content"> <!--Content container -->
 					      <div class="modal-header"> <!-- Header-->
 					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					        <h4 class="modal-title" id="myModalLabe1l">Aktiviteter i Nærområdet</h4>
+					        <h4 class="modal-title" id="myModalLabel1">Aktiviteter i Nærområdet</h4>
 					      </div>
 					      <div class="modal-body"> <!-- Modal body, aktiviteter -->
 					        	
@@ -140,8 +145,8 @@
             						og en bølamann på truger. Der har de også en café.
             						<a href="http://www.bolarein.no/">Ønsker du å vite mer?</a></p>
 
-            						    <img src="images/oyingen.jpg" class="responsiveBilder">
-					              <img src="images/oyingen1.jpeg" class="responsiveBilder">
+            						    <img src="images/oyingen.jpg" alt="helleristing" class="responsiveBilder">
+					              <img src="images/oyingen1.jpeg" alt ="ski aktiviteter" class="responsiveBilder">
 
 					      </div>
 					      <div class="modal-footer"> <!-- Dismiss button -->
@@ -189,7 +194,7 @@
 					      </div>
 
 					      <div class="modal-body"> <!-- Modal body, iframe fra google maps  -->
-					        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28322.758313725597!2d12.167048797002852!3d63.66156745501194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x466d8e71eecb1447%3A0xcfbae686be9a3c2e!2sInnsvatnet!5e0!3m2!1sno!2sno!4v1479821158768" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
+					        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28322.758313725597!2d12.167048797002852!3d63.66156745501194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x466d8e71eecb1447%3A0xcfbae686be9a3c2e!2sInnsvatnet!5e0!3m2!1sno!2sno!4v1479821158768"   style="border:0" allowfullscreen></iframe>
 					      </div>
 
 					      <div class="modal-footer"> <!-- Dismiss button -->
@@ -303,7 +308,7 @@
 					      </div>
 
 					      <div class="modal-body"> <!-- Modal body, iframe fra google maps  -->
-					        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56185.3616153411!2d11.303531934147934!3d63.891761214494686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x466d6271653e4d97%3A0xcc228ccae303e631!2zQsO4cmdpbg!5e0!3m2!1sno!2sno!4v1479821437168" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
+					        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56185.3616153411!2d11.303531934147934!3d63.891761214494686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x466d6271653e4d97%3A0xcc228ccae303e631!2zQsO4cmdpbg!5e0!3m2!1sno!2sno!4v1479821437168"   style="border:0" allowfullscreen></iframe>
 					      </div>
 
 					      <div class="modal-footer"> <!-- Dismiss button -->
@@ -375,7 +380,7 @@
 			</div>
 		</footer>
 
-	</div>
+	
 
 
 

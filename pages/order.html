@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="nn">
 	<head>
 		<!--Characterset -->
 		<meta charset="utf-8">
@@ -6,26 +7,25 @@
     		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<!--Mobile responsive -->
     		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Hytter og slikt</title>
-
+		<title>Bestill</title>
 		<!-- Normalize.css for å nullstille innebygd css. Gir bedre utgangspunkt å arbeide med. -->
 		<link rel="stylesheet" href="../styles/normalize.css">
-		
 		<!--Font awesome -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<!--jQuery UI stilark -->
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 		<!-- Bootstrap CDN-->
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<!-- Optional theme Bootstrap-->
+		<!-- Additional theme for bootstrap-->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 		<!--Timepicker.js  -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.css">
-		<!-- Stilark -->
-		<link rel="stylesheet" href="../styles/main.css">
 		  <!--recaptcha -->
        		<script src='https://www.google.com/recaptcha/api.js'></script>
+		<!-- Css stilark, hentes fra main.scss -->
+		<link rel="stylesheet" href="../styles/main.css">
+		
 	</head>
 <body>
 	<div class="wrapper">
@@ -45,7 +45,7 @@
 		</nav>
 		</header>
 		<!-- Bestillingsskjema -->
-		<div class="container" id="bestiller">
+		<div class="container headerFixedMargin" id="bestiller">
 			<h1>Bestill</h1>
 			<div class="row">
 				<!-- Bootstrap responsive klasser -->
@@ -104,22 +104,26 @@
 								<div class="form-group hide  col-sm-6" id="velgTimePanel">
 								<h3>Hvor mange timer vil du leie? </h3>
 								<p>Utleie begynner klokken 12.00. Pris 150kr/t</p>
+								<small>Dato Velger Felt kan navigeres med cmd/ctrl og piltaster</small>
+									<br>
 									<label for="datovelger3">Fra</label>
 									<input type="text" id="datovelger3" name="datovelger3">
 									<br/>
-									<label for="">Til :</label>
-									<input type="text" id="timeVelger1" >
+									<label for="timeVelger1">Til :</label>
+									<input type="text" id="timeVelger1" class="ui-timepicker-input">
 									
 								</div>
 								
 								<!-- Hvis langtidsleie er valgt -->
 								<div class="form-group hide  col-sm-6" id="velgDatoPanel">
 									<h3>Hvor mange dager vil du leie? </h3>
-									<label for="">Fra</label>
+									<small>Dato Velger Felt kan navigeres med cmd/ctrl og piltaster</small>
+									<br>
+									<label for="datovelger1">Fra</label>
 									<input type="text" id="datovelger1" name="datovelger1">
 									<br/>
-									<label for="">Til :</label>
-									<input type="text" id="datovelger2" name="datovelger1">
+									<label for="datovelger2">Til :</label>
+									<input type="text" id="datovelger2" name="datovelger2">
 								</div>	
 							</div>
 						</div>

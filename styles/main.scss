@@ -65,9 +65,17 @@ Navigasjon
 	height:40px;
 }
 /*Header z-index fix for fixed navigasjon*/
-header{
-	z-index:5;
+header {
+	position:fixed;
+	z-index:10;
+	width:100%;
 }
+/*Fiks på alle ellementer som kommer etter header for å possisjonere rikitg når headeren er fixed*/
+.headerFixedMargin{
+	padding-top:62px;
+}
+	
+
 /*ingen border bottom på index.html, men på alle andre*/
 #indexUl{
 	border-bottom:none;	
@@ -92,7 +100,7 @@ nav {
 				background: $nav-color;
 				color:$navtextcolor;
 				&:hover {
-				/*background: darken($nav-color ,5%);*/
+				/*background: darken($nav-color ,2%);*/
 				background:$btnColor;
 				text-decoration: none;
 				color:white;
@@ -145,12 +153,13 @@ INDEX.HTML / Generel css
 	border-radius: 0;
 	margin:5px 0;
 	&:hover {
-	background: lighten($btnColor,5%);	
+	background: lighten($btnColor,2%);	
 	}
 
-	&:active {
-		background: lighten($btnColor,5%);	
+	&:active,&:focus,&:focus:active {
+		background: lighten($btnColor,2%);	
 		}
+	
 }
 
 /*knapper som skal stileres i stil 2*/
@@ -248,12 +257,13 @@ ORDER.HTML
     	color:white;
     	font-weight: normal;
 	&:hover {
-	background: lighten($btnColor,5%);	
+	background: lighten($btnColor,2%);	
 	}
 
-	&:active {
-		background: lighten($btnColor,5%);	
+	&:active,&:focus,&:focus:active {
+		background: lighten($btnColor,2%);	
 		}
+
 }
 
 
@@ -280,6 +290,12 @@ HYTTER.HTML
 /* Padding for fasilitet containerere*/
 .inner {
 	padding:20px;	
+}
+
+/*Google maps iframe in modal*/
+iframe {
+	width:100%;
+	height:400px;
 }
 /*Stilering for hver hyttecontainer*/
 #hytterContainer{

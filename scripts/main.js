@@ -92,6 +92,7 @@ $(document).ready(function(){
             dateFormat: "d-M-yy",
             minDate: 0,
             onSelect: function () {
+
                 var datovelger2 = $('#datovelger2');
                 startDate = $(this).datepicker('getDate');
                 fraDato = $(this).datepicker('getDate').toString().substring(0,10); //for å vise dato i oppsumering
@@ -218,17 +219,44 @@ $(document).ready(function(){
                          'step': 60
                     });
 
-                    //skru av muligheten for å skrive med tastatur for å forhindre kluss verdier.
-                   $("#timeVelger1").keydown(function(){
-                   	return false;
-                   });
 
-                   $("#datovelger1").keydown(function(){
-                   	return false;
+                    //skru av muligheten for å skrive med tastatur for å forhindre kluss verdier, men fortsatt ha muligheten til å bruke tab (keykode9) for navigasjon .
+                 $("#timeVelger1").keydown(function(evt){
+                  	evt = evt || window.event;
+		    cancelKeypress = /^(9)$/.test("" + evt.keyCode);
+		    if (!cancelKeypress) {
+		        return false;
+    		}
                    });
-                   $("#datovelger2").keydown(function(){
-                   	return false;
+	
+
+	//skru av muligheten for å skrive med tastatur for å forhindre kluss verdier, men fortsatt ha muligheten til å bruke tab (keykode9) for navigasjon .
+                   $("#datovelger1").keydown(function(evt){
+                   	evt = evt || window.event;
+		    cancelKeypress = /^(9)$/.test("" + evt.keyCode);
+		    if (!cancelKeypress) {
+		        return false;
+    		}
+                  	
                    });
+                   //skru av muligheten for å skrive med tastatur for å forhindre kluss verdier, men fortsatt ha muligheten til å bruke tab (keykode9) for navigasjon .
+                   $("#datovelger2").keydown(function(evt){
+                   	evt = evt || window.event;
+		    cancelKeypress = /^(9)$/.test("" + evt.keyCode);
+		    if (!cancelKeypress) {
+		        return false;
+    		}
+                  	
+                   });
+                   //skru av muligheten for å skrive med tastatur for å forhindre kluss verdier, men fortsatt ha muligheten til å bruke tab (keykode9) for navigasjon .
+                    $("#datovelger3").keydown(function(evt){
+                   	evt = evt || window.event;
+		    cancelKeypress = /^(9)$/.test("" + evt.keyCode);
+		    if (!cancelKeypress) {
+		        return false;
+    		}
+                  	
+                   }); 
 
                    //Lagde et regex som filtrerer alt bortsett fra tall. 
                    $("#telefon").on('input', function (event) { 
