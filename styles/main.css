@@ -363,7 +363,10 @@ Media Queries
     padding-left: 0; }
 
   #logoFooter {
-    height: 30px; } }
+    height: 30px; }
+
+  audio {
+    margin-left: -10px; } }
 /*
 http://www.are360.com/sv/Gora/Vinter/
 */
