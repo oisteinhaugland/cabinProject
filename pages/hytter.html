@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--Språk -->
 <html lang="nn">
 <head>
 	<!--Characterset -->
@@ -7,8 +8,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!--Mobile responsive -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--Tittel -->
 	<title>Hytter</title>
-	<link rel="stylesheet" href="../normalize.css">
 	<!--Font awesome -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- Bootstrap-->
@@ -17,12 +18,12 @@
 	<!-- Additional theme for bootstrap-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<!--Egen favicon som vi lagde/ det bildet i toppen fanen -->
-	<link rel="shortcut icon" type="image/x-icon" href="logoliten1.ico" />
+	<link rel="shortcut icon" type="image/x-icon" href="../logoliten1.ico" />
 	<!-- Css stilark, hentes fra main.scss -->
 	<link rel="stylesheet" href="../styles/main.css">
 </head>
 <!-- Bilder som brukes.
-img 10-13 og 19-22 Creative Commons 0 LIcence from unsplash
+img 2,10-13 og 19-22 Creative Commons 0 LIcence from unsplash
 img 14 http://sjostrandcamping.no/hytter/
 img 15 https://www.inatur.no/hytte/5404ae83e4b0ba862db1bdef
 img 16 http://www.tindehytter.no/prosjekter/lygna-hyttegrender/
@@ -30,11 +31,14 @@ img 17 https://smallhousebliss.com/2015/03/24/hawkhill-nature-villa-maria/
 img 18 http://cottagelife.com/realestate/20-tiny-cabins-that-will-inspire-you-to-downsize
 -->
 <body>
+	<!--Navigasjon -->
 	<header>
 		<nav>
  			<ul>
  				<li>
-					<img src="../images/logo/nylogostor.png" alt="logo" id="logoHeader">
+ 					<a href="../index.html" class="logoLink" >
+						<img src="../images/logo/nylogostor.png" alt="logo" id="logoHeader">
+					</a>
 				</li>
 				<li>
 					<a href="../index.html" >
@@ -60,32 +64,33 @@ img 18 http://cottagelife.com/realestate/20-tiny-cabins-that-will-inspire-you-to
 			</ul>
 		</nav>
 	</header>
+	<!-- Intro tekst -->
 	<div id="introText" class="headerFixedMargin">
 		<h1 class="underline">Oversikt over alle de ulike hyttene du kan leie hos oss</h1>
 		<p>
 			Her er våre hytter som er lokalisert rundt i Nord-Trøndelag og egner seg godt som feriested i norsk natur.
 		</p>
 	</div>
-	<div class="container-fluid" id="hytterContainer">
+
+	<!--Main content section -->
+	<section class="container-fluid" id="hytterContainer">
 		<div class="container">
+		<!-- første rad -->
 			<div class="row" id="row1">
 				<h2 class="hytteTittel">Øyingen</h2>
 				<div class="col-sm-6">
 					<div class="hytteboks">
-						
-						
 						<img src="../images/JPG/img13.jpg" alt="Hyttenr1" />
+						<!--Fasiliteter -->
 						<div class="col-md-6 inner">
 							<ul>
 								<li>Internett:✖</li>
 								<li>Vannklosett:✖</li>
 								<li>Kjøkken:✔</li>
 								<li>Badestamp:✔</li>
-								
-
-								
 							</ul>
 						</div>
+						<!--Fasiliteter -->
 						<div class="col-md-6 inner">
 							<ul>
 								<li>Peis: ✔</li>
@@ -93,10 +98,10 @@ img 18 http://cottagelife.com/realestate/20-tiny-cabins-that-will-inspire-you-to
 								<li>Badstue: ✖</li>
 								<Li>Antall sengeplasser: 8</Li>
 								<li class="priser">Døgnpris:800kr</li>
-								
 							</ul>
 						</div>
-
+						
+						<!--Bestill knapp med string query -->
 						<a href="order.html?id=hytte1" class="btn btn-primary buttons" type="button" >Bestill</a>
 					</div>
 				</div><!--End col -->
@@ -104,9 +109,8 @@ img 18 http://cottagelife.com/realestate/20-tiny-cabins-that-will-inspire-you-to
 
 				<div class="col-sm-6">
 					<div class="hytteboks">
-						
-						
 						<img src="../images/JPG/img14.jpg" alt="Hyttenr2" />
+						<!--Fasiliteter -->
 						<div class="col-md-6 inner">
 							<ul>
 								<li>Internett:✖</li>
@@ -118,6 +122,7 @@ img 18 http://cottagelife.com/realestate/20-tiny-cabins-that-will-inspire-you-to
 								
 							</ul>
 						</div>
+						<!--Fasiliteter -->
 						<div class="col-md-6 inner">
 							<ul>
 								<li>Peis: ✔</li>
@@ -128,6 +133,8 @@ img 18 http://cottagelife.com/realestate/20-tiny-cabins-that-will-inspire-you-to
 								
 							</ul>
 						</div>
+
+						<!--Bestill knapp med string query -->
 						<a href="order.html?id=hytte2" class="btn btn-primary buttons" type="button" >Bestill</a>
 					</div>
 				</div> <!--End col -->
@@ -135,6 +142,7 @@ img 18 http://cottagelife.com/realestate/20-tiny-cabins-that-will-inspire-you-to
 		</div> <!--end container -->
 
 		<div class="container">
+			<!-- andre rad -->
 			<div class="row" id="row2">
 				<h2 class="hytteTittel">Innsvatnet</h2>
 				<div class="col-sm-6">
@@ -142,6 +150,7 @@ img 18 http://cottagelife.com/realestate/20-tiny-cabins-that-will-inspire-you-to
 						
 						
 						<img src="../images/JPG/img18.jpg" alt="Hyttenr3" />
+						<!--Fasiliteter -->
 						<div class="col-md-6 inner">
 							<ul>
 								<li>Internett:✖</li>
@@ -153,6 +162,7 @@ img 18 http://cottagelife.com/realestate/20-tiny-cabins-that-will-inspire-you-to
 								
 							</ul>
 						</div>
+						<!--Fasiliteter -->
 						<div class="col-md-6 inner">
 							<ul>
 								<li>Badstue: ✖</li>
@@ -163,26 +173,26 @@ img 18 http://cottagelife.com/realestate/20-tiny-cabins-that-will-inspire-you-to
 								
 							</ul>
 						</div>
+
+						<!--Bestill knapp med string query -->
 						<a href="order.html?id=hytte4" class="btn btn-primary buttons" type="button" >Bestill</a>
 					</div>
 				</div> <!--end col -->
 
 				<div class="col-sm-6">
+					<!--hytte container -->
 					<div class="hytteboks">
-						
-						
 						<img src="../images/JPG/img15.jpg" alt="Hyttenr4" />
+						<!--Fasiliteter -->
 						<div class="col-md-6 inner">
 							<ul>
 								<li>Internett:✔</li>
 								<li>Vannklosett:✖</li>
 								<li>Kjøkken:✔</li>
 								<li>Badestamp:✔</li>
-								
-
-								
 							</ul>
 						</div>
+						<!--Fasiliteter -->
 						<div class="col-md-6 inner">
 							<ul>
 								<li>Innlagt Vann:✔</li>
@@ -190,11 +200,10 @@ img 18 http://cottagelife.com/realestate/20-tiny-cabins-that-will-inspire-you-to
 								<li>Peis: ✖ </li>
 								<Li>Antall sengeplasser: 10</Li>
 								<li class="priser">Døgnpris:950kr</li>
-								
 							</ul>
 						</div>
 
-					<!--Bestill knapp  med string query for å oppdaterere bestillingsskjemaet.-->
+					<!--Bestill knapp med string query -->
 					<a href="order.html?id=hytte4" class="btn btn-primary buttons" type="button" >Bestill</a>
 					</div>
 
@@ -203,24 +212,23 @@ img 18 http://cottagelife.com/realestate/20-tiny-cabins-that-will-inspire-you-to
 		</div><!--End container -->
 
 		<div class="container">
+			<!-- tredje rad -->
 			<div class="row" id="row3">
 			<h2 class="hytteTittel">Børgin</h2>
 				<div class="col-sm-6">
+					<!--hytte container -->
 					<div class="hytteboks">
-						
-						
 						<img src="../images/JPG/img16.jpg" alt="Hyttenr5" />
+							<!--Fasiliteter -->
 							<div class="col-md-6 inner">
 							<ul>
 								<li>Internett:✖</li>
 								<li>Vannklosett:✔</li>
 								<li>Kjøkken:✔</li>
 								<li>Tilrettelagt for funksjonsnedsettelse: ✔</li>
-								
-
-								
 							</ul>
 						</div>
+						<!--Fasiliteter -->
 						<div class="col-md-6 inner">
 							<ul>
 								<li>Badstue: ✖</li>
@@ -228,29 +236,28 @@ img 18 http://cottagelife.com/realestate/20-tiny-cabins-that-will-inspire-you-to
 								<li>Innlagt Vann:✔</li>
 								<Li>Antall sengeplasser: 12</Li>
 								<li class="priser">Døgnpris:1000kr</li>
-								
 							</ul>
 						</div>
-							<a href="order.html?id=hytte5" class="btn btn-primary buttons" type="button" >Bestill</a>
+
+						<!--Bestill knapp med string query -->
+						<a href="order.html?id=hytte5" class="btn btn-primary buttons" type="button" >Bestill</a>
 					</div>
 				</div> <!--End col -->
 			
 				<div class="col-sm-6">
+					<!--hytte container -->
 					<div class="hytteboks">
-						
-						
 						<img src="../images/JPG/img17.jpg" alt="Hyttenr1" />
+						<!--Fasiliteter -->
 						<div class="col-md-6 inner">
 							<ul>
 								<li>Internett:✔</li>
 								<li>Vannklosett:✔</li>
 								<li>Kjøkken:✔</li>
-								<li>Badestamp:✔</li>
-								
-
-								
+								<li>Badestamp:✔</li>	
 							</ul>
 						</div>
+						<!--Fasiliteter -->
 						<div class="col-md-6 inner">
 							<ul>
 								<li>Badstue: ✔</li>
@@ -258,41 +265,45 @@ img 18 http://cottagelife.com/realestate/20-tiny-cabins-that-will-inspire-you-to
 								<li>Innlagt Vann:✔</li>
 								<Li>Antall sengeplasser: 11</Li>
 								<li class="priser">Døgnpris:1050kr</li>
-								
 							</ul>
 						</div>
+
+						<!--Bestill knapp med string query -->
 						<a href="order.html?id=hytte6" class="btn btn-primary buttons" type="button" >Bestill</a>
 					</div>
 				</div> <!--End col -->
 			</div>  <!--End row -->
 		</div>  <!--End container -->
-	</div> <!--End container-fluid -->
+	</section> <!--End container-fluid -->
 
+	<!--Footer -->
 	<footer id="bottomFooter">
 		<div class="container">
 			<div class="row">
+				<div class="col-sm-6">
+					<ul id="kontakt">
+						<li id="contactHeader">Kontakt oss:</li>
+
+						<li>
+							<i class="xs-hidden fa fa-envelope" aria-hidden="true"></i> <a href="mailto:furustu@online.no">Mail: furustu@online.no</a></li>
+						<li>
+							<i class="xs-hidden fa fa-phone" aria-hidden="true"></i> Tlf: 22522484</li>
+						<li>
+							<i class="xs-hidden fa fa-home" aria-hidden="true"></i> Adr:  Trondheimsveien 43B, 7014, Trondheim</li>
+					</ul>	
+				</div>
+				<!--Logo -->
+				<div class="col-sm-6">
+					<img src="../images/logo/logohvit.png" id="logoFooter" alt="logo">
+				</div>
+			</div>
 		</div>
-		<div class="col-sm-6">
-			<ul id="kontakt">
-				<li id="contactHeader">Kontakt oss:</li>
+	</footer>
 
-				<li>
-					<i class="xs-hidden fa fa-envelope" aria-hidden="true"></i> <a href="mailto:furustu@online.no">Mail: furustu@online.no</a></li>
-				<li>
-					<i class="xs-hidden fa fa-phone" aria-hidden="true"></i> Tlf: 22522484</li>
-				<li>
-					<i class="xs-hidden fa fa-home" aria-hidden="true"></i> Adr:  Trondheimsveien 43B, 7014, Trondheim</li>
-			</ul>	
-			</div>
-			<div class="col-sm-6">
-			<img src="../images/logo/logohvit.png" id="logoFooter" alt="logo"></div>
-			</div>
-		</footer>
-
-
+	<!-- scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<!-- Latest compiled and minified JavaScript -->
+	<!-- Latest compiled and minified JavaScript / Bootstrap -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script src="scripts/main.js"></script>
+	
 </body>
 </html>

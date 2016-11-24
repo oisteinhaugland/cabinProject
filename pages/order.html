@@ -1,121 +1,150 @@
 <!DOCTYPE html>
+<!--Språk -->
 <html lang="nn">
-	<head>
-		<!--Characterset -->
-		<meta charset="utf-8">
-		<!--Support for older IE browsers -->
-    		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<!--Mobile responsive -->
-    		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Bestill</title>
-		<!-- Normalize.css for å nullstille innebygd css. Gir bedre utgangspunkt å arbeide med. -->
-		<link rel="stylesheet" href="../styles/normalize.css">
-		<!--Font awesome -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<!--jQuery UI stilark -->
-		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-		<!-- Bootstrap CDN-->
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<!-- Additional theme for bootstrap-->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-		<!--Timepicker.js  -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.css">
-		  <!--recaptcha -->
-       		<script src='https://www.google.com/recaptcha/api.js'></script>
-       		<!--Egen favicon som vi lagde/ det bildet i toppen fanen -->
-		<link rel="shortcut icon" type="image/x-icon" href="logoliten1.ico" />
-		<!-- Css stilark, hentes fra main.scss -->
-		<link rel="stylesheet" href="../styles/main.css">
-		
-	</head>
-	<!-- bilder som brukes på denne siden har Creative Commons 0 lisens
-	med unntak kajak.jpg  https://www.visitnorway.com/things-to-do/nature-attractions/fjords/
-	-->
+<head>
+	<!--Characterset -->
+	<meta charset="utf-8">
+	<!--Support for older IE browsers -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--Mobile responsive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--Tittel -->
+	<title>Bestill</title>
+	<!-- Normalize.css for å nullstille innebygd css. Gir bedre utgangspunkt å arbeide med. -->
+	<link rel="stylesheet" href="../styles/normalize.css">
+	<!--Font awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--jQuery UI stilark -->
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<!-- Bootstrap CDN-->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Additional theme for bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<!--Timepicker.js  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.css">
+	  <!--recaptcha -->
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<!--Egen favicon som vi lagde/ det bildet i toppen fanen -->
+	<link rel="shortcut icon" type="image/x-icon" href="../logoliten1.ico" />
+	<!-- Css stilark, hentes fra main.scss -->
+	<link rel="stylesheet" href="../styles/main.css">
+</head>
+<!-- bilder som brukes på denne siden har Creative Commons 0 lisens
+med unntak kajak.jpg  https://www.visitnorway.com/things-to-do/nature-attractions/fjords/
+-->
 <body>
-	<div class="wrapper">
+	<!--Content Wrapper -->
+	<div class="wrapper"> 
 		<!--Navigasjonsbar -->
 		<header>
 			<nav>
-			<ul>
-				<li>
-					<img src="../images/logo/nylogostor.png" alt="logo" id="logoHeader">
-				</li>
-				<li><a href="../index.html" ><i class="xs-hidden fa fa-compass" aria-hidden="true"></i> Hjem </a></li>
-				<li><a href="hytter.html"><i class="xs-hidden fa fa-home" aria-hidden="true"></i> Hytter </a></li>
-				<li><a href="order.html" class=" active"><i class="xs-hidden fa fa-shopping-cart" aria-hidden="true"></i> Bestill </a></li>
-				<li><a href="omoss.html"><i class="xs-hidden fa fa-info-circle" aria-hidden="true"></i> Om Oss </a></li>
-			</ul>
-		</nav>
+				<ul>
+					<li>
+						<a href="../index.html" class="logoLink" >
+							<img src="../images/logo/nylogostor.png" alt="logo" id="logoHeader">
+						</a>
+					</li>
+					<li>
+						<a href="../index.html" >
+							<i class="xs-hidden fa fa-compass" aria-hidden="true"></i> Hjem 
+						</a>
+					</li>
+					<li>
+						<a href="hytter.html">
+							<i class="xs-hidden fa fa-home" aria-hidden="true"></i> Hytter
+						 </a>
+					 </li>
+					<li>
+						<a href="order.html" class=" active">
+							<i class="xs-hidden fa fa-shopping-cart" aria-hidden="true"></i> Bestill 
+						</a>
+					</li>
+					<li>
+						<a href="omoss.html">
+							<i class="xs-hidden fa fa-info-circle" aria-hidden="true"></i> Om Oss 
+						</a>
+					</li>
+				</ul>
+			</nav>
 		</header>
+
 		<!-- Bestillingsskjema -->
-		<div class="container headerFixedMargin" id="bestiller">
+		<section class="container headerFixedMargin" id="bestiller">
 			<h1>Bestill</h1>
 			<div class="row">
-				<!-- Bootstrap responsive klasser -->
+				<!-- form container -->
 				<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 
 					<!-- action javascript:void(0) for å forhindre submit action. Men akseptere required fields. -->
 					<form action="javascript:void(0);" method="GET" id="bestillingSkjema">
 				
-						<!-- INPUTs -->
+					<!-- INPUTS -->
+						<!--Fornavn -->	
 						<div class="form-group">
 							<label for="fornavn">Fornavn</label>
 							<input name="navn" required type="text" class="form-control" id="fornavn">
 						</div>
-				
+
+						<!--Etternavn -->	
 						<div class="form-group">
 							<label for="etternavn">Etternavn</label>
 							<input name="navn" required type="text" class="form-control" id="etternavn">
 						</div>
-				
+
+						<!--Email -->
 						<div class="form-group ">
 							<label for="email">Email</label>
 							<input required type="email" class="form-control" id="email">
 						</div>
-				
+						
+						<!--Telefon -->
 						<div class="form-group">
 							<label for="telefon">Telefon</label>
 							<input required type="tel" pattern="[0-9]{8}" maxlength="8" class="form-control" id="telefon">
 						</div>
-
-
+						
+						<!--Hytte - velg 1 -->
 						<div class="form-group">
-						  <label for="område">Velg hytte:</label>
-						  <select required class="form-control" id="hytte" >
-						  <option value="0" disabled selected>Velg hytteområde</option>
-						    <option value="800">Hytte1 - Døgnpris: 800kr</option>
-						    <option value="850">Hytte 2 - Døgnpris: 850kr</option>
-						    <option value="900">Hytte 3 - Døgnpris: 900kr</option>
-						    <option value="950">Hytte4 - Døgnpris: 950kr</option>
-						    <option value="1000">Hytte5 - Døgnpris: 1000kr</option>
-						    <option value="1050">Hytte6 - Døgnpris: 1050kr</option>
-						  </select>
-						  <h4>Fasiliteter: </h4>
-						  <p id="fasiliteterP"></p>
+							<label for="område">Velg hytte:</label>
+						  	<select required class="form-control" id="hytte" >
+							  	<option value="0" disabled selected>Velg hytteområde</option>
+								<option value="800">Hytte1 - Døgnpris: 800kr</option>
+								<option value="850">Hytte 2 - Døgnpris: 850kr</option>
+								<option value="900">Hytte 3 - Døgnpris: 900kr</option>
+								<option value="950">Hytte4 - Døgnpris: 950kr</option>
+								<option value="1000">Hytte5 - Døgnpris: 1000kr</option>
+								<option value="1050">Hytte6 - Døgnpris: 1050kr</option>
+						  	</select>
+						  	
+						  	<!-- Fasiliteter vises basert på hvilken hytte som blir valgt -->
+						  	<h4>Fasiliteter: </h4>
+						  	<p id="fasiliteterP"></p>
 							
 						</div>
-
+						
+						<!--Leieperiode -->
 						<div id="leiePeriodeContainer" class="container-fluid">
 							<div class="row">
+								<!-- Velg hvor lenge du skal leie-->
 								<div class="form-group  col-sm-5">
-								<h3>Hvor lenge vil du leie?</h3>
-								<input  type="radio" name="leiePeriode" id="kortTidsLeie" required> Mindre enn 24 timer <br/>
-								<input  type="radio" name="leiePeriode" id="langTidsLeie" required> Mer enn 24 timer
+									<h3>Hvor lenge vil du leie?</h3>
+									<input  type="radio" name="leiePeriode" id="kortTidsLeie" required> Mindre enn 24 timer 
+									<br/>
+									<input  type="radio" name="leiePeriode" id="langTidsLeie" required> Mer enn 24 timer
 								</div>
 								
 								<!-- Hvis kortidleie er valgt -->
 								<div class="form-group hide  col-sm-6" id="velgTimePanel">
-								<h3>Hvor mange timer vil du leie? </h3>
-								<p>Utleie begynner klokken 12.00. Pris 150kr/t</p>
-								<small>Dato Velger Felt kan navigeres med cmd/ctrl og piltaster</small>
+									<h3>Hvor mange timer vil du leie? </h3>
+									<p>Utleie begynner klokken 12.00. Pris 150kr/t</p>
+									<small>Dato Velger Felt kan navigeres med cmd/ctrl og piltaster</small>
 									<br>
 									<label for="datovelger3">Fra</label>
 									<input type="text" id="datovelger3" name="datovelger3">
 									<br/>
 									<label for="timeVelger1">Til :</label>
 									<input type="text" id="timeVelger1" class="ui-timepicker-input">
-									
 								</div>
 								
 								<!-- Hvis langtidsleie er valgt -->
@@ -129,15 +158,20 @@
 									<label for="datovelger2">Til :</label>
 									<input type="text" id="datovelger2" name="datovelger2">
 								</div>	
-							</div>
-						</div>
+							</div> <!--row end -->
+						</div> <!--kortidsleie end -->
+
 						<!-- Checkboxer for tillegg -->
 						<div class="form-group clear" id="utgifter">
-							<label><input type="checkbox" name="medlem" id="medlem"> Medlem i Turistforeningen. Gir 15% Rabatt.</label>
-							<label><input type="checkbox" name="utvask" id="utvask"> Bestill Utvask - 1500kr</label>
+							<label>
+								<input type="checkbox" name="medlem" id="medlem"> Medlem i Turistforeningen. Gir 15% Rabatt.
+							</label>
+							<label>
+								<input type="checkbox" name="utvask" id="utvask"> Bestill Utvask - 1500kr
+							</label>
 						</div>
 
-						<!-- Pris oversikt -->
+						<!-- Oversikt over totaltpris -->
 						<div id="prisOversikt">
 							<p> Totalpris: <span id="totalPris">0</span>kr</p>
 						</div>
@@ -145,30 +179,24 @@
 						<!-- Recaptcha -->
 						<div name="recaptcha" required class="g-recaptcha" data-sitekey="6Lf3KAwUAAAAAKcgkM_NDrAZ5Jz2oFO7_12OMRJk" ></div>
 						
-						<!-- Submit button-->
+						<!-- Submit/Reset Knapper -->
 						<div class="form-group">
 							<input required value="Bestill" type="submit" class="form-control btn btn-primary submit">
-								<input required value="Reset" type="reset" class="form-control btn btn-primary submit reset">
+							<input required value="Reset" type="reset" class="form-control btn btn-primary submit reset">
 						</div>
-						
-
 					</form>
-					<!--Debugger knapp 
-					<button id="testingbutton">Hjelp</button>
-					-->
-				</div>
+				</div> <!-- form container end -->
 			</div>
-		</div>
+		</section> <!--section end -->
 		
-
 		<!-- Div som hvises når det skjemaet er bestilt. Default hidden. Løsning i stedet for php/angular.js/ajax etc.-->
-		<div id="bestilt" class="hide headerFixedMargin">
+		<section id="bestilt" class="hide headerFixedMargin">
 			<div class="container">
-					<div class="row">
-						<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-							<h1>Tusen takk for din bestilling.</h1>
-			
-							<div id="opplysninger">
+				<div class="row">
+					<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+						<h1>Tusen takk for din bestilling.</h1>
+		
+						<div id="opplysninger">
 							<h2>Dine opplysninger</h2>
 							<p>Fornavn: <span id="showFornavn"></span></p>
 							<p>Etternavn: <span id="showEtternavn"></span></p>
@@ -183,41 +211,47 @@
 						</div>
 					</div>
 				</div>	
-			
 			</div>
-		</div>
+		</section>
+		
+		<!-- Footer -->
 		<footer id="bottomFooter">
-		<div class="container">
-			<div class="row">
-		</div>
-		<div class="col-sm-6">
-			<ul id="kontakt">
-				<li id="contactHeader">Kontakt oss:</li>
-
-				<li>
-					<i class="xs-hidden fa fa-envelope" aria-hidden="true"></i> <a href="mailto:furustu@online.no">Mail: furustu@online.no</a></li>
-				<li>
-					<i class="xs-hidden fa fa-phone" aria-hidden="true"></i> Tlf: 22522484</li>
-				<li>
-					<i class="xs-hidden fa fa-home" aria-hidden="true"></i> Adr:  Trondheimsveien 43B, 7014, Trondheim</li>
-			</ul>	
-			</div>
-			<div class="col-sm-6">
-			<img src="../images/logo/logohvit.png" id="logoFooter" alt="logo"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<ul id="kontakt">
+							<li id="contactHeader">
+								Kontakt oss:
+							</li>
+							<li>
+								<i class="xs-hidden fa fa-envelope" aria-hidden="true"></i> <a href="mailto:furustu@online.no">Mail: furustu@online.no</a></li>
+							<li>
+								<i class="xs-hidden fa fa-phone" aria-hidden="true"></i> Tlf: 22522484
+							</li>
+							<li>
+								<i class="xs-hidden fa fa-home" aria-hidden="true"></i> Adr:  Trondheimsveien 43B, 7014, Trondheim
+							</li>
+						</ul>	
+					</div>
+					<div class="col-sm-6">
+						<!--Logo -->
+						<img src="../images/logo/logohvit.png" id="logoFooter" alt="logo">
+					</div>
+				</div>
 			</div>
 		</footer>
-	</div>
-
+	</div><!--Contet Wrapper End -->
+<!--Scripts -->	
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-<!-- Webshim, et bibliotek som aktiverer required funksjonen for Safari, men det ble skrevet vanlig javascript validering for å teste det ut. Webshim var en lettere løsning, men vanlig validering var god trening.
-<script src="https://cdnjs.cloudflare.com/ajax/libs/webshim/1.16.0/dev/polyfiller.js"></script>
-<script type="text/javascript">
-	webshim.activeLang('en');
-        	webshims.polyfill('forms');
-        	webshims.cfg.no$Switch = true;
-</script>
+<!-- 
+	Webshim, et bibliotek som aktiverer required funksjonen for Safari, men det ble skrevet vanlig javascript validering for å teste det ut. Webshim var en lettere løsning, men vanlig validering var god trening.
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/webshim/1.16.0/dev/polyfiller.js"></script>
+	<script type="text/javascript">
+		webshim.activeLang('en');
+	        	webshims.polyfill('forms');
+	        	webshims.cfg.no$Switch = true;
+	</script>
 -->
 <!--timepicker js-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.js"></script>

@@ -1,12 +1,14 @@
-/*************************************************************************************************************************
+/*******************************************************************************************************************************************
 Globale Funksjoner
 *******************************************************************************************************************************************/
 //Brukes nettlesere som ikke kan bruke required.
-//skjekker ett parameter om det stemmer med regex som validerer email format.
+
+//skjekker ett parameter om det stemmer med regex som validerer email format, lang regex..
 function validateEmail(emailtest){ 
   	var emailPattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     	return emailPattern.test(emailtest);
 }
+
 //Funksjon som summerer alle kostnader og ganger med medlemsrabatt(står på 1 som default)
 function findTotalSum(){
 	sum = (hyttePris + prisForValgtPeriode + prisForValgteTimer)  * medlemRabatt
@@ -19,20 +21,17 @@ function clearInput(target){
 	target.value= "";
 	return target;
 }
-
+/*Funkjsonen nullstiller totaltprisoversikten, brukes ved reset form button*/
 function clearPrisOnReset(){
 	$("#totalPris").html("0");
 }
 
-
-
 // Hver gang $("#totalPris").html(findTotalSum); blir nevnt er det for å kontinuerlig oppdatere totaltpris.
-
-//Regular expressions lages ved hjelp av http://regexr.com
+//Regular expressions er laget ved hjelp av http://regexr.com
     
-/***************************************************************************************************************************
+/*******************************************************************************************************************************************
 Info-variabler / Deklareres og blir gitt verdi for å bestemme data type.
-/**************************************************************************************************************************/
+*******************************************************************************************************************************************/
 var fornavn;
 var etternavn;
 var email;
@@ -54,8 +53,7 @@ var antallTimer = 0;
 var prisForValgteTimer = 0;
 var prisForValgtPeriode = antallDøgn * døgnPris;
 
-
-
+// Fasiliteter strings, brukes for å vise hvilke fasiliteter som hører til hvilken hytte.
 var fasiliteterHytte1 = "Sengeplasser: 8"  + "&emsp;" + "Internett:✖" + "&emsp;" + "Vannklosett:✖"+ "&emsp;" +"Kjøkken:✔"+ "&emsp;" +"Badestamp:✔" +"&emsp;" +"Peis: ✔"+"&emsp;" +"Innlagt Vann: ✖" + "&emsp;" +"Badstue: ✖";
 var fasiliteterHytte2 = "Sengeplasser: 10"  + "&emsp;" + "Internett:✖" + "&emsp;" + "Vannklosett:✖"+ "&emsp;" +"Kjøkken:✔"+ "&emsp;" +"Utedo::✔" +"&emsp;" +"Peis: ✔"+"&emsp;" +"Innlagt Vann: ✖" + "&emsp;" +"Badstue: ✖";
 var fasiliteterHytte3 = "Sengeplasser: 14"  + "&emsp;" + "Internett:✖" + "&emsp;" + "Vannklosett:✖"+ "&emsp;" +"Kjøkken:✔"+ "&emsp;" +"Badestamp:✖" +"&emsp;" +"Peis: ✔"+"&emsp;" +"Innlagt Vann: ✖" + "&emsp;" +"Badstue: ✖";
@@ -65,9 +63,9 @@ var fasiliteterHytte6 = "Sengeplasser: 11"  + "&emsp;" + "Internett:✔" + "&ems
 
 
 
-/***************************************************************************************************************************
+/*******************************************************************************************************************************************
 / Document.ready 
-/***************************************************************************************************************************/
+*******************************************************************************************************************************************/
 $(document).ready(function(){
 
 
@@ -84,25 +82,27 @@ $(document).ready(function(){
 		       }
 		       return(false);
 		}
-
    
    	//nødvending variabler for datovelger. Deklareres for å brukes i funksjon.
 	 var startDateInteger;
 
 
-/***************************************************************************************************************************************
+
+/*******************************************************************************************************************************************
 / Datovelger / Timevelger 
-***************************************************************************************************************************************/	 
+*******************************************************************************************************************************************/
     //jquery UI funksjon for å velge dato
    $("#datovelger1").datepicker({
             dateFormat: "d-M-yy",
             minDate: 0,
+            //når dato velges
             onSelect: function () {
 
-                var datovelger2 = $('#datovelger2');
-                startDate = $(this).datepicker('getDate');
-                fraDato = $(this).datepicker('getDate').toString().substring(0,10); //for å vise dato i oppsumering
-                hvilkenMåned = $(this).datepicker('getDate').getMonth() + 1;
+	var datovelger2 = $('#datovelger2');
+	startDate = $(this).datepicker('getDate');
+	//for å vise dato i oppsumering. Get date har formatet FRI NOV 18, så substring 8,10 henter ut tallet., 
+	fraDato = $(this).datepicker('getDate').toString().substring(0,10); 
+	hvilkenMåned = $(this).datepicker('getDate').getMonth() + 1;
 
                //switch for å hindre at summen blir feil ved bestilling som skjer over 2 måneder
                 switch (hvilkenMåned){
@@ -153,8 +153,6 @@ $(document).ready(function(){
                 	case 12:
                 		daysInMonth = 31;
                 		break;
-                	
-
                 }
 
                 //1# getdate gjøres om til string, og tallverdiene som står mellom plass 8,10 hentes ut.
@@ -175,8 +173,6 @@ $(document).ready(function(){
                 datovelger2.datepicker('option', 'maxDate', startDate);
                 datovelger2.datepicker('option', 'minDate', nextDay);
 
-
-       
             }
         });
 
@@ -189,11 +185,13 @@ $(document).ready(function(){
             	tilDato = $(this).datepicker('getDate').toString().substring(0,10);
             	var endDateInterger = parseInt(endDateString)
 
-            	//hvis slutt dato er større enn startdato
-            	//hvis slutt dato er mindre enn startdato
+            	
+            	
             	if (endDateInterger > startDateInteger){
+            		 //hvis slutt dato er større enn startdato
             		antallDøgn = endDateInterger- startDateInteger; 
-            	} else {
+            	} else { 
+            		//hvis slutt dato er mindre enn startdato
             		antallDøgn = endDateInterger - startDateInteger + daysInMonth;
             	}
 
@@ -214,7 +212,6 @@ $(document).ready(function(){
              }
         });
 
-
         //Timevelger funksjoner - timepicker.js
                     $('#timeVelger1').timepicker({
                         'minTime': '12:00pm',
@@ -225,7 +222,6 @@ $(document).ready(function(){
                          'step': 60
                     });
 
-
                     //skru av muligheten for å skrive med tastatur for å forhindre kluss verdier, men fortsatt ha muligheten til å bruke tab (keykode9) for navigasjon .
                  $("#timeVelger1").keydown(function(evt){
                   	evt = evt || window.event;
@@ -235,7 +231,6 @@ $(document).ready(function(){
     		}
                    });
 	
-
 	//skru av muligheten for å skrive med tastatur for å forhindre kluss verdier, men fortsatt ha muligheten til å bruke tab (keykode9) for navigasjon .
                    $("#datovelger1").keydown(function(evt){
                    	evt = evt || window.event;
@@ -245,6 +240,7 @@ $(document).ready(function(){
     		}
                   	
                    });
+
                    //skru av muligheten for å skrive med tastatur for å forhindre kluss verdier, men fortsatt ha muligheten til å bruke tab (keykode9) for navigasjon .
                    $("#datovelger2").keydown(function(evt){
                    	evt = evt || window.event;
@@ -254,6 +250,7 @@ $(document).ready(function(){
     		}
                   	
                    });
+
                    //skru av muligheten for å skrive med tastatur for å forhindre kluss verdier, men fortsatt ha muligheten til å bruke tab (keykode9) for navigasjon .
                     $("#datovelger3").keydown(function(evt){
                    	evt = evt || window.event;
@@ -261,7 +258,6 @@ $(document).ready(function(){
 		    if (!cancelKeypress) {
 		        return false;
     		}
-                  	
                    }); 
 
                    //Lagde et regex som filtrerer alt bortsett fra tall. 
@@ -273,18 +269,17 @@ $(document).ready(function(){
                     $("#timeVelger1").on('change', function() {
                     	valgtKlokkeSlett = $(this).val().substring(0,2);
                     	valgtKlokkeSlett = parseInt(valgtKlokkeSlett);
+                    	
                     	antallTimer = valgtKlokkeSlett - 12;
-
                     	prisForValgteTimer = timePris * antallTimer;
 
-                  
                     });
 
-/***************************************************************************************************************************
+/*******************************************************************************************************************************************
 Form-change / submit
-***************************************************************************************************************************/
+*******************************************************************************************************************************************/
 
-
+	//Funksjon for vær gang et input i skjemaet endrer seg.
 	$("#bestillingSkjema :input").change(function(){
 			//Variabler oppdateres, brukes for å vise kvitering etter form submit.
 			fornavn = $("#fornavn").val();
@@ -292,13 +287,11 @@ Form-change / submit
 			email = $("#email").val();
 			telefon = $("#telefon").val();
 
-
-
 			//hyttepris oppdateres og gjøres til integer.
 			hyttePris = $("#hytte option:selected").val();
 			hyttePris = parseInt(hyttePris);
 
-			//Switch som viser fasiliteter basert på hvilken hytte som blir valgt
+			//Switch som viser fasiliteter basert på hvilken hytte som blir valgt. Hver hytte har en value, og den blir targeted.
 			switch ($("#hytte option:selected").val()){
 				case "800":
 				$("#fasiliteterP").html(fasiliteterHytte1);
@@ -325,7 +318,6 @@ Form-change / submit
 				break;
 			}
 			
-
 			//Reset input felter for å hindre pris tukling.
 			$("#langTidsLeie").click(function(){
 				clearInput(document.getElementById("timeVelger1"));
@@ -362,7 +354,7 @@ Form-change / submit
 		      		}
 		 	 });
 
-			//skjekker valg for utvask
+			//skjekker valg for utvask og oppdaterer pris.
 			$("#utvask").on('change', function(){
 				//hvis den er avmerket
 				if ($('#utvask').is(':checked')) {
@@ -381,14 +373,13 @@ Form-change / submit
 	
 		
 	//Det skjekkes om det skal leies i mindre eller mer en ett døgn
-	// Viser repsektive panel ut i fra hvilken knap som er blitt avmerket.
+	// Viser repsektive panel ut i fra hvilken knap som er blitt avmerket. og pris variablene nullstilles
 		if ($("#kortTidsLeie").is(":checked")){
 			prisForValgtPeriode = 0;
 			prisForValgtPeriode = antallDøgn * døgnPris;
 			$("#velgDatoPanel").removeClass("showMe");
 			$("#velgDatoPanel").addClass("hide");
 			
-
 			$("#velgTimePanel").removeClass("hide");
 			$("#velgTimePanel").addClass("showMe")
 
@@ -414,7 +405,7 @@ Form-change / submit
 			$("#datovelger2").prop('required',true);
 		}
 		 
-		//Medlemsrabatt skjekkes
+			//Medlemsrabatt skjekkes
 			if ($('#medlem').is(':checked')) {
 				medlemRabatt = 0.85;
 			}
@@ -426,7 +417,7 @@ Form-change / submit
 	}); //input change end
 
 		//switch som oppdaterer hvilken hytte som blir valgt ut i fra hvilken hytte som blir bestilt fra forrige side.
-		// .trigger oppdaterer skjeamet.
+		// .trigger oppdaterer skjeamet. Den får "changed" actionen til å fyre, slik at funksjonen  - $("#bestillingSkjema :input").change(function() - kjører, og prisen oppdateres..
 		   switch (getQueryVariable("id")){
                 		case "hytte1" :
 				$('#hytte').val(800);
@@ -453,19 +444,19 @@ Form-change / submit
 				$('#hytte').val(1050);
 				$("#hytte").trigger("change");
                 			break;
-                	} //end
+                	} //switch end
 
               	
-     
-/********************************************************************************************************************
+   
+/*******************************************************************************************************************************************
 Validering
-********************************************************************************************************************/
-	// Funksjon for "takk for bestillingen".
+*******************************************************************************************************************************************/
+	// On submit funksjon..
 	$("#bestillingSkjema").submit(function(){
 
 		//chrome fix - prøvde patterns for html5, men dette fungerte bedre.
 		   if ($("#bestillingSkjema :input").attr('name') == "navn") {
-		   	//var er regex som skjekker matcher alle tall og tegn.
+		   	//var er regex som skjekker matcher lik alle tall og tegn.
 			var hasNumberOrSign = /[\d!+-.,!@#$%^&*();\/|<>"':?=]+/
 			//hvis input feltet inneholder noen av tegnen i regexet skjer følgende.
 		         	if (hasNumberOrSign.test($(this).val())) {
@@ -473,7 +464,6 @@ Validering
 	          	 		$(this).focus();
 	         			e.preventDefault();
 		            	return false;
-		          	 
 		          }
 		      }
 		
@@ -507,7 +497,6 @@ Validering
 	          	 		$(this).focus();
 	         			e.preventDefault();
 		            	return false;
-		          	 
 		          }
 		}
 		        //Ved email
@@ -561,30 +550,28 @@ Validering
 				 }
 
 
-			//recapcha validering. grecaptcha.getResponse er tom hvis den ikke er avkrysset
+			//recapcha validering. grecaptcha.getResponse er tom hvis den ikke er avkrysset, ergo hvis length lik 0, er den ikke kryset av.
 			if ($(this).attr('name') == "recaptcha" && grecaptcha.getResponse().length === 0 ){
 				alert("Vennligt bekreft reCAPTCHA.");
 				 $(this).focus();
 	            		e.preventDefault();
 	            		return false;
-				
-				}
-
-		        	}
-		        ); 
+			}
+	        	}); //for each end
 		
 		 // Bestillingskjema gjemmes
 		$("#bestiller").hide()
 
 		//Takk for din bestilling vises
 		$("#bestilt").removeClass("hide");
-		//Lettfiks for spacing issues med footeren etter man har bestilt.
+
+		//Fiks for spacing issues med footeren etter man har bestilt.
 		$("#bottomFooter").addClass("hide");
 		
 		
-/*********************************************************************************************************************************************
+/*******************************************************************************************************************************************
 Oppsumering etter bestilling.
-*********************************************************************************************************************************************/
+*******************************************************************************************************************************************/
 
 		//Henter all informasjon fra variablene og setter respektive spans til å være lik verdiene som ble fylt inn.
 		$("#showFornavn").html(fornavn);	
@@ -613,36 +600,18 @@ Oppsumering etter bestilling.
 		}
 		
 		$('#showTotalPris').html(findTotalSum);
-	});
-	
-	$("#testingbutton").click(function(){
-		alert(getQueryVariable("id"));
-		//alert(daysInMonth);
-		/*alert("timepris" + timePris)
-		alert("pris for valgte timer" +prisForValgteTimer)
-		alert("pris for valgte periode" + prisForValgtPeriode)
-
-		alert("hyttepris: "+hyttePris)*/
-		//alert(hyttePris)
-		//alert(antallDøgn)
-		//alert(pris)
-		//var x = typeof prisForValgteTimer;
-		//var y = typeof prisForValgteTimer;
-    		//alert("type for prisForValgteTimer: "+ x);
-    		//alert("type for prisForValgtPeriode: "+y);
-
-		    });
+	}); // on submit end.
 
 	//bootstrap carousel fix, hindrer at den pauser på mouse hover;
 	$('.carousel').carousel({
-    	pause: "false"
+    		pause: "false"
 	});
 
 	//Reset knapp fix..
 	$("#bestillingSkjema :reset").click(function(){
 		             document.getElementById("bestillingSkjema").reset(); // reset skjemaet
 			clearPrisOnReset();	// kaller funksjonen som oppdateres prisen
-		       	  return false;         // returner false for å stoppe funksjonen.
+		       	return false;		// returner false for å stoppe funksjonen.
 
 	});
 
@@ -652,7 +621,6 @@ Oppsumering etter bestilling.
         			scrollTop: $("#mainContent").offset().top
         			},
         			'slow');
-	});
-	
-});
+	});	
 
+}); // document ready end.

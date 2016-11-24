@@ -1,6 +1,6 @@
 <!DOCTYPE html>
+<!--Språk -->
 <html lang="nn">
-
 	<head>
 		<!--Characterset -->
 		<meta charset="utf-8">
@@ -8,6 +8,7 @@
     		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<!--Mobile responsive -->
     		<meta name="viewport" content="width=device-width, initial-scale=1">
+    		<!--Tittel -->
 		<title>Om Oss</title>
 		<!-- Normalize.css for å nullstille innebygd css. Gir bedre utgangspunkt å arbeide med. -->
 		<link rel="stylesheet" href="../styles/normalize.css">
@@ -23,19 +24,20 @@
 		<!--Timepicker.js  -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.css">
 		<!--Egen favicon som vi lagde/ det bildet i toppen fanen -->
-		<link rel="shortcut icon" type="image/x-icon" href="logoliten1.ico" />
+		<link rel="shortcut icon" type="image/x-icon" href="../logoliten1.ico" />
 		<!-- Stilark -->
 		<link rel="stylesheet" href="../styles/main.css">
-
 	</head>
-
 <!-- Alle portett bilder har Creative Commons Lisens og er til fri bruk. Hentet fra pexels.com-->
 <body>
+	<!--Navigasjon -->
 	<header>
-			<nav>
-				<ul>
+		<nav>
+			<ul>
 				<li>
-					<img src="../images/logo/nylogostor.png" alt="logo" id="logoHeader">
+					<a href="../index.html" class="logoLink" >
+						<img src="../images/logo/nylogostor.png" alt="logo" id="logoHeader">
+					</a>
 				</li>
 				<li>
 					<a href="../index.html" >
@@ -47,7 +49,6 @@
 						<i class="xs-hidden fa fa-home" aria-hidden="true"></i> Hytter
 					 </a>
 				</li>
-				
 				<li>
 					<a href="order.html">
 						<i class="xs-hidden fa fa-shopping-cart" aria-hidden="true"></i> Bestill 
@@ -61,6 +62,8 @@
 			</ul>
 		</nav>
 	</header>
+
+	<!-- Introduksjons test -->
 	<div class="container headerFixedMargin">
 		<div class="row">
 			<div class="col-sm-12">
@@ -68,43 +71,47 @@
 			</div>
 		</div>
 	</div>
-	<div class="container page-content">
+
+	<!-- Content Wrapper-->
+	<section class="container page-content">
 		<div class="row">
+			<!--Person -->
 			<div class="col-sm-6 col-md-4 ">
 				<div class="omossContainer">
 					<img class="bilde" src="../images/JPG/person1.jpg" alt="person1">
-						<div class="caption">
-						        <h2 class="navn">Børre Nilsen</h2>
-						        <p class="info">
-								Hyttedesigner og Haiku-skribent.
-								<br />
-								En kråke
-								<br/>
-								Komplisert hjemsøkt måne
-								<br/>
-								Klare drømmer livløs
+					<div class="caption">
+					        <h2 class="navn">Børre Nilsen</h2>
+					        <p class="info">
+							Hyttedesigner og Haiku-skribent.
+							<br />
+							En kråke
+							<br/>
+							Komplisert hjemsøkt måne
+							<br/>
+							Klare drømmer livløs
 
-						        </p>
-		       
-						</div>
+					        </p>
+					</div>
 				</div>
 			</div>
 
+			<!--Person -->
 			<div class="col-sm-6 col-md-4 ">
 				<div class="omossContainer">
 					<img class="bilde" src="../images/JPG/person2.jpg" alt="person2">
-						<div class="caption">
-						        <h2 class="navn">Lars Berntsen</h2>
-						        <p class="info">
-								Glad gutt. Sosiale medier lærd. Amatør ninja. Kaffoman. Student. Extremsportutøver. Tenker.<br /><br />
-							</p>					
-						</div>
+					<div class="caption">
+					        <h2 class="navn">Lars Berntsen</h2>
+					        <p class="info">
+							Glad gutt. Sosiale medier lærd. Amatør ninja. Kaffoman. Student. Extremsportutøver. Tenker.<br /><br />
+						</p>					
+					</div>
 				</div>
 			</div>
 
+			<!--Person -->
 			<div class="col-sm-6 col-md-4">
 				<div class="omossContainer">
-					<img class="bilde" src="../images/JPG/person3.jpg" alt="person2">
+					<img class="bilde" src="../images/JPG/person3.jpg" alt="person3">
 					<div class="caption">
 					        <h2 class="navn">Henrik Matsen</h2>
 					        <p class="info">
@@ -113,39 +120,39 @@
 					</div>
 				</div>
 			</div>
-		
 
-		
+			<!--Person -->
 			<div class="col-sm-6 col-md-4 ">
 				<div class="omossContainer">
 					<img class="bilde" src="../images/JPG/person4.jpg" alt="person4">
-						<div class="caption">
-						        <h2 class="navn">Jølle Håvardson</h2>
-						        <p class="info">
-								Tegneserieskaper på heltid. Stor forkjemper for avanserte algorytmer i førskolen.
-								<br/>
-								Har besteget Mount Kilimanjaro.
-								<br/>
-								Elsker kålrabistappe.
+					<div class="caption">
+					        <h2 class="navn">Jølle Håvardson</h2>
+					        <p class="info">
+							Tegneserieskaper på heltid. Stor forkjemper for avanserte algorytmer i førskolen.
+							<br/>
+							Har besteget Mount Kilimanjaro.
+							<br/>
+							Elsker kålrabistappe.
 
-						        </p>
-		       
-						</div>
+					        </p>
+					</div>
 				</div>
 			</div>
 
+			<!--Person -->
 			<div class="col-sm-6 col-md-4 ">
 				<div class="omossContainer">
 					<img class="bilde" src="../images/JPG/person5.jpg" alt="person5">
-						<div class="caption">
-						        <h2 class="navn">Odd Stranger</h2>
-						        <p class="info">
-								Sliten.<br /><br /><br /><br />
-							</p>					
-						</div>
+					<div class="caption">
+					        <h2 class="navn">Odd Stranger</h2>
+					        <p class="info">
+							Sliten.<br /><br /><br /><br />
+						</p>					
+					</div>
 				</div>
 			</div>
 
+			<!--Person -->
 			<div class="col-sm-6 col-md-4">
 				<div class="omossContainer">
 					<img class="bilde" src="../images/JPG/person6.jpg" alt="person6">
@@ -158,29 +165,27 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
 	<footer id="bottomFooter">
 		<div class="container">
 			<div class="row">
+				<div class="col-sm-6">
+					<ul id="kontakt">
+						<li id="contactHeader">Kontakt oss:</li>
+						<li>
+							<i class="xs-hidden fa fa-envelope" aria-hidden="true"></i> <a href="mailto:furustu@online.no">Mail: furustu@online.no</a></li>
+						<li>
+							<i class="xs-hidden fa fa-phone" aria-hidden="true"></i> Tlf: 22522484</li>
+						<li>
+							<i class="xs-hidden fa fa-home" aria-hidden="true"></i> Adr:  Trondheimsveien 43B, 7014, Trondheim</li>
+					</ul>	
+				</div>
+				<div class="col-sm-6">
+					<img src="../images/logo/logohvit.png" id="logoFooter" alt="logo">
+				</div>
+			</div>
 		</div>
-		<div class="col-sm-6">
-			<ul id="kontakt">
-				<li id="contactHeader">Kontakt oss:</li>
-
-				<li>
-					<i class="xs-hidden fa fa-envelope" aria-hidden="true"></i> <a href="mailto:furustu@online.no">Mail: furustu@online.no</a></li>
-				<li>
-					<i class="xs-hidden fa fa-phone" aria-hidden="true"></i> Tlf: 22522484</li>
-				<li>
-					<i class="xs-hidden fa fa-home" aria-hidden="true"></i> Adr:  Trondheimsveien 43B, 7014, Trondheim</li>
-			</ul>	
-			</div>
-			<div class="col-sm-6">
-			<img src="../images/logo/logohvit.png" id="logoFooter" alt="logo"></div>
-			</div>
-		</footer>
-
-
+	</footer>
 </body>
 </html>

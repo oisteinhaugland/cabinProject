@@ -1,17 +1,6 @@
-body,html,#bottomFooter{
-	margin-bottom:0;
-	padding-bottom: 0;
-}
-
-
 /************************************************************************************
-Variabler
+Variabler / SCSS
 ************************************************************************************/
-/* test farger
-#3F8D8C
-#303539
-*/
-
 $nav-color:#f7f7f7;
 $navtextcolor: #303539;;
 /*$btnColor:#50a050;*/
@@ -22,8 +11,9 @@ $better-helvetica:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue
 $resetColor:#e1e1e1;
 
 
+
 /************************************************************************************
-General
+Generell
 ************************************************************************************/
 .clear {
 	clear: both;
@@ -44,9 +34,10 @@ General
 }
 
 
-/************************************
+
+/*******************************************************************************************
 Body
-************************************/
+*******************************************************************************************/
 body {
 	font-family: $better-helvetica;
 	font-size:16px;
@@ -56,14 +47,18 @@ body {
 
 
 
-/************************************************************************************
+/*******************************************************************************************
 Navigasjon
-************************************************************************************/
+*******************************************************************************************/
+
 /*Font-awesome carret styling*/
 #downCaret {
 	color:$btnColor;
 	font-size:50px;
 	padding:0;
+	&:hover {
+	cursor:pointer;
+	}
 }
 
 /*Logo I headeren*/
@@ -71,28 +66,19 @@ Navigasjon
 	margin-top:11.5px;
 	height:40px;
 }
+
 /*Header z-index fix for fixed navigasjon*/
 header {
 	position:fixed;
 	z-index:10;
 	width:100%;
 }
+
 /*Fiks på alle ellementer som kommer etter header for å possisjonere rikitg når headeren er fixed*/
 .headerFixedMargin{
 	padding-top:62px;
 }
 	
-
-/*ingen border bottom på index.html, men på alle andre*/
-#indexUl{
-	/*border-bottom:none;	*/
-}
-
-#downCaret:hover {
-	cursor:pointer;
-}
-
-
 /*Navigasjonsbaren*/
 nav {
 	width:100%;
@@ -112,8 +98,8 @@ nav {
 				padding:20px;
 				background: $nav-color;
 				color:$navtextcolor;
+
 				&:hover {
-				
 				background:$btnColor;
 				text-decoration: none;
 				color:white;
@@ -128,6 +114,13 @@ nav {
 		background: darken($btnColor,2%);
 		color:white;
 		}
+}
+/*For å stilere logoen riktig selv om den er en link*/
+.logoLink {
+	padding:0;
+	&:hover {
+		background:#f7f7f7;
+	}
 }
 
 
@@ -175,7 +168,7 @@ INDEX.HTML / Generel css
 	
 }
 
-/*knapper som skal stileres i stil 2*/
+/*knapper som skal stileres anderedes*/
 .myOtherBtns{
 	background:rgb(225,225,225);
 	color:$navtextcolor;
@@ -186,15 +179,13 @@ INDEX.HTML / Generel css
 	margin-bottom: 53.5px;
 }
 
-/*Fargefelt */
+/*Fargefelt, hr kan ikke manipuleres */
 .seperator {
 	margin:20px 0;
 	height:1px;
 	width:100%;
 	background:$mountainColor;
-	
 }
-
 
 /*Container-fluid padding fix */
 .container-fluid {
@@ -202,11 +193,12 @@ INDEX.HTML / Generel css
 	padding-right: 0;
 }
 
-
 /* Introduksjons bildet og tekst*/
 #intro {
 	border-radius: 0;
-	background: url(../images/JPG/img10.jpg) no-repeat center center fixed; 
+	/*background: url(../images/JPG/img10.jpg) no-repeat center center fixed; */
+	background: url(../images/JPG/header.jpg) no-repeat center center fixed; 
+	 /*for Opera,mozilla,Chrome,Safari*/
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
 	  -o-background-size: cover;
@@ -236,6 +228,15 @@ INDEX.HTML / Generel css
 #mainContent {
 	margin-top:0;
 }
+
+/*Bildecations i kursiv*/
+figcaption {
+	small {
+		font-style: italic;
+	}
+}
+
+
 
 /*******************************************************************************************
 ORDER.HTML
@@ -296,9 +297,10 @@ ORDER.HTML
 }
 
 
-/************************************************************************************************************
+
+/*******************************************************************************************
 HYTTER.HTML
-************************************************************************************************************/
+*******************************************************************************************/
 /*Stilering for pris*/
 .priser {
 	border-top:1px solid grey;
@@ -363,13 +365,18 @@ HYTTER.HTML
 			font-size: 18px;
 			border-radius: 0;
 			background:$mountainColor;
+			&:hover {
+				background:lighten($mountainColor,2%);
+			}
 		}
 	  }
 }
 
-/******************************************************
+
+
+/*******************************************************************************************
 Om Oss.html
-******************************************************/
+*******************************************************************************************/
 
 .omossContainer {
 	margin:15px 0;
@@ -386,11 +393,9 @@ Om Oss.html
 
 
 
-
-
-/************************************************************************
+/*******************************************************************************************
 Carousel
-************************************************************************/
+*******************************************************************************************/
 .item {
 	 -webkit-background-size: cover;
 	  -moz-background-size: cover;
@@ -418,9 +423,9 @@ background: url(../images/JPG/img2.jpg) no-repeat center center fixed;
 }
 
 
-/************************************************************************
+/*******************************************************************************************
 Footer
-************************************************************************/
+*******************************************************************************************/
 /*Øverste li element*/
 #contactHeader {
 	margin-bottom: 8px;
@@ -435,12 +440,8 @@ Footer
 	margin:20px 0 0 0;
 	width: 100%;
 	background-color: #004F66;
-
-	/*position:absolute;
-	bottom:0;*/
-
+	
 	ul {
-
 		margin:0;
 		color:#fff;
 		list-style: none;
@@ -459,18 +460,16 @@ Footer
 }
 
 
-/************************************
+/*******************************************************************************************
 Media Queries
-************************************/
+*******************************************************************************************/
 
-/*footer fix  for smaller screens*/
+/*footer fix for smaller screens*/
 @media screen and (max-width: 992px) {
 	  #logoFooter {
    	height:70px;
    	
-   }
-
-
+   	}
    }	
 
 
@@ -500,19 +499,14 @@ padding-left:0;
 @media screen and (max-width: 480px) {
    .xs-hidden {
    	display:none;
-   }
+   	}
 
    #bottomFooter>.container{
    	padding-left:0;
-   }
+   	}
 
    #logoFooter {
    	height:30px;
- }
+ 	}
   
 }
-
-
-/*
-http://www.are360.com/sv/Gora/Vinter/
-*/
