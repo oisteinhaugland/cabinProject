@@ -147,7 +147,7 @@ INDEX.HTML / Generel css
 /* Introduksjons bildet og tekst*/
 #intro {
   border-radius: 0;
-  background: url(../images/test/JPEG/img10.jpg) no-repeat center center fixed;
+  background: url(../images/JPG/img10.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -297,16 +297,16 @@ Carousel
   margin-bottom: 0; }
 
 #item1 {
-  background: url(../images/test/JPEG/img11.jpg) no-repeat center center fixed; }
+  background: url(../images/JPG/img11.jpg) no-repeat center center fixed; }
 
 #item2 {
-  background: url(../images/JPEG/img2.jpg) no-repeat center center fixed; }
+  background: url(../images/JPG/img2.jpg) no-repeat center center fixed; }
 
 #item3 {
-  background: url(../images/JPEG/img3.jpg) no-repeat center center fixed; }
+  background: url(../images/JPG/img3.jpg) no-repeat center center fixed; }
 
 #item4 {
-  background: url(../images/test/JPEG/img12.jpg) no-repeat center center fixed; }
+  background: url(../images/JPG/img12.jpg) no-repeat center center fixed; }
 
 /************************************************************************
 Footer

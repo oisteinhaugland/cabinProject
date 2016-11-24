@@ -614,9 +614,7 @@ Oppsumering etter bestilling.
 		
 		$('#showTotalPris').html(findTotalSum);
 	});
-
 	
-
 	$("#testingbutton").click(function(){
 		alert(getQueryVariable("id"));
 		//alert(daysInMonth);
