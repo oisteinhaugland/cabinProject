@@ -60,7 +60,7 @@ var fasiliteterHytte1 = "Sengeplasser: 8"  + "&emsp;" + "Internett:✖" + "&emsp
 var fasiliteterHytte2 = "Sengeplasser: 10"  + "&emsp;" + "Internett:✖" + "&emsp;" + "Vannklosett:✖"+ "&emsp;" +"Kjøkken:✔"+ "&emsp;" +"Utedo::✔" +"&emsp;" +"Peis: ✔"+"&emsp;" +"Innlagt Vann: ✖" + "&emsp;" +"Badstue: ✖";
 var fasiliteterHytte3 = "Sengeplasser: 14"  + "&emsp;" + "Internett:✖" + "&emsp;" + "Vannklosett:✖"+ "&emsp;" +"Kjøkken:✔"+ "&emsp;" +"Badestamp:✖" +"&emsp;" +"Peis: ✔"+"&emsp;" +"Innlagt Vann: ✖" + "&emsp;" +"Badstue: ✖";
 var fasiliteterHytte4 = "Sengeplasser: 10"  + "&emsp;" + "Internett:✔" + "&emsp;" + "Vannklosett:✖"+ "&emsp;" +"Kjøkken:✔"+ "&emsp;" +"Badestamp:✔" +"&emsp;" +"Peis:  ✖"+"&emsp;" +"Innlagt Vann: ✖" + "&emsp;" +"Badstue:✖";
-var fasiliteterHytte5 = "Sengeplasser: 12"  + "&emsp;" + "Internett:✖" + "&emsp;" + "Vannklosett:✔"+ "&emsp;" +"Kjøkken:✔"+ "&emsp;" +"Badestamp:✖" +"&emsp;" +"Peis: ✔"+"&emsp;" +"Innlagt Vann: ✔" + "&emsp;" +"Badstue: ✔";
+var fasiliteterHytte5 = "Sengeplasser: 12"  + "&emsp;" + "Internett:✖" + "&emsp;" + "Vannklosett:✔"+ "&emsp;" +"Kjøkken:✔"+ "&emsp;" +"Tilrettelagt for funksjonsnedsettelse: ✔" +"&emsp;" +"Peis: ✔"+"&emsp;" +"Innlagt Vann: ✔" + "&emsp;" +"Badstue: ✔";
 var fasiliteterHytte6 = "Sengeplasser: 11"  + "&emsp;" + "Internett:✔" + "&emsp;" + "Vannklosett:✔"+ "&emsp;" +"Kjøkken:✔"+ "&emsp;" +"Badestamp:✔" +"&emsp;" +"Peis: ✔"+"&emsp;" +"Innlagt Vann: ✔" + "&emsp;" +"Badstue: ✔";
 
 
@@ -653,5 +653,6 @@ Oppsumering etter bestilling.
         			},
         			'slow');
 	});
+	
 });
 
