@@ -473,7 +473,10 @@ Media Queries
    #bottomFooter>.container{
    	padding-left:0;
    }
- 
+
+   #logoFooter {
+   	height:30px;
+ }
 }
 /*gjem headeren og fjern padding i navigasjon*/
 @media screen and (max-width: 768px) {

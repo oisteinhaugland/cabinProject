@@ -342,12 +342,13 @@ Media Queries
 /*gjem ikoner i navigasjonbaren på mobil og fiks footer*/
 @media screen and (max-width: 480px) {
   .xs-hidden {
-    display: none; 
-  }
+    display: none; }
 
   #bottomFooter > .container {
-    padding-left: 0; } 
-  }
+    padding-left: 0; }
+
+  #logoFooter {
+    height: 30px; } }
 /*gjem headeren og fjern padding i navigasjon*/
 @media screen and (max-width: 768px) {
   #logoHeader {
