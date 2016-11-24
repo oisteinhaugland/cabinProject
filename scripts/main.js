@@ -578,6 +578,8 @@ Validering
 
 		//Takk for din bestilling vises
 		$("#bestilt").removeClass("hide");
+		//Lettfiks for spacing issues med footeren etter man har bestilt.
+		$("#bottomFooter").addClass("hide");
 		
 		
 /*********************************************************************************************************************************************

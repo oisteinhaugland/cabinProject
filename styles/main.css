@@ -353,7 +353,10 @@ Media Queries
 
   #logoFooter {
     height: 50px;
-    padding-left: 35px; } }
+    padding-left: 35px; }
+
+  .audio {
+    margin-left: -12.5px; } }
 /*gjem ikoner i navigasjonbaren på mobil og fiks footer*/
 @media screen and (max-width: 480px) {
   .xs-hidden {
@@ -363,10 +366,7 @@ Media Queries
     padding-left: 0; }
 
   #logoFooter {
-    height: 30px; }
-
-  audio {
-    margin-left: -10px; } }
+    height: 30px; } }
 /*
 http://www.are360.com/sv/Gora/Vinter/
 */

@@ -459,7 +459,6 @@ Footer
 }
 
 
-
 /************************************
 Media Queries
 ************************************/
@@ -490,6 +489,9 @@ padding-left:0;
    	padding-left:35px;
    }
 
+.audio {
+	margin-left: -12.5px;
+}
  
 }
 
@@ -507,10 +509,10 @@ padding-left:0;
    #logoFooter {
    	height:30px;
  }
+ 
 
- audio {
-   	margin-left:-10px;
-   }
+
+ 
 }
 
 
